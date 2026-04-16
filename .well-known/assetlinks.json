@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.gastrack.terry",
+      "sha256_cert_fingerprints": [
+        "AA:0E:AB:B1:87:31:30:AD:24:CD:2F:F9:74:6D:BD:9F:65:9B:AE:5E:51:17:6C:61:E0:67:EB:73:6F:A4:59:3A"
+      ]
+    }
+  }
+]
