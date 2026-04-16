@@ -18,21 +18,26 @@ const TRANSLATIONS = {
     home_cta_beta: "Beta feedback",
     home_features_label: "What GasTrack does",
     home_feat1_title: "Fuel tracking",
-    home_feat1_body: "Log fill-ups, odometer, and prices. See trends and budgets that reflect how you actually drive.",
+    home_feat1_body:
+      "Log every fill-up, track consumption, and spot trends. Supports petrol, diesel, LPG, methane, electric, and hybrid vehicles.",
     home_feat2_title: "Parking & maintenance",
-    home_feat2_body: "Keep parking sessions and service history where they belong — next to your vehicle story.",
+    home_feat2_body:
+      "Never lose track of a parking session or service record. GasTrack keeps your full vehicle history in one place.",
     home_feat3_title: "Real costs",
-    home_feat3_body: "Understand spending beyond the pump: recurring costs, insights, and the full picture of ownership.",
+    home_feat3_body:
+      "See what your vehicle actually costs per month — fuel, insurance, tax, finance, maintenance, all in one dashboard.",
     home_feat4_title: "Radar",
-    home_feat4_body: "Compare nearby prices where data is available, so you can choose when and where to fill up.",
+    home_feat4_body:
+      "Find nearby fuel stations with live prices and community ratings. Available in Italy, France, Germany, and Spain.",
     home_feat5_title: "Social",
-    home_feat5_body: "Optional social layer: friends, feed, and shared context — only if you want it.",
+    home_feat5_body:
+      "Compare efficiency with friends, share achievements, and see how your driving stacks up.",
     home_feat6_title: "Gamification",
-    home_feat6_body: "Achievements and streaks that reward consistency, without losing sight of real numbers.",
+    home_feat6_body:
+      "Earn XP, level up, and unlock achievements as you track your vehicle. Staying on top of costs has never been this satisfying.",
     home_contact_label: "Contact",
-    home_contact_title: "We’re here to help",
-    home_contact_body:
-      "Questions about GasTrack, your data, or beta access? Reach out — we read every message.",
+    home_contact_title: "Questions or feedback?",
+    home_contact_body: "GasTrack is built by an independent developer. We read every message.",
     privacy_title: "GasTrack — Privacy Policy",
     privacy_updated: "Last updated: 5 April 2026",
     privacy_intro:
@@ -41,7 +46,7 @@ const TRANSLATIONS = {
     terms_updated: "Last updated: 16 April 2026",
     terms_intro:
       "These terms govern your use of the GasTrack mobile application. By downloading or using GasTrack, you agree to these terms and to our Privacy Policy.",
-    footer_copy: "© 2026 GasTrack. All rights reserved.",
+    footer_copy: "© 2025–2026 GasTrack. All rights reserved.",
   },
   it: {
     nav_home: "Home",
@@ -57,21 +62,27 @@ const TRANSLATIONS = {
     home_cta_beta: "Feedback beta",
     home_features_label: "Cosa fa GasTrack",
     home_feat1_title: "Monitoraggio carburante",
-    home_feat1_body: "Registra rifornimenti, contachilometri e prezzi. Vedi andamenti e budget legati a come guidi davvero.",
+    home_feat1_body:
+      "Registra ogni rifornimento, monitora i consumi e individua le tendenze. Supporta benzina, diesel, GPL, metano, elettrico e ibrido.",
     home_feat2_title: "Parcheggi e manutenzione",
-    home_feat2_body: "Tieni sessioni di parcheggio e storico interventi accanto alla storia del veicolo.",
+    home_feat2_body:
+      "Non perdere mai traccia di una sosta o di un intervento. GasTrack conserva la cronologia completa del tuo veicolo in un unico posto.",
     home_feat3_title: "Costi reali",
-    home_feat3_body: "Comprendi le spese oltre al distributore: costi ricorrenti, insights e il quadro completo.",
+    home_feat3_body:
+      "Scopri quanto ti costa davvero il veicolo ogni mese — carburante, assicurazione, tasse, finanziamento, manutenzione, tutto in una dashboard.",
     home_feat4_title: "Radar",
-    home_feat4_body: "Confronta prezzi nelle vicinanze dove i dati sono disponibili, per scegliere quando e dove fare rifornimento.",
+    home_feat4_body:
+      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Disponibile in Italia, Francia, Germania e Spagna.",
     home_feat5_title: "Social",
-    home_feat5_body: "Social opzionale: amici, feed e contesto condiviso — solo se lo desideri.",
+    home_feat5_body:
+      "Confronta i consumi con gli amici, condividi traguardi e scopri come guidi rispetto agli altri.",
     home_feat6_title: "Gamification",
-    home_feat6_body: "Obiettivi e serie che premiano la costanza, senza perdere di vista i numeri reali.",
+    home_feat6_body:
+      "Guadagna XP, sali di livello e sblocca achievement mentre tieni traccia del tuo veicolo. Non è mai stato così soddisfacente.",
     home_contact_label: "Contatti",
-    home_contact_title: "Siamo qui per aiutarti",
+    home_contact_title: "Domande o feedback?",
     home_contact_body:
-      "Domande su GasTrack, i tuoi dati o l’accesso beta? Scrivici: leggiamo ogni messaggio.",
+      "GasTrack è sviluppato da uno sviluppatore indipendente. Leggiamo ogni messaggio.",
     privacy_title: "GasTrack — Informativa sulla privacy",
     privacy_updated: "Ultimo aggiornamento: 5 aprile 2026",
     privacy_intro:
@@ -80,7 +91,7 @@ const TRANSLATIONS = {
     terms_updated: "Ultimo aggiornamento: 16 aprile 2026",
     terms_intro:
       "Questi termini disciplinano l’uso dell’app mobile GasTrack. Scaricando o usando GasTrack, accetti questi termini e la nostra Informativa sulla privacy.",
-    footer_copy: "© 2026 GasTrack. Tutti i diritti riservati.",
+    footer_copy: "© 2025–2026 GasTrack. Tutti i diritti riservati.",
   },
   fr: {
     nav_home: "Accueil",
@@ -97,26 +108,26 @@ const TRANSLATIONS = {
     home_features_label: "Ce que fait GasTrack",
     home_feat1_title: "Suivi du carburant",
     home_feat1_body:
-      "Enregistrez les pleins, l’odomètre et les prix. Visualisez tendances et budgets alignés sur votre usage réel.",
+      "Enregistrez chaque plein, suivez la consommation et repérez les tendances. Compatible essence, diesel, GPL, méthane, électrique et hybride.",
     home_feat2_title: "Parking et entretien",
     home_feat2_body:
-      "Conservez sessions de stationnement et historique d’entretien au bon endroit — à côté de l’histoire du véhicule.",
+      "Ne perdez jamais le fil d'une session de stationnement ou d'un entretien. GasTrack conserve l'historique complet de votre véhicule au même endroit.",
     home_feat3_title: "Coûts réels",
     home_feat3_body:
-      "Comprenez les dépenses au-delà de la pompe : coûts récurrents, analyses et vision complète de la possession.",
+      "Découvrez ce que votre véhicule vous coûte vraiment par mois — carburant, assurance, taxes, financement, entretien, tout dans un tableau de bord.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Comparez les prix à proximité lorsque les données sont disponibles, pour choisir quand et où faire le plein.",
+      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Disponible en Italie, France, Allemagne et Espagne.",
     home_feat5_title: "Social",
     home_feat5_body:
-      "Couche sociale optionnelle : amis, fil et contexte partagé — seulement si vous le souhaitez.",
+      "Comparez votre efficacité avec vos amis, partagez vos succès et voyez comment vous vous situez.",
     home_feat6_title: "Gamification",
     home_feat6_body:
-      "Succès et séries qui récompensent l’assiduité, sans perdre de vue les chiffres réels.",
+      "Gagnez des XP, montez de niveau et débloquez des succès en suivant votre véhicule. Gérer ses coûts n'a jamais été aussi satisfaisant.",
     home_contact_label: "Contact",
-    home_contact_title: "Nous sommes là pour vous aider",
+    home_contact_title: "Questions ou retours ?",
     home_contact_body:
-      "Questions sur GasTrack, vos données ou l’accès bêta ? Écrivez-nous — nous lisons chaque message.",
+      "GasTrack est développé par un développeur indépendant. Nous lisons chaque message.",
     privacy_title: "GasTrack — Politique de confidentialité",
     privacy_updated: "Dernière mise à jour : 5 avril 2026",
     privacy_intro:
@@ -125,7 +136,7 @@ const TRANSLATIONS = {
     terms_updated: "Dernière mise à jour : 16 avril 2026",
     terms_intro:
       "Les présentes conditions régissent votre utilisation de l’application mobile GasTrack. En téléchargeant ou en utilisant GasTrack, vous acceptez ces conditions et notre Politique de confidentialité.",
-    footer_copy: "© 2026 GasTrack. Tous droits réservés.",
+    footer_copy: "© 2025–2026 GasTrack. Tous droits réservés.",
   },
 };
 
