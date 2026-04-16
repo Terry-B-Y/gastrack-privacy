@@ -3,98 +3,101 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GasTrack — Privacy Policy</title>
-  <meta name="description" content="Privacy policy for the GasTrack mobile app." />
-  <style>
-    :root { color-scheme: light dark; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; line-height: 1.55; max-width: 42rem; margin: 0 auto; padding: 1.25rem 1rem 3rem; color: #111; background: #fafafa; }
-    @media (prefers-color-scheme: dark) { body { color: #e8e8e8; background: #121214; } a { color: #7eb6ff; } }
-    h1 { font-size: 1.65rem; margin-bottom: 0.25rem; }
-    .meta { font-size: 0.9rem; color: #555; margin-bottom: 1.5rem; }
-    @media (prefers-color-scheme: dark) { .meta { color: #9a9a9a; } }
-    h2 { font-size: 1.15rem; margin-top: 1.75rem; border-bottom: 1px solid #ddd; padding-bottom: 0.35rem; }
-    @media (prefers-color-scheme: dark) { h2 { border-color: #333; } }
-    ul { padding-left: 1.25rem; }
-    li { margin: 0.35rem 0; }
-    .contact { margin-top: 2rem; padding: 1rem; background: #eee; border-radius: 8px; }
-    @media (prefers-color-scheme: dark) { .contact { background: #1e1e22; } }
-    a { color: #0b57d0; }
-  </style>
+  <title>GasTrack — Your vehicle, under control.</title>
+  <meta name="description" content="GasTrack — track fuel, parking, maintenance, and real costs. Now on iOS and Android." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <h1>GasTrack — Privacy Policy</h1>
-  <p class="meta">Last updated: <time datetime="2026-04-05">5 April 2026</time></p>
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">GasTrack</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a>
+      <a href="privacy.html" class="nav-link" data-i18n="nav_privacy">Privacy</a>
+      <a href="terms.html" class="nav-link" data-i18n="nav_terms">Terms</a>
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button type="button" class="lang-btn" data-lang="it" onclick="setLang('it')">IT</button>
+        <button type="button" class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
 
-  <p>
-    This policy describes how <strong>GasTrack</strong> (“the app”) handles personal information when you use our
-    mobile application. GasTrack is operated by an independent developer (as shown on the App Store and Google Play).
-    If you have questions, contact us at
-    <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.
-  </p>
+  <main>
+    <section class="hero container">
+      <div class="badge fade-in delay-1"><span aria-hidden="true">⚡</span> <span data-i18n="home_badge">Now on iOS &amp; Android</span></div>
+      <h1 class="display fade-in delay-1">
+        <span data-i18n="home_headline_1">Your vehicle,</span><br />
+        <span class="accent fade-in delay-2" data-i18n="home_headline_2">under control.</span>
+      </h1>
+      <p class="sub fade-in delay-3" data-i18n="home_sub">GasTrack helps you track fuel, parking, maintenance, and real costs.</p>
+      <div class="btn-row fade-in delay-4">
+        <a class="btn btn-primary" href="https://apps.apple.com/app/id_PLACEHOLDER" rel="noopener noreferrer" target="_blank" data-i18n="home_cta_ios">App Store</a>
+        <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.gastrack.terry" rel="noopener noreferrer" target="_blank" data-i18n="home_cta_android">Google Play</a>
+      </div>
+      <p style="margin-top: 16px;" class="fade-in delay-5">
+        <a class="btn btn-ghost" href="mailto:support.gastrack@gmail.com?subject=GasTrack%20beta" data-i18n="home_cta_beta">Beta feedback</a>
+      </p>
+    </section>
 
-  <h2>1. What we collect</h2>
-  <p>Depending on how you use the app, we may process:</p>
-  <ul>
-    <li><strong>Account data</strong> — Email address and authentication credentials managed by
-      <strong>Google Firebase Authentication</strong> (sign-in provider you choose, e.g. email and password).</li>
-    <li><strong>Profile and preferences</strong> — Name or display fields you provide, language, units, and app settings stored in
-      <strong>Cloud Firestore</strong> under your user id.</li>
-    <li><strong>Fuel and vehicle data</strong> — Vehicles you add, fill-ups, odometer readings, costs, notes, and related fields.</li>
-    <li><strong>Parking and maintenance</strong> — Logs and optional details you enter (e.g. service history, parking sessions).</li>
-    <li><strong>Optional financial inputs</strong> — Optional fields you choose to store for analytics inside the app (e.g. budgets, vehicle purchase notes), only as you enter them.</li>
-    <li><strong>Social features (optional)</strong> — If you use social features, we may store a public profile, feed posts, friend connections, and related metadata as implemented in the app.</li>
-    <li><strong>Push notifications</strong> — If you opt in, a device token may be stored so we can deliver notifications.</li>
-    <li><strong>Diagnostics and product improvement</strong> — With your consent where required, we may use Firebase/Google tooling (e.g. Analytics, Performance) in line with your in-app choices and platform settings.</li>
-    <li><strong>Support</strong> — Information you send when you contact us (e.g. email).</li>
-  </ul>
-  <p>We do not sell your personal information.</p>
+    <section class="section container">
+      <span class="label fade-in" data-i18n="home_features_label">What GasTrack does</span>
+      <div class="features-grid">
+        <article class="card card-accent fade-in delay-1">
+          <div class="feat-emoji" aria-hidden="true">⛽</div>
+          <h2 class="feat-title" data-i18n="home_feat1_title">Fuel tracking</h2>
+          <p class="feat-body" data-i18n="home_feat1_body">Log fill-ups, odometer, and prices.</p>
+        </article>
+        <article class="card card-accent fade-in delay-2">
+          <div class="feat-emoji" aria-hidden="true">🅿️</div>
+          <h2 class="feat-title" data-i18n="home_feat2_title">Parking &amp; maintenance</h2>
+          <p class="feat-body" data-i18n="home_feat2_body">Keep parking sessions and service history.</p>
+        </article>
+        <article class="card card-accent fade-in delay-3">
+          <div class="feat-emoji" aria-hidden="true">📊</div>
+          <h2 class="feat-title" data-i18n="home_feat3_title">Real costs</h2>
+          <p class="feat-body" data-i18n="home_feat3_body">Understand spending beyond the pump.</p>
+        </article>
+        <article class="card card-accent fade-in delay-4">
+          <div class="feat-emoji" aria-hidden="true">📡</div>
+          <h2 class="feat-title" data-i18n="home_feat4_title">Radar</h2>
+          <p class="feat-body" data-i18n="home_feat4_body">Compare nearby prices where data is available.</p>
+        </article>
+        <article class="card card-accent fade-in delay-5">
+          <div class="feat-emoji" aria-hidden="true">👥</div>
+          <h2 class="feat-title" data-i18n="home_feat5_title">Social</h2>
+          <p class="feat-body" data-i18n="home_feat5_body">Optional social layer.</p>
+        </article>
+        <article class="card card-accent fade-in delay-6">
+          <div class="feat-emoji" aria-hidden="true">🏆</div>
+          <h2 class="feat-title" data-i18n="home_feat6_title">Gamification</h2>
+          <p class="feat-body" data-i18n="home_feat6_body">Achievements and streaks.</p>
+        </article>
+      </div>
+    </section>
 
-  <h2>2. Why we use data</h2>
-  <ul>
-    <li>To provide account sign-in and sync your data across devices.</li>
-    <li>To show your logs, statistics, vehicles, and optional social or insights features.</li>
-    <li>To send optional notifications you enable.</li>
-    <li>To secure the service, fix bugs, and improve the app.</li>
-    <li>To comply with law and respond to valid requests.</li>
-  </ul>
+    <section class="section container section--tight">
+      <div class="card fade-in" style="text-align: center; max-width: 520px; margin: 0 auto;">
+        <span class="label" data-i18n="home_contact_label">Contact</span>
+        <h1 style="font-size: 1.5rem; margin-bottom: 12px;" data-i18n="home_contact_title">We’re here to help</h1>
+        <p style="margin-bottom: 20px;" data-i18n="home_contact_body">Questions about GasTrack?</p>
+        <a class="btn btn-primary" href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>
+      </div>
+    </section>
+  </main>
 
-  <h2>3. Legal bases (EEA/UK users)</h2>
-  <p>
-    Where GDPR applies, we rely on <strong>contract</strong> (providing the service), <strong>legitimate interests</strong>
-    (security, improvement), and, where required, <strong>consent</strong> (e.g. optional analytics or AI features as presented in the app).
-  </p>
-
-  <h2>4. Where data is processed</h2>
-  <p>
-    Data is processed using <strong>Google Firebase</strong> (Authentication, Firestore, and related services) in
-    accordance with Google’s terms and privacy documentation. Firebase project configuration (including region choices)
-    is set by the operator in the Firebase console.
-  </p>
-
-  <h2>5. Retention</h2>
-  <p>
-    We keep your data until you <strong>delete your account</strong> or delete specific content using the controls in the app,
-    subject to short backup and operational retention by our cloud providers as described in their policies.
-  </p>
-
-  <h2>6. Your rights</h2>
-  <p>Depending on your region, you may have the right to access, correct, delete, export, or restrict processing of your data, and to lodge a complaint with a supervisory authority.</p>
-  <p>In the app you can use <strong>Privacy &amp; Data</strong> (and related settings) to export or erase your data where those features are available. Account deletion removes your app account and associated data as implemented in the current version of the app.</p>
-
-  <h2>7. Children</h2>
-  <p>GasTrack is not intended for children under the age where parental consent is required in your country. We do not knowingly collect personal information from young children.</p>
-
-  <h2>8. Changes</h2>
-  <p>We may update this policy from time to time. The “Last updated” date at the top will change when we do. Continued use of the app after changes means you accept the updated policy where permitted by law.</p>
-
-  <div class="contact">
-    <strong>Contact</strong><br />
-    Email: <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>
-  </div>
-
-  <p style="font-size: 0.85rem; color: #666; margin-top: 2rem;">
-    This page is provided for transparency. It is not legal advice. Adapt names, regions, and details to match your
-    Firebase setup and counsel if needed.
-  </p>
+  <footer class="footer">
+    <div class="footer-logo">GasTrack</div>
+    <div class="footer-links">
+      <a href="index.html" class="footer-link" data-i18n="nav_home">Home</a>
+      <a href="privacy.html" class="footer-link" data-i18n="nav_privacy">Privacy</a>
+      <a href="terms.html" class="footer-link" data-i18n="nav_terms">Terms</a>
+      <a href="mailto:support.gastrack@gmail.com" class="footer-link">support.gastrack@gmail.com</a>
+    </div>
+    <p class="footer-copy" data-i18n="footer_copy">© 2026 GasTrack. All rights reserved.</p>
+  </footer>
+  <script src="js/i18n.js"></script>
 </body>
 </html>
