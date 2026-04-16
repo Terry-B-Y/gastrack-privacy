@@ -379,13 +379,6 @@ strong {
   color: var(--text-tertiary);
 }
 
-/* ——— Legal disclaimer small ——— */
-.legal-note {
-  font-size: 0.85rem;
-  color: var(--text-tertiary);
-  margin-top: 2rem;
-}
-
 /* ——— Hero ——— */
 .hero {
   padding-top: 100px;
