@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GasTrack</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; max-width: 32rem; line-height: 1.45; }
+    #status { color: #222; }
+    .err { color: #b00020; }
+  </style>
+</head>
+<body>
+  <p id="status">Completing sign-in…</p>
+  <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
+  <script>
+    (function () {
+      function param(name) {
+        var re = new RegExp('[?&]' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^&]*)');
+        var m = re.exec(location.search);
+        return m ? decodeURIComponent(m[1].replace(/\+/g, ' ')) : '';
+      }
+      var mode = param('mode');
+      var oobCode = param('oobCode');
+      var apiKey = param('apiKey');
+      var continueUrl = param('continueUrl') || 'https://gastrack.eu/';
+      var el = document.getElementById('status');
+
+      if (!oobCode || !apiKey) {
+        el.className = 'err';
+        el.textContent = 'This link is missing required parameters. Open the link from your GasTrack email.';
+        return;
+      }
+
+      firebase.initializeApp({
+        apiKey: apiKey,
+        authDomain: 'gastrack-2e476.firebaseapp.com',
+        projectId: 'gastrack-2e476',
+      });
+      var auth = firebase.auth();
+
+      function fail(e) {
+        el.className = 'err';
+        el.textContent = (e && e.message) ? e.message : 'Something went wrong. Try again from your email.';
+      }
+
+      function goNext() {
+        el.textContent = 'Done. Opening GasTrack…';
+        window.location.replace(continueUrl);
+      }
+
+      if (mode === 'resetPassword') {
+        el.textContent =
+          'Password reset must be finished in the GasTrack app. Use Forgot password on the sign-in screen if you still need a new password.';
+        return;
+      }
+      if (mode === 'signIn') {
+        el.textContent =
+          'Email sign-in links are completed inside the GasTrack app. Open the app and request a new sign-in link if needed.';
+        return;
+      }
+
+      var applyModes = { verifyEmail: 1, recoverEmail: 1, verifyAndChangeEmail: 1, revertSecondFactorAddition: 1 };
+      if (mode && !applyModes[mode]) {
+        el.className = 'err';
+        el.textContent = 'This action type is not supported on the web. Use the GasTrack app.';
+        return;
+      }
+
+      auth.applyActionCode(oobCode).then(goNext).catch(fail);
+    })();
+  </script>
+</body>
+</html>
