@@ -4,7 +4,11 @@
     "details": [
       {
         "appID": "7V86G8R83G.com.gastrack.terry",
-        "paths": ["/link/*"]
+        "paths": [
+          "/link/*",
+          "/link/auth-action",
+          "/link/auth-action*"
+        ]
       }
     ]
   }
