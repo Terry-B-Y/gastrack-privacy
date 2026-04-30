@@ -5,3 +5,5 @@ This repository exists only to host the public site (e.g. **[index.html](index.h
 **Copyright:** Proprietary; sole authorship is stated in [`LICENSE`](LICENSE).
 
 The main application code lives in a **private** repository (`gas-track`).
+
+**Author:** [Terry Boakye Yiadom — LinkedIn](https://www.linkedin.com/in/terry-boakye-yiadom-a8738426a/)

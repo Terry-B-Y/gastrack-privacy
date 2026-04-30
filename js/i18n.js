@@ -38,6 +38,7 @@ const TRANSLATIONS = {
     home_contact_label: "Contact",
     home_contact_title: "Questions or feedback?",
     home_contact_body: "GasTrack is built by an independent developer. We read every message.",
+    home_contact_linkedin: "LinkedIn",
     privacy_title: "GasTrack — Privacy Policy",
     privacy_updated: "Last updated: 5 April 2026",
     privacy_intro:
@@ -118,6 +119,7 @@ const TRANSLATIONS = {
     home_contact_title: "Domande o feedback?",
     home_contact_body:
       "GasTrack è sviluppato da uno sviluppatore indipendente. Leggiamo ogni messaggio.",
+    home_contact_linkedin: "LinkedIn",
     privacy_title: "GasTrack — Informativa sulla privacy",
     privacy_updated: "Ultimo aggiornamento: 5 aprile 2026",
     privacy_intro:
@@ -198,6 +200,7 @@ const TRANSLATIONS = {
     home_contact_title: "Questions ou retours ?",
     home_contact_body:
       "GasTrack est développé par un développeur indépendant. Nous lisons chaque message.",
+    home_contact_linkedin: "LinkedIn",
     privacy_title: "GasTrack — Politique de confidentialité",
     privacy_updated: "Dernière mise à jour : 5 avril 2026",
     privacy_intro:
