@@ -8,11 +8,13 @@ const TRANSLATIONS = {
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Terms",
-    home_badge: "Now on iOS & Android",
+    home_badge: "Available in Italy · iOS & Android",
     home_headline_1: "Your vehicle,",
     home_headline_2: "under control.",
     home_sub:
-      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter.",
+      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. The app is offered in Italy today; other countries may follow.",
+    home_meta_description:
+      "GasTrack — fuel, parking, maintenance, and real costs. Available in Italy on iOS and Android.",
     home_cta_ios: "App Store",
     home_cta_android: "Google Play",
     home_cta_beta: "Beta feedback",
@@ -28,7 +30,7 @@ const TRANSLATIONS = {
       "See what your vehicle actually costs per month — fuel, insurance, tax, finance, maintenance, all in one dashboard.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Find nearby fuel stations with live prices and community ratings. Available in Italy, France, Germany, and Spain.",
+      "Find nearby fuel stations with live prices and community ratings. Fuel Radar is available in Italy today; more countries may be added later.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Compare efficiency with friends, share achievements, and see how your driving stacks up.",
@@ -88,11 +90,13 @@ const TRANSLATIONS = {
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Termini",
-    home_badge: "Disponibile su iOS e Android",
+    home_badge: "Disponibile in Italia · iOS e Android",
     home_headline_1: "Il tuo veicolo,",
     home_headline_2: "sotto controllo.",
     home_sub:
-      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza.",
+      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza. L’app è oggi offerta in Italia; altri Paesi potranno seguire.",
+    home_meta_description:
+      "GasTrack — carburante, parcheggio, manutenzione e costi reali. Disponibile in Italia su iOS e Android.",
     home_cta_ios: "App Store",
     home_cta_android: "Google Play",
     home_cta_beta: "Feedback beta",
@@ -108,7 +112,7 @@ const TRANSLATIONS = {
       "Scopri quanto ti costa davvero il veicolo ogni mese — carburante, assicurazione, tasse, finanziamento, manutenzione, tutto in una dashboard.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Disponibile in Italia, Francia, Germania e Spagna.",
+      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Il Radar carburante è oggi disponibile in Italia; altri Paesi potranno essere aggiunti in seguito.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Confronta i consumi con gli amici, condividi traguardi e scopri come guidi rispetto agli altri.",
@@ -169,11 +173,13 @@ const TRANSLATIONS = {
     nav_home: "Accueil",
     nav_privacy: "Confidentialité",
     nav_terms: "Conditions",
-    home_badge: "Disponible sur iOS et Android",
+    home_badge: "Disponible en Italie · iOS et Android",
     home_headline_1: "Votre véhicule,",
     home_headline_2: "sous contrôle.",
     home_sub:
-      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté.",
+      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté. L’application est proposée en Italie pour l’instant ; d’autres pays pourront suivre.",
+    home_meta_description:
+      "GasTrack — carburant, stationnement, entretien et coûts réels. Disponible en Italie sur iOS et Android.",
     home_cta_ios: "App Store",
     home_cta_android: "Google Play",
     home_cta_beta: "Retour bêta",
@@ -189,7 +195,7 @@ const TRANSLATIONS = {
       "Découvrez ce que votre véhicule vous coûte vraiment par mois — carburant, assurance, taxes, financement, entretien, tout dans un tableau de bord.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Disponible en Italie, France, Allemagne et Espagne.",
+      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Le radar carburant est disponible en Italie pour l’instant ; d’autres pays pourront être ajoutés ultérieurement.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Comparez votre efficacité avec vos amis, partagez vos succès et voyez comment vous vous situez.",
@@ -299,6 +305,12 @@ function applyTranslations() {
     if (dict.terms_meta_description) {
       var mt = document.querySelector('meta[name="description"]');
       if (mt) mt.setAttribute("content", dict.terms_meta_description);
+    }
+    document.documentElement.lang = currentLang;
+  } else if (page === "home") {
+    if (dict.home_meta_description) {
+      var mh = document.querySelector('meta[name="description"]');
+      if (mh) mh.setAttribute("content", dict.home_meta_description);
     }
     document.documentElement.lang = currentLang;
   }
