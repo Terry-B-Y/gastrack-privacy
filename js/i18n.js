@@ -249,6 +249,15 @@ const TRANSLATIONS = {
   },
 };
 
+(function mergeLegalTranslations() {
+  var G = typeof window !== "undefined" && window.GAS_LEGAL_TRANSLATIONS;
+  if (!G) return;
+  ["en", "it", "fr"].forEach(function (lang) {
+    var patch = G[lang];
+    if (patch && TRANSLATIONS[lang]) Object.assign(TRANSLATIONS[lang], patch);
+  });
+})();
+
 let currentLang = localStorage.getItem("gt_lang") || "en";
 
 function setLang(lang) {
@@ -276,6 +285,23 @@ function applyTranslations() {
     const val = dict[key] ?? TRANSLATIONS.en[key] ?? "";
     el.setAttribute("placeholder", val);
   });
+
+  var page = document.body && document.body.getAttribute("data-page");
+  if (page === "privacy") {
+    if (dict.privacy_title) document.title = dict.privacy_title;
+    if (dict.privacy_meta_description) {
+      var md = document.querySelector('meta[name="description"]');
+      if (md) md.setAttribute("content", dict.privacy_meta_description);
+    }
+    document.documentElement.lang = currentLang;
+  } else if (page === "terms") {
+    if (dict.terms_title) document.title = dict.terms_title;
+    if (dict.terms_meta_description) {
+      var mt = document.querySelector('meta[name="description"]');
+      if (mt) mt.setAttribute("content", dict.terms_meta_description);
+    }
+    document.documentElement.lang = currentLang;
+  }
 }
 
 function updateLangButtons() {
