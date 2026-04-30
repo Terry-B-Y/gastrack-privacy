@@ -8,15 +8,15 @@ const TRANSLATIONS = {
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Terms",
-    home_badge: "Available in Italy · iOS & Android",
+    home_badge: "Italy · TestFlight & internal testing",
     home_headline_1: "Your vehicle,",
     home_headline_2: "under control.",
     home_sub:
-      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. The app is offered in Italy today; other countries may follow.",
+      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. We’re not in the public App Store yet: <strong>request access</strong> by email and we’ll add you to <strong>TestFlight (iOS)</strong> or <strong>Google Play internal testing</strong> where appropriate. Focus is <strong>Italy</strong> for now; other countries may follow.",
     home_meta_description:
-      "GasTrack — fuel, parking, maintenance, and real costs. Available in Italy on iOS and Android.",
-    home_cta_ios: "App Store",
-    home_cta_android: "Google Play",
+      "GasTrack — fuel, parking, maintenance, and real costs. Request TestFlight or Google Play internal testing access (Italy). Not publicly listed in stores yet.",
+    home_cta_ios: "Request TestFlight (iOS)",
+    home_cta_android: "Request Android testing",
     home_cta_beta: "Beta feedback",
     home_features_label: "What GasTrack does",
     home_feat1_title: "Fuel tracking",
@@ -30,7 +30,7 @@ const TRANSLATIONS = {
       "See what your vehicle actually costs per month — fuel, insurance, tax, finance, maintenance, all in one dashboard.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Find nearby fuel stations with live prices and community ratings. Fuel Radar is available in Italy today; more countries may be added later.",
+      "Find nearby fuel stations with live prices and community ratings. Fuel Radar is aimed at <strong>Italy</strong> first (in testing with the rest of the app); more countries may be added after a wider release.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Compare efficiency with friends, share achievements, and see how your driving stacks up.",
@@ -39,12 +39,13 @@ const TRANSLATIONS = {
       "Earn XP, level up, and unlock achievements as you track your vehicle. Staying on top of costs has never been this satisfying.",
     home_contact_label: "Contact",
     home_contact_title: "Questions or feedback?",
-    home_contact_body: "GasTrack is built by an independent developer. We read every message.",
+    home_contact_body:
+      "GasTrack is built by an independent developer. <strong>Email us</strong> to ask for TestFlight / Play internal access or anything else — we read every message.",
     home_contact_linkedin: "LinkedIn",
     privacy_title: "GasTrack — Privacy Policy",
     privacy_updated: "Last updated: 5 April 2026",
     privacy_intro:
-      'This policy describes how <strong>GasTrack</strong> (\u201Cthe app\u201D) handles personal information when you use our mobile application. GasTrack is operated by <strong>Terry Boakye Yiadom</strong>, sole author (as shown on the App Store and Google Play). If you have questions, contact us at <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+      'This policy describes how <strong>GasTrack</strong> (\u201Cthe app\u201D) handles personal information when you use our mobile application. GasTrack is operated by <strong>Terry Boakye Yiadom</strong>, sole author. Distribution is currently via <strong>TestFlight (iOS)</strong> and <strong>Google Play internal testing</strong> (not a public store listing yet). If you have questions, contact us at <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Terms of Service",
     terms_updated: "Last updated: 16 April 2026",
     terms_intro:
@@ -90,15 +91,15 @@ const TRANSLATIONS = {
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Termini",
-    home_badge: "Disponibile in Italia · iOS e Android",
+    home_badge: "Italia · TestFlight e test interni",
     home_headline_1: "Il tuo veicolo,",
     home_headline_2: "sotto controllo.",
     home_sub:
-      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza. L’app è oggi offerta in Italia; altri Paesi potranno seguire.",
+      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza. <strong>Non siamo ancora negli store pubblici:</strong> scrivici per <strong>chiedere l’accesso</strong> e ti aggiungeremo a <strong>TestFlight (iOS)</strong> o al <strong>test interno Google Play</strong> quando appropriato. Focus sull’<strong>Italia</strong> per ora; altri Paesi potranno seguire.",
     home_meta_description:
-      "GasTrack — carburante, parcheggio, manutenzione e costi reali. Disponibile in Italia su iOS e Android.",
-    home_cta_ios: "App Store",
-    home_cta_android: "Google Play",
+      "GasTrack — carburante, parcheggio, manutenzione e costi reali. Richiedi accesso TestFlight o test interno Google Play (Italia). Non ancora in store pubblico.",
+    home_cta_ios: "Richiedi TestFlight (iOS)",
+    home_cta_android: "Richiedi test Android",
     home_cta_beta: "Feedback beta",
     home_features_label: "Cosa fa GasTrack",
     home_feat1_title: "Monitoraggio carburante",
@@ -112,7 +113,7 @@ const TRANSLATIONS = {
       "Scopri quanto ti costa davvero il veicolo ogni mese — carburante, assicurazione, tasse, finanziamento, manutenzione, tutto in una dashboard.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Il Radar carburante è oggi disponibile in Italia; altri Paesi potranno essere aggiunti in seguito.",
+      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Il Radar carburante punta prima all’<strong>Italia</strong> (in test insieme al resto dell’app); altri Paesi dopo un rilascio più ampio.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Confronta i consumi con gli amici, condividi traguardi e scopri come guidi rispetto agli altri.",
@@ -122,12 +123,12 @@ const TRANSLATIONS = {
     home_contact_label: "Contatti",
     home_contact_title: "Domande o feedback?",
     home_contact_body:
-      "GasTrack è sviluppato da uno sviluppatore indipendente. Leggiamo ogni messaggio.",
+      "GasTrack è sviluppato da uno sviluppatore indipendente. <strong>Scrivici</strong> per chiedere accesso a TestFlight / test interno Play o per qualsiasi altra cosa — leggiamo ogni messaggio.",
     home_contact_linkedin: "LinkedIn",
     privacy_title: "GasTrack — Informativa sulla privacy",
     privacy_updated: "Ultimo aggiornamento: 5 aprile 2026",
     privacy_intro:
-      'Questa informativa descrive come <strong>GasTrack</strong> (“l’app”) tratta i dati personali quando usi la nostra applicazione mobile. GasTrack è gestita da <strong>Terry Boakye Yiadom</strong>, unico autore (come indicato su App Store e Google Play). Per domande, contattaci a <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+      'Questa informativa descrive come <strong>GasTrack</strong> (“l’app”) tratta i dati personali quando usi la nostra applicazione mobile. GasTrack è gestita da <strong>Terry Boakye Yiadom</strong>, unico autore. La distribuzione è attualmente tramite <strong>TestFlight (iOS)</strong> e <strong>test interno Google Play</strong> (non ancora scheda store pubblica). Per domande, contattaci a <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Termini di servizio",
     terms_updated: "Ultimo aggiornamento: 16 aprile 2026",
     terms_intro:
@@ -173,15 +174,15 @@ const TRANSLATIONS = {
     nav_home: "Accueil",
     nav_privacy: "Confidentialité",
     nav_terms: "Conditions",
-    home_badge: "Disponible en Italie · iOS et Android",
+    home_badge: "Italie · TestFlight et tests internes",
     home_headline_1: "Votre véhicule,",
     home_headline_2: "sous contrôle.",
     home_sub:
-      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté. L’application est proposée en Italie pour l’instant ; d’autres pays pourront suivre.",
+      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté. <strong>Pas encore en store public :</strong> <strong>demandez l’accès</strong> par e-mail pour être ajouté à <strong>TestFlight (iOS)</strong> ou aux <strong>tests internes Google Play</strong> le cas échéant. Priorité <strong>Italie</strong> pour l’instant ; d’autres pays pourront suivre.",
     home_meta_description:
-      "GasTrack — carburant, stationnement, entretien et coûts réels. Disponible en Italie sur iOS et Android.",
-    home_cta_ios: "App Store",
-    home_cta_android: "Google Play",
+      "GasTrack — carburant, stationnement, entretien et coûts réels. Demandez l’accès TestFlight ou tests internes Google Play (Italie). Pas encore en fiche store publique.",
+    home_cta_ios: "Demander TestFlight (iOS)",
+    home_cta_android: "Demander les tests Android",
     home_cta_beta: "Retour bêta",
     home_features_label: "Ce que fait GasTrack",
     home_feat1_title: "Suivi du carburant",
@@ -195,7 +196,7 @@ const TRANSLATIONS = {
       "Découvrez ce que votre véhicule vous coûte vraiment par mois — carburant, assurance, taxes, financement, entretien, tout dans un tableau de bord.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Le radar carburant est disponible en Italie pour l’instant ; d’autres pays pourront être ajoutés ultérieurement.",
+      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Le radar carburant vise d’abord l’<strong>Italie</strong> (en test avec le reste de l’app) ; d’autres pays après un déploiement plus large.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Comparez votre efficacité avec vos amis, partagez vos succès et voyez comment vous vous situez.",
@@ -205,12 +206,12 @@ const TRANSLATIONS = {
     home_contact_label: "Contact",
     home_contact_title: "Questions ou retours ?",
     home_contact_body:
-      "GasTrack est développé par un développeur indépendant. Nous lisons chaque message.",
+      "GasTrack est développé par un développeur indépendant. <strong>Écrivez-nous</strong> pour demander l’accès TestFlight / tests internes Play ou pour toute autre question — nous lisons chaque message.",
     home_contact_linkedin: "LinkedIn",
     privacy_title: "GasTrack — Politique de confidentialité",
     privacy_updated: "Dernière mise à jour : 5 avril 2026",
     privacy_intro:
-      'Cette politique décrit comment <strong>GasTrack</strong> (« l’application ») traite les informations personnelles lorsque vous utilisez notre application mobile. GasTrack est exploitée par <strong>Terry Boakye Yiadom</strong>, auteur unique (comme indiqué sur l’App Store et Google Play). Pour toute question, contactez-nous à <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+      'Cette politique décrit comment <strong>GasTrack</strong> (« l’application ») traite les informations personnelles lorsque vous utilisez notre application mobile. GasTrack est exploitée par <strong>Terry Boakye Yiadom</strong>, auteur unique. La distribution passe actuellement par <strong>TestFlight (iOS)</strong> et les <strong>tests internes Google Play</strong> (pas encore de fiche store publique). Pour toute question, contactez-nous à <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Conditions d’utilisation",
     terms_updated: "Dernière mise à jour : 16 avril 2026",
     terms_intro:

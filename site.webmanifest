@@ -1,7 +1,7 @@
 {
   "name": "GasTrack",
   "short_name": "GasTrack",
-  "description": "Your vehicle, under control.",
+  "description": "Vehicle costs in one place — TestFlight & Play internal testing; request access on gastrack.eu.",
   "icons": [
     {
       "src": "/favicon-192x192.png",
