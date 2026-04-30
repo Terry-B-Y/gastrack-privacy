@@ -37,8 +37,7 @@ const TRANSLATIONS = {
       "Earn XP, level up, and unlock achievements as you track your vehicle. Staying on top of costs has never been this satisfying.",
     home_contact_label: "Contact",
     home_contact_title: "Questions or feedback?",
-    home_contact_body:
-      "GasTrack is built and operated by Terry Boakye Yiadom (sole author). We read every message.",
+    home_contact_body: "GasTrack is built by an independent developer. We read every message.",
     privacy_title: "GasTrack — Privacy Policy",
     privacy_updated: "Last updated: 5 April 2026",
     privacy_intro:
@@ -46,7 +45,7 @@ const TRANSLATIONS = {
     terms_title: "GasTrack — Terms of Service",
     terms_updated: "Last updated: 16 April 2026",
     terms_intro:
-      "These terms govern your use of the GasTrack mobile application, operated by Terry Boakye Yiadom (sole author). By downloading or using GasTrack, you agree to these terms and to our Privacy Policy.",
+      "These terms govern your use of the GasTrack mobile application. By downloading or using GasTrack, you agree to these terms and to our Privacy Policy.",
     delete_meta_title: "GasTrack — Delete account",
     delete_back: "← Back to home",
     delete_eyebrow: "REQUEST ACCOUNT DELETION",
@@ -82,7 +81,7 @@ const TRANSLATIONS = {
     delete_in_app:
       "Already have the app? You can delete your account directly in Settings → Account → Delete account for immediate deletion.",
     footer_delete_account: "Delete account",
-    footer_copy: "© 2025–2026 Terry Boakye Yiadom · GasTrack. All rights reserved.",
+    footer_copy: "© 2025–2026 GasTrack. All rights reserved.",
   },
   it: {
     nav_home: "Home",
@@ -118,7 +117,7 @@ const TRANSLATIONS = {
     home_contact_label: "Contatti",
     home_contact_title: "Domande o feedback?",
     home_contact_body:
-      "GasTrack è sviluppato e gestito da Terry Boakye Yiadom (unico autore). Leggiamo ogni messaggio.",
+      "GasTrack è sviluppato da uno sviluppatore indipendente. Leggiamo ogni messaggio.",
     privacy_title: "GasTrack — Informativa sulla privacy",
     privacy_updated: "Ultimo aggiornamento: 5 aprile 2026",
     privacy_intro:
@@ -126,7 +125,7 @@ const TRANSLATIONS = {
     terms_title: "GasTrack — Termini di servizio",
     terms_updated: "Ultimo aggiornamento: 16 aprile 2026",
     terms_intro:
-      "Questi termini disciplinano l’uso dell’app mobile GasTrack, gestita da Terry Boakye Yiadom (unico autore). Scaricando o usando GasTrack, accetti questi termini e la nostra Informativa sulla privacy.",
+      "Questi termini disciplinano l’uso dell’app mobile GasTrack. Scaricando o usando GasTrack, accetti questi termini e la nostra Informativa sulla privacy.",
     delete_meta_title: "GasTrack — Elimina account",
     delete_back: "← Torna alla home",
     delete_eyebrow: "RICHIESTA DI ELIMINAZIONE ACCOUNT",
@@ -162,7 +161,7 @@ const TRANSLATIONS = {
     delete_in_app:
       "Hai già l'app? Puoi eliminare il tuo account direttamente in Impostazioni → Account → Elimina account per l'eliminazione immediata.",
     footer_delete_account: "Elimina account",
-    footer_copy: "© 2025–2026 Terry Boakye Yiadom · GasTrack. Tutti i diritti riservati.",
+    footer_copy: "© 2025–2026 GasTrack. Tutti i diritti riservati.",
   },
   fr: {
     nav_home: "Accueil",
@@ -198,7 +197,7 @@ const TRANSLATIONS = {
     home_contact_label: "Contact",
     home_contact_title: "Questions ou retours ?",
     home_contact_body:
-      "GasTrack est développé et exploité par Terry Boakye Yiadom (auteur unique). Nous lisons chaque message.",
+      "GasTrack est développé par un développeur indépendant. Nous lisons chaque message.",
     privacy_title: "GasTrack — Politique de confidentialité",
     privacy_updated: "Dernière mise à jour : 5 avril 2026",
     privacy_intro:
@@ -206,7 +205,7 @@ const TRANSLATIONS = {
     terms_title: "GasTrack — Conditions d’utilisation",
     terms_updated: "Dernière mise à jour : 16 avril 2026",
     terms_intro:
-      "Les présentes conditions régissent votre utilisation de l’application mobile GasTrack, exploitée par Terry Boakye Yiadom (auteur unique). En téléchargeant ou en utilisant GasTrack, vous acceptez ces conditions et notre Politique de confidentialité.",
+      "Les présentes conditions régissent votre utilisation de l’application mobile GasTrack. En téléchargeant ou en utilisant GasTrack, vous acceptez ces conditions et notre Politique de confidentialité.",
     delete_meta_title: "GasTrack — Supprimer le compte",
     delete_back: "← Retour à l’accueil",
     delete_eyebrow: "DEMANDE DE SUPPRESSION DE COMPTE",
@@ -243,7 +242,7 @@ const TRANSLATIONS = {
     delete_in_app:
       "Vous avez déjà l’application ? Vous pouvez supprimer votre compte directement dans Réglages → Compte → Supprimer le compte pour une suppression immédiate.",
     footer_delete_account: "Supprimer le compte",
-    footer_copy: "© 2025–2026 Terry Boakye Yiadom · GasTrack. Tous droits réservés.",
+    footer_copy: "© 2025–2026 GasTrack. Tous droits réservés.",
   },
 };
 
