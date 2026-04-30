@@ -8,16 +8,15 @@ const TRANSLATIONS = {
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Terms",
-    home_badge: "Italy · TestFlight & internal testing",
+    home_badge: "Italy · Closed beta",
     home_headline_1: "Your vehicle,",
     home_headline_2: "under control.",
     home_sub:
-      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. We’re not in the public App Store yet: <strong>request access</strong> by email and we’ll add you to <strong>TestFlight (iOS)</strong> or <strong>Google Play internal testing</strong> where appropriate. Focus is <strong>Italy</strong> for now; other countries may follow.",
+      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. The app is in a <strong>closed beta</strong> (not a public store listing yet). Use the <strong>beta request form</strong> on this site to ask to be added. Focus is <strong>Italy</strong> for now; other countries may follow.",
     home_meta_description:
-      "GasTrack — fuel, parking, maintenance, and real costs. Request TestFlight or Google Play internal testing access (Italy). Not publicly listed in stores yet.",
-    home_cta_ios: "Request TestFlight (iOS)",
-    home_cta_android: "Request Android testing",
-    home_cta_beta: "Beta feedback",
+      "GasTrack — fuel, parking, maintenance, and real costs. Request closed beta access via the form on gastrack.eu (Italy first). Not publicly listed in stores yet.",
+    home_cta_primary: "Request beta access",
+    home_cta_secondary: "Beta feedback",
     home_features_label: "What GasTrack does",
     home_feat1_title: "Fuel tracking",
     home_feat1_body:
@@ -30,7 +29,7 @@ const TRANSLATIONS = {
       "See what your vehicle actually costs per month — fuel, insurance, tax, finance, maintenance, all in one dashboard.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Find nearby fuel stations with live prices and community ratings. Fuel Radar is aimed at <strong>Italy</strong> first (in testing with the rest of the app); more countries may be added after a wider release.",
+      "Find nearby fuel stations with live prices and community ratings. Fuel Radar is aimed at <strong>Italy</strong> first during beta; more countries may be added after a wider release.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Compare efficiency with friends, share achievements, and see how your driving stacks up.",
@@ -40,12 +39,40 @@ const TRANSLATIONS = {
     home_contact_label: "Contact",
     home_contact_title: "Questions or feedback?",
     home_contact_body:
-      "GasTrack is built by an independent developer. <strong>Email us</strong> to ask for TestFlight / Play internal access or anything else — we read every message.",
+      "GasTrack is built by an independent developer. Use the <strong>beta access form</strong> to request an invite, or email us for anything else — we read every message.",
     home_contact_linkedin: "LinkedIn",
+
+    beta_meta_title: "GasTrack — Request beta access",
+    beta_meta_description:
+      "Apply for the GasTrack closed beta. Provide your details and confirm the Terms, Privacy, and beta limitations.",
+
+    beta_back: "← Back to home",
+    beta_eyebrow: "CLOSED BETA",
+    beta_title: "Request beta access",
+    beta_intro_html:
+      "<p>Use this form to ask to join the <strong>closed beta</strong>. We read every request. We may email you if a spot opens. This creates <strong>no obligation</strong> on either side — it is only a request to be considered.</p>",
+    beta_notice_html:
+      "<p><strong>What we use your answers for:</strong> we use what you submit here only to decide whether to invite you to the beta and to reply at the email you give. Full details are in our <a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>.</p><p><strong>Plain language, not legal advice:</strong> if you need advice for your situation, speak to a qualified professional.</p>",
+
+    beta_label_first_name: "First name",
+    beta_label_surname: "Surname",
+    beta_label_email: "Email address",
+    beta_label_why: "Why do you want to join? (helps us prioritise)",
+    beta_placeholder_why: "e.g. I drive in Italy and want to track fuel; I am happy to report bugs…",
+
+    beta_consent_html:
+      'I have read and agree to the <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a> and the <a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>. I understand that GasTrack is <strong>beta software</strong>: it may be incomplete, unstable, or change without notice; there are <strong>no warranties</strong> of any kind; data loss or errors are possible; and there is <strong>no guarantee</strong> of availability, features, or support. I am joining voluntarily. I consent to the operator using my details only to assess this request and to contact me about beta access, as explained in the Privacy Policy. I confirm that the information I provide is accurate to the best of my knowledge.',
+
+    beta_submit: "Submit request",
+    beta_success_title: "Request received",
+    beta_success_body:
+      "Thank you. If we can offer you beta access, we will contact you at the email address you provided. We cannot reply to every submission.",
+    beta_success_footer: "Questions? support.gastrack@gmail.com",
+
     privacy_title: "GasTrack — Privacy Policy",
     privacy_updated: "Last updated: 5 April 2026",
     privacy_intro:
-      'This policy describes how <strong>GasTrack</strong> (\u201Cthe app\u201D) handles personal information when you use our mobile application. GasTrack is operated by <strong>Terry Boakye Yiadom</strong>, sole author. Distribution is currently via <strong>TestFlight (iOS)</strong> and <strong>Google Play internal testing</strong> (not a public store listing yet). If you have questions, contact us at <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+      'This policy describes how <strong>GasTrack</strong> (\u201Cthe app\u201D) handles personal information when you use our mobile application. GasTrack is operated by <strong>Terry Boakye Yiadom</strong>, sole author. Distribution is currently a <strong>closed beta</strong> (not a public store listing yet). If you have questions, contact us at <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Terms of Service",
     terms_updated: "Last updated: 16 April 2026",
     terms_intro:
@@ -84,6 +111,7 @@ const TRANSLATIONS = {
     delete_success_footer: "If you have questions: support.gastrack@gmail.com",
     delete_in_app:
       "Already have the app? You can delete your account directly in Settings → Account → Delete account for immediate deletion.",
+    footer_beta_access: "Beta access",
     footer_delete_account: "Delete account",
     footer_copy: "© 2025–2026 GasTrack. All rights reserved.",
   },
@@ -91,16 +119,15 @@ const TRANSLATIONS = {
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Termini",
-    home_badge: "Italia · TestFlight e test interni",
+    home_badge: "Italia · Beta chiusa",
     home_headline_1: "Il tuo veicolo,",
     home_headline_2: "sotto controllo.",
     home_sub:
-      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza. <strong>Non siamo ancora negli store pubblici:</strong> scrivici per <strong>chiedere l’accesso</strong> e ti aggiungeremo a <strong>TestFlight (iOS)</strong> o al <strong>test interno Google Play</strong> quando appropriato. Focus sull’<strong>Italia</strong> per ora; altri Paesi potranno seguire.",
+      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza. L’app è in <strong>beta chiusa</strong> (non ancora in store pubblico). Usa il <strong>modulo per richiedere la beta</strong> su questo sito. Focus sull’<strong>Italia</strong> per ora; altri Paesi potranno seguire.",
     home_meta_description:
-      "GasTrack — carburante, parcheggio, manutenzione e costi reali. Richiedi accesso TestFlight o test interno Google Play (Italia). Non ancora in store pubblico.",
-    home_cta_ios: "Richiedi TestFlight (iOS)",
-    home_cta_android: "Richiedi test Android",
-    home_cta_beta: "Feedback beta",
+      "GasTrack — carburante, parcheggio, manutenzione e costi reali. Richiedi la beta chiusa tramite il modulo su gastrack.eu (prima l’Italia). Non ancora in store pubblico.",
+    home_cta_primary: "Richiedi accesso beta",
+    home_cta_secondary: "Feedback beta",
     home_features_label: "Cosa fa GasTrack",
     home_feat1_title: "Monitoraggio carburante",
     home_feat1_body:
@@ -113,7 +140,7 @@ const TRANSLATIONS = {
       "Scopri quanto ti costa davvero il veicolo ogni mese — carburante, assicurazione, tasse, finanziamento, manutenzione, tutto in una dashboard.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Il Radar carburante punta prima all’<strong>Italia</strong> (in test insieme al resto dell’app); altri Paesi dopo un rilascio più ampio.",
+      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Il Radar carburante punta prima all’<strong>Italia</strong> durante la beta; altri Paesi dopo un rilascio più ampio.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Confronta i consumi con gli amici, condividi traguardi e scopri come guidi rispetto agli altri.",
@@ -123,12 +150,40 @@ const TRANSLATIONS = {
     home_contact_label: "Contatti",
     home_contact_title: "Domande o feedback?",
     home_contact_body:
-      "GasTrack è sviluppato da uno sviluppatore indipendente. <strong>Scrivici</strong> per chiedere accesso a TestFlight / test interno Play o per qualsiasi altra cosa — leggiamo ogni messaggio.",
+      "GasTrack è sviluppato da uno sviluppatore indipendente. Usa il <strong>modulo accesso beta</strong> per chiedere un invito, oppure scrivici per qualsiasi altra cosa — leggiamo ogni messaggio.",
     home_contact_linkedin: "LinkedIn",
+
+    beta_meta_title: "GasTrack — Richiedi accesso beta",
+    beta_meta_description:
+      "Richiedi la beta chiusa di GasTrack. Inserisci i tuoi dati e conferma Termini, Privacy e limiti della beta.",
+
+    beta_back: "← Torna alla home",
+    beta_eyebrow: "BETA CHIUSA",
+    beta_title: "Richiedi accesso beta",
+    beta_intro_html:
+      "<p>Usa questo modulo per chiedere di entrare nella <strong>beta chiusa</strong>. Leggiamo ogni richiesta. Potremmo scriverti se si libera un posto. <strong>Nessun obbligo</strong> per te o per noi — è solo una richiesta di valutazione.</p>",
+    beta_notice_html:
+      "<p><strong>A cosa servono i dati:</strong> usiamo quanto invii solo per valutare se invitarti alla beta e per risponderti all’indirizzo email indicato. I dettagli completi sono nell’<a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Informativa sulla privacy</a>.</p><p><strong>Linguaggio semplice, non parere legale:</strong> per la tua situazione specifica rivolgiti a un professionista qualificato.</p>",
+
+    beta_label_first_name: "Nome",
+    beta_label_surname: "Cognome",
+    beta_label_email: "Indirizzo email",
+    beta_label_why: "Perché vuoi entrare? (ci aiuta a dare priorità)",
+    beta_placeholder_why: "es. Guido in Italia e voglio tracciare i rifornimenti; posso segnalare bug…",
+
+    beta_consent_html:
+      'Ho letto e accetto i <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Termini di servizio</a> e l’<a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Informativa sulla privacy</a>. Comprendo che GasTrack è <strong>software in beta</strong>: può essere incompleto, instabile o cambiare senza preavviso; <strong>non ci sono garanzie</strong> di alcun tipo; possono verificarsi perdite di dati o errori; e <strong>non è garantita</strong> disponibilità, funzionalità o assistenza. Partecipo volontariamente. Acconsento che l’operatore usi i miei dati solo per valutare questa richiesta e contattarmi per l’accesso alla beta, come spiegato nell’Informativa sulla privacy. Dichiaro che le informazioni fornite sono, a mia conoscenza, veritiere.',
+
+    beta_submit: "Invia richiesta",
+    beta_success_title: "Richiesta ricevuta",
+    beta_success_body:
+      "Grazie. Se potremo offrirti l’accesso alla beta, ti contatteremo all’indirizzo email indicato. Non possiamo rispondere a tutte le richieste.",
+    beta_success_footer: "Domande? support.gastrack@gmail.com",
+
     privacy_title: "GasTrack — Informativa sulla privacy",
     privacy_updated: "Ultimo aggiornamento: 5 aprile 2026",
     privacy_intro:
-      'Questa informativa descrive come <strong>GasTrack</strong> (“l’app”) tratta i dati personali quando usi la nostra applicazione mobile. GasTrack è gestita da <strong>Terry Boakye Yiadom</strong>, unico autore. La distribuzione è attualmente tramite <strong>TestFlight (iOS)</strong> e <strong>test interno Google Play</strong> (non ancora scheda store pubblica). Per domande, contattaci a <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+      'Questa informativa descrive come <strong>GasTrack</strong> (“l’app”) tratta i dati personali quando usi la nostra applicazione mobile. GasTrack è gestita da <strong>Terry Boakye Yiadom</strong>, unico autore. La distribuzione è attualmente una <strong>beta chiusa</strong> (non ancora scheda store pubblica). Per domande, contattaci a <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Termini di servizio",
     terms_updated: "Ultimo aggiornamento: 16 aprile 2026",
     terms_intro:
@@ -167,6 +222,7 @@ const TRANSLATIONS = {
     delete_success_footer: "Per domande: support.gastrack@gmail.com",
     delete_in_app:
       "Hai già l'app? Puoi eliminare il tuo account direttamente in Impostazioni → Account → Elimina account per l'eliminazione immediata.",
+    footer_beta_access: "Accesso beta",
     footer_delete_account: "Elimina account",
     footer_copy: "© 2025–2026 GasTrack. Tutti i diritti riservati.",
   },
@@ -174,16 +230,15 @@ const TRANSLATIONS = {
     nav_home: "Accueil",
     nav_privacy: "Confidentialité",
     nav_terms: "Conditions",
-    home_badge: "Italie · TestFlight et tests internes",
+    home_badge: "Italie · Bêta fermée",
     home_headline_1: "Votre véhicule,",
     home_headline_2: "sous contrôle.",
     home_sub:
-      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté. <strong>Pas encore en store public :</strong> <strong>demandez l’accès</strong> par e-mail pour être ajouté à <strong>TestFlight (iOS)</strong> ou aux <strong>tests internes Google Play</strong> le cas échéant. Priorité <strong>Italie</strong> pour l’instant ; d’autres pays pourront suivre.",
+      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté. L’application est en <strong>bêta fermée</strong> (pas encore en fiche store publique). Utilisez le <strong>formulaire de demande d’accès</strong> sur ce site. Priorité <strong>Italie</strong> pour l’instant ; d’autres pays pourront suivre.",
     home_meta_description:
-      "GasTrack — carburant, stationnement, entretien et coûts réels. Demandez l’accès TestFlight ou tests internes Google Play (Italie). Pas encore en fiche store publique.",
-    home_cta_ios: "Demander TestFlight (iOS)",
-    home_cta_android: "Demander les tests Android",
-    home_cta_beta: "Retour bêta",
+      "GasTrack — carburant, stationnement, entretien et coûts réels. Demandez l’accès à la bêta fermée via le formulaire sur gastrack.eu (Italie d’abord). Pas encore en fiche store publique.",
+    home_cta_primary: "Demander l’accès bêta",
+    home_cta_secondary: "Retour bêta",
     home_features_label: "Ce que fait GasTrack",
     home_feat1_title: "Suivi du carburant",
     home_feat1_body:
@@ -196,7 +251,7 @@ const TRANSLATIONS = {
       "Découvrez ce que votre véhicule vous coûte vraiment par mois — carburant, assurance, taxes, financement, entretien, tout dans un tableau de bord.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Le radar carburant vise d’abord l’<strong>Italie</strong> (en test avec le reste de l’app) ; d’autres pays après un déploiement plus large.",
+      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Le radar carburant vise d’abord l’<strong>Italie</strong> pendant la bêta ; d’autres pays après un déploiement plus large.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Comparez votre efficacité avec vos amis, partagez vos succès et voyez comment vous vous situez.",
@@ -206,12 +261,41 @@ const TRANSLATIONS = {
     home_contact_label: "Contact",
     home_contact_title: "Questions ou retours ?",
     home_contact_body:
-      "GasTrack est développé par un développeur indépendant. <strong>Écrivez-nous</strong> pour demander l’accès TestFlight / tests internes Play ou pour toute autre question — nous lisons chaque message.",
+      "GasTrack est développé par un développeur indépendant. Utilisez le <strong>formulaire d’accès bêta</strong> pour demander une invitation, ou écrivez-nous pour toute autre question — nous lisons chaque message.",
     home_contact_linkedin: "LinkedIn",
+
+    beta_meta_title: "GasTrack — Demander l’accès bêta",
+    beta_meta_description:
+      "Demandez l’accès à la bêta fermée GasTrack. Indiquez vos coordonnées et acceptez les Conditions, la Politique de confidentialité et les limites de la bêta.",
+
+    beta_back: "← Retour à l’accueil",
+    beta_eyebrow: "BÊTA FERMÉE",
+    beta_title: "Demander l’accès bêta",
+    beta_intro_html:
+      "<p>Ce formulaire sert à demander à rejoindre la <strong>bêta fermée</strong>. Nous lisons chaque demande. Nous pouvons vous contacter par e-mail si une place se libère. <strong>Aucune obligation</strong> pour vous ni pour nous — il s’agit seulement d’une demande d’examen.</p>",
+    beta_notice_html:
+      "<p><strong>Utilisation de vos réponses :</strong> nous utilisons ce que vous envoyez uniquement pour décider d’une invitation à la bêta et pour vous répondre à l’adresse indiquée. Les détails figurent dans notre <a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Politique de confidentialité</a>.</p><p><strong>Langage clair, pas un avis juridique :</strong> pour votre situation, consultez un professionnel qualifié.</p>",
+
+    beta_label_first_name: "Prénom",
+    beta_label_surname: "Nom",
+    beta_label_email: "Adresse e-mail",
+    beta_label_why: "Pourquoi souhaitez-vous rejoindre la bêta ? (aide à prioriser)",
+    beta_placeholder_why:
+      "p. ex. Je conduis en Italie et je veux suivre le carburant ; je peux signaler des bugs…",
+
+    beta_consent_html:
+      'J’ai lu et j’accepte les <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Conditions d’utilisation</a> et la <a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>. Je comprends que GasTrack est un <strong>logiciel en bêta</strong> : il peut être incomplet, instable ou évoluer sans préavis ; il n’y a <strong>aucune garantie</strong> ; des pertes de données ou des erreurs sont possibles ; et il n’y a <strong>aucune garantie</strong> de disponibilité, de fonctionnalités ou d’assistance. Je participe volontairement. J’accepte que l’exploitant utilise mes informations uniquement pour étudier cette demande et pour me contacter concernant l’accès bêta, comme expliqué dans la Politique de confidentialité. Je confirme que les renseignements fournis sont, à ma connaissance, exacts.',
+
+    beta_submit: "Envoyer la demande",
+    beta_success_title: "Demande reçue",
+    beta_success_body:
+      "Merci. Si nous pouvons vous proposer l’accès bêta, nous vous contacterons à l’adresse e-mail indiquée. Nous ne pouvons pas répondre à toutes les demandes.",
+    beta_success_footer: "Des questions ? support.gastrack@gmail.com",
+
     privacy_title: "GasTrack — Politique de confidentialité",
     privacy_updated: "Dernière mise à jour : 5 avril 2026",
     privacy_intro:
-      'Cette politique décrit comment <strong>GasTrack</strong> (« l’application ») traite les informations personnelles lorsque vous utilisez notre application mobile. GasTrack est exploitée par <strong>Terry Boakye Yiadom</strong>, auteur unique. La distribution passe actuellement par <strong>TestFlight (iOS)</strong> et les <strong>tests internes Google Play</strong> (pas encore de fiche store publique). Pour toute question, contactez-nous à <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+      'Cette politique décrit comment <strong>GasTrack</strong> (« l’application ») traite les informations personnelles lorsque vous utilisez notre application mobile. GasTrack est exploitée par <strong>Terry Boakye Yiadom</strong>, auteur unique. La distribution est actuellement une <strong>bêta fermée</strong> (pas encore de fiche store publique). Pour toute question, contactez-nous à <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Conditions d’utilisation",
     terms_updated: "Dernière mise à jour : 16 avril 2026",
     terms_intro:
@@ -251,6 +335,7 @@ const TRANSLATIONS = {
     delete_success_footer: "Des questions ? Écrivez à support.gastrack@gmail.com",
     delete_in_app:
       "Vous avez déjà l’application ? Vous pouvez supprimer votre compte directement dans Réglages → Compte → Supprimer le compte pour une suppression immédiate.",
+    footer_beta_access: "Accès bêta",
     footer_delete_account: "Supprimer le compte",
     footer_copy: "© 2025–2026 GasTrack. Tous droits réservés.",
   },
@@ -312,6 +397,12 @@ function applyTranslations() {
     if (dict.home_meta_description) {
       var mh = document.querySelector('meta[name="description"]');
       if (mh) mh.setAttribute("content", dict.home_meta_description);
+    }
+    document.documentElement.lang = currentLang;
+  } else if (page === "beta") {
+    if (dict.beta_meta_description) {
+      var mb = document.querySelector('meta[name="description"]');
+      if (mb) mb.setAttribute("content", dict.beta_meta_description);
     }
     document.documentElement.lang = currentLang;
   }

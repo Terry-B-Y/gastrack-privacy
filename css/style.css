@@ -512,6 +512,47 @@ strong {
   padding-left: 20px;
 }
 
+.beta-notice {
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin: 20px 0 24px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.beta-notice a {
+  color: var(--accent);
+}
+
+.consent-field {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+
+.consent-field input[type="checkbox"] {
+  margin-top: 6px;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.consent-field .consent-text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.consent-field .consent-text a {
+  color: var(--accent);
+}
+
 .success-card {
   background: var(--bg-card);
   border: 0.5px solid var(--border);

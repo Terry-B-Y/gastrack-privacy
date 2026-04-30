@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title data-i18n="beta_meta_title">GasTrack — Request beta access</title>
+  <meta name="description" content="Apply for the GasTrack closed beta. Confirm Terms, Privacy, and beta limitations." />
+  <meta name="copyright" content="© 2025–2026 GasTrack. All rights reserved." />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#F5A623">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="beta">
+  <nav class="nav">
+    <a href="https://gastrack.eu/" class="nav-logo">GasTrack</a>
+    <div class="nav-links">
+      <a href="https://gastrack.eu/" class="nav-link" data-i18n="nav_home">Home</a>
+      <a href="https://gastrack.eu/privacy.html" class="nav-link" data-i18n="nav_privacy">Privacy</a>
+      <a href="https://gastrack.eu/terms.html" class="nav-link" data-i18n="nav_terms">Terms</a>
+      <div class="lang-switcher">
+        <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+        <button type="button" class="lang-btn" data-lang="it" onclick="setLang('it')">IT</button>
+        <button type="button" class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container delete-page">
+    <section class="section section--tight">
+      <a href="https://gastrack.eu/" class="delete-back" data-i18n="beta_back">← Back to home</a>
+
+      <span class="label" data-i18n="beta_eyebrow">CLOSED BETA</span>
+      <h1 data-i18n="beta_title">Request beta access</h1>
+      <div class="sub" style="margin-top: 12px; max-width: 40rem;" data-i18n="beta_intro_html" data-i18n-html="true"></div>
+
+      <div id="beta-form-block">
+        <div class="beta-notice fade-in" data-i18n="beta_notice_html" data-i18n-html="true"></div>
+
+        <form
+          action="https://formspree.io/f/xaqaeabj"
+          method="POST"
+          id="beta-access-form"
+        >
+          <input type="hidden" name="_subject" value="GasTrack — Beta access request" />
+          <input type="hidden" name="form_type" value="beta_access" />
+          <input type="hidden" name="_replyto" id="beta-reply-to" value="" />
+
+          <div class="field">
+            <label for="first_name" data-i18n="beta_label_first_name">First name</label>
+            <input
+              type="text"
+              id="first_name"
+              name="first_name"
+              required
+              autocomplete="given-name"
+            />
+          </div>
+
+          <div class="field">
+            <label for="surname" data-i18n="beta_label_surname">Surname</label>
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              required
+              autocomplete="family-name"
+            />
+          </div>
+
+          <div class="field">
+            <label for="email" data-i18n="beta_label_email">Email address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              oninput="document.getElementById('beta-reply-to').value = this.value"
+            />
+          </div>
+
+          <div class="field">
+            <label for="why_join" data-i18n="beta_label_why">Why do you want to join?</label>
+            <textarea
+              id="why_join"
+              name="why_join"
+              rows="4"
+              required
+              data-i18n-placeholder="beta_placeholder_why"
+              placeholder="e.g. I drive in Italy…"
+            ></textarea>
+          </div>
+
+          <div class="field consent-field">
+            <input type="checkbox" id="agreed_legal" name="agreed_legal" value="yes" required />
+            <label for="agreed_legal" class="consent-text">
+              <span data-i18n="beta_consent_html" data-i18n-html="true"></span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 8px;" data-i18n="beta_submit">
+            Submit request
+          </button>
+        </form>
+      </div>
+
+      <div id="success-message" class="success-card" style="display: none;">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <h2 style="margin-bottom: 16px; font-size: 1.35rem;" data-i18n="beta_success_title">Request received</h2>
+        <p style="margin-bottom: 12px; color: var(--text-secondary); line-height: 1.5;" data-i18n="beta_success_body">
+          Thank you. If we can offer you beta access, we will contact you at the email address you provided.
+        </p>
+        <p style="margin-bottom: 8px; color: var(--text-secondary); line-height: 1.5;">
+          <strong id="confirmed-email"></strong>
+        </p>
+        <p style="font-size: 14px; color: var(--text-tertiary);" data-i18n="beta_success_footer">
+          Questions? support.gastrack@gmail.com
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-logo">GasTrack · gastrack.eu</div>
+    <div class="footer-links">
+      <a href="https://gastrack.eu/" class="footer-link" data-i18n="nav_home">Home</a>
+      <a href="https://gastrack.eu/privacy.html" class="footer-link" data-i18n="nav_privacy">Privacy</a>
+      <a href="https://gastrack.eu/terms.html" class="footer-link" data-i18n="nav_terms">Terms</a>
+      <a href="https://gastrack.eu/beta-access.html" class="footer-link" data-i18n="footer_beta_access">Beta access</a>
+      <a href="https://gastrack.eu/delete-account.html" class="footer-link" data-i18n="footer_delete_account" style="color: var(--text-tertiary);">Delete account</a>
+      <a href="mailto:support.gastrack@gmail.com" class="footer-link">support.gastrack@gmail.com</a>
+    </div>
+    <p class="footer-copy" data-i18n="footer_copy">© 2025–2026 GasTrack. All rights reserved.</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById("beta-access-form");
+      var block = document.getElementById("beta-form-block");
+      var success = document.getElementById("success-message");
+      if (!form || !block || !success) return;
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+
+        try {
+          var response = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" },
+          });
+
+          if (response.ok) {
+            var email = document.getElementById("email").value;
+            document.getElementById("confirmed-email").textContent = email;
+            block.style.display = "none";
+            success.style.display = "block";
+          } else {
+            alert(
+              "Something went wrong. Please email support.gastrack@gmail.com directly."
+            );
+          }
+        } catch (err) {
+          alert(
+            "Something went wrong. Please email support.gastrack@gmail.com directly."
+          );
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
