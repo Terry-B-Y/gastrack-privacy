@@ -8,13 +8,13 @@ const TRANSLATIONS = {
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Terms",
-    home_badge: "Italy · Closed beta",
+    home_badge: "Closed beta",
     home_headline_1: "Your vehicle,",
     home_headline_2: "under control.",
     home_sub:
-      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. The app is in a <strong>closed beta</strong> (not a public store listing yet). Use the <strong>beta request form</strong> on this site to ask to be added. Focus is <strong>Italy</strong> for now; other countries may follow.",
+      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. The app is in a <strong>closed beta</strong> (not a public store listing yet). Use the <strong>beta request form</strong> on this site to ask to be added.",
     home_meta_description:
-      "GasTrack — fuel, parking, maintenance, and real costs. Request closed beta access via the form on gastrack.eu (Italy first). Not publicly listed in stores yet.",
+      "GasTrack — fuel, parking, maintenance, and real costs. Request closed beta access via the form on gastrack.eu. Not publicly listed in stores yet.",
     home_cta_primary: "Request beta access",
     home_cta_secondary: "Beta feedback",
     home_features_label: "What GasTrack does",
@@ -29,7 +29,7 @@ const TRANSLATIONS = {
       "See what your vehicle actually costs per month — fuel, insurance, tax, finance, maintenance, all in one dashboard.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Find nearby fuel stations with live prices and community ratings. Fuel Radar is aimed at <strong>Italy</strong> first during beta; more countries may be added after a wider release.",
+      "Find nearby fuel stations with live prices and community ratings. Fuel Radar is in testing with the rest of the app.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Compare efficiency with friends, share achievements, and see how your driving stacks up.",
@@ -58,7 +58,7 @@ const TRANSLATIONS = {
     beta_label_surname: "Surname",
     beta_label_email: "Email address",
     beta_label_why: "Why do you want to join? (helps us prioritise)",
-    beta_placeholder_why: "e.g. I drive in Italy and want to track fuel; I am happy to report bugs…",
+    beta_placeholder_why: "e.g. I want to track fuel and costs; I am happy to report bugs…",
 
     beta_consent_html:
       'I have read and agree to the <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a> and the <a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>. I understand that GasTrack is <strong>beta software</strong>: it may be incomplete, unstable, or change without notice; there are <strong>no warranties</strong> of any kind; data loss or errors are possible; and there is <strong>no guarantee</strong> of availability, features, or support. I am joining voluntarily. I consent to the operator using my details only to assess this request and to contact me about beta access, as explained in the Privacy Policy. I confirm that the information I provide is accurate to the best of my knowledge.',
@@ -119,13 +119,13 @@ const TRANSLATIONS = {
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Termini",
-    home_badge: "Italia · Beta chiusa",
+    home_badge: "Beta chiusa",
     home_headline_1: "Il tuo veicolo,",
     home_headline_2: "sotto controllo.",
     home_sub:
-      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza. L’app è in <strong>beta chiusa</strong> (non ancora in store pubblico). Usa il <strong>modulo per richiedere la beta</strong> su questo sito. Focus sull’<strong>Italia</strong> per ora; altri Paesi potranno seguire.",
+      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza. L’app è in <strong>beta chiusa</strong> (non ancora in store pubblico). Usa il <strong>modulo per richiedere la beta</strong> su questo sito.",
     home_meta_description:
-      "GasTrack — carburante, parcheggio, manutenzione e costi reali. Richiedi la beta chiusa tramite il modulo su gastrack.eu (prima l’Italia). Non ancora in store pubblico.",
+      "GasTrack — carburante, parcheggio, manutenzione e costi reali. Richiedi la beta chiusa tramite il modulo su gastrack.eu. Non ancora in store pubblico.",
     home_cta_primary: "Richiedi accesso beta",
     home_cta_secondary: "Feedback beta",
     home_features_label: "Cosa fa GasTrack",
@@ -140,7 +140,7 @@ const TRANSLATIONS = {
       "Scopri quanto ti costa davvero il veicolo ogni mese — carburante, assicurazione, tasse, finanziamento, manutenzione, tutto in una dashboard.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Il Radar carburante punta prima all’<strong>Italia</strong> durante la beta; altri Paesi dopo un rilascio più ampio.",
+      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Il Radar carburante è in prova insieme al resto dell’app.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Confronta i consumi con gli amici, condividi traguardi e scopri come guidi rispetto agli altri.",
@@ -169,7 +169,7 @@ const TRANSLATIONS = {
     beta_label_surname: "Cognome",
     beta_label_email: "Indirizzo email",
     beta_label_why: "Perché vuoi entrare? (ci aiuta a dare priorità)",
-    beta_placeholder_why: "es. Guido in Italia e voglio tracciare i rifornimenti; posso segnalare bug…",
+    beta_placeholder_why: "es. Voglio tracciare carburante e costi; posso segnalare bug…",
 
     beta_consent_html:
       'Ho letto e accetto i <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Termini di servizio</a> e l’<a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Informativa sulla privacy</a>. Comprendo che GasTrack è <strong>software in beta</strong>: può essere incompleto, instabile o cambiare senza preavviso; <strong>non ci sono garanzie</strong> di alcun tipo; possono verificarsi perdite di dati o errori; e <strong>non è garantita</strong> disponibilità, funzionalità o assistenza. Partecipo volontariamente. Acconsento che l’operatore usi i miei dati solo per valutare questa richiesta e contattarmi per l’accesso alla beta, come spiegato nell’Informativa sulla privacy. Dichiaro che le informazioni fornite sono, a mia conoscenza, veritiere.',
@@ -230,13 +230,13 @@ const TRANSLATIONS = {
     nav_home: "Accueil",
     nav_privacy: "Confidentialité",
     nav_terms: "Conditions",
-    home_badge: "Italie · Bêta fermée",
+    home_badge: "Bêta fermée",
     home_headline_1: "Votre véhicule,",
     home_headline_2: "sous contrôle.",
     home_sub:
-      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté. L’application est en <strong>bêta fermée</strong> (pas encore en fiche store publique). Utilisez le <strong>formulaire de demande d’accès</strong> sur ce site. Priorité <strong>Italie</strong> pour l’instant ; d’autres pays pourront suivre.",
+      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté. L’application est en <strong>bêta fermée</strong> (pas encore en fiche store publique). Utilisez le <strong>formulaire de demande d’accès</strong> sur ce site.",
     home_meta_description:
-      "GasTrack — carburant, stationnement, entretien et coûts réels. Demandez l’accès à la bêta fermée via le formulaire sur gastrack.eu (Italie d’abord). Pas encore en fiche store publique.",
+      "GasTrack — carburant, stationnement, entretien et coûts réels. Demandez l’accès à la bêta fermée via le formulaire sur gastrack.eu. Pas encore en fiche store publique.",
     home_cta_primary: "Demander l’accès bêta",
     home_cta_secondary: "Retour bêta",
     home_features_label: "Ce que fait GasTrack",
@@ -251,7 +251,7 @@ const TRANSLATIONS = {
       "Découvrez ce que votre véhicule vous coûte vraiment par mois — carburant, assurance, taxes, financement, entretien, tout dans un tableau de bord.",
     home_feat4_title: "Radar",
     home_feat4_body:
-      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Le radar carburant vise d’abord l’<strong>Italie</strong> pendant la bêta ; d’autres pays après un déploiement plus large.",
+      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Le radar carburant est en test avec le reste de l’application.",
     home_feat5_title: "Social",
     home_feat5_body:
       "Comparez votre efficacité avec vos amis, partagez vos succès et voyez comment vous vous situez.",
@@ -281,7 +281,7 @@ const TRANSLATIONS = {
     beta_label_email: "Adresse e-mail",
     beta_label_why: "Pourquoi souhaitez-vous rejoindre la bêta ? (aide à prioriser)",
     beta_placeholder_why:
-      "p. ex. Je conduis en Italie et je veux suivre le carburant ; je peux signaler des bugs…",
+      "p. ex. Je veux suivre le carburant et les coûts ; je peux signaler des bugs…",
 
     beta_consent_html:
       'J’ai lu et j’accepte les <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Conditions d’utilisation</a> et la <a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>. Je comprends que GasTrack est un <strong>logiciel en bêta</strong> : il peut être incomplet, instable ou évoluer sans préavis ; il n’y a <strong>aucune garantie</strong> ; des pertes de données ou des erreurs sont possibles ; et il n’y a <strong>aucune garantie</strong> de disponibilité, de fonctionnalités ou d’assistance. Je participe volontairement. J’accepte que l’exploitant utilise mes informations uniquement pour étudier cette demande et pour me contacter concernant l’accès bêta, comme expliqué dans la Politique de confidentialité. Je confirme que les renseignements fournis sont, à ma connaissance, exacts.',
