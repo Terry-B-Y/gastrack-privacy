@@ -5,6 +5,14 @@
 
 const TRANSLATIONS = {
   en: {
+    nf_badge: "GasTrack link",
+    nf_title_generic: "Page not found",
+    nf_sub_generic:
+      "That page doesn\u2019t exist. The links below will get you where you\u2019re going.",
+    nf_title_link: "Open this in GasTrack",
+    nf_sub_link:
+      "This link opens inside the GasTrack app. If you have it installed, it will have opened already \u2014 otherwise the app is still in closed beta, and you can request access below.",
+    nf_cta_beta: "Request beta access",
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Terms",
@@ -116,6 +124,14 @@ const TRANSLATIONS = {
     footer_copy: "© 2025–2026 GasTrack. All rights reserved.",
   },
   it: {
+    nf_badge: "Link GasTrack",
+    nf_title_generic: "Pagina non trovata",
+    nf_sub_generic:
+      "Questa pagina non esiste. I link qui sotto ti portano dove volevi andare.",
+    nf_title_link: "Apri in GasTrack",
+    nf_sub_link:
+      "Questo link si apre nell\u2019app GasTrack. Se ce l\u2019hai installata si \u00e8 gi\u00e0 aperta \u2014 altrimenti l\u2019app \u00e8 ancora in beta chiusa e puoi richiedere l\u2019accesso qui sotto.",
+    nf_cta_beta: "Richiedi accesso alla beta",
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Termini",
@@ -227,6 +243,14 @@ const TRANSLATIONS = {
     footer_copy: "© 2025–2026 GasTrack. Tutti i diritti riservati.",
   },
   fr: {
+    nf_badge: "Lien GasTrack",
+    nf_title_generic: "Page introuvable",
+    nf_sub_generic:
+      "Cette page n\u2019existe pas. Les liens ci-dessous vous m\u00e8neront o\u00f9 vous alliez.",
+    nf_title_link: "Ouvrir dans GasTrack",
+    nf_sub_link:
+      "Ce lien s\u2019ouvre dans l\u2019application GasTrack. Si vous l\u2019avez install\u00e9e, elle s\u2019est d\u00e9j\u00e0 ouverte \u2014 sinon l\u2019application est encore en b\u00eata ferm\u00e9e et vous pouvez demander l\u2019acc\u00e8s ci-dessous.",
+    nf_cta_beta: "Demander l\u2019acc\u00e8s \u00e0 la b\u00eata",
     nav_home: "Accueil",
     nav_privacy: "Confidentialité",
     nav_terms: "Conditions",
