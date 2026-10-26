@@ -132,8 +132,11 @@
         <div class="success-card auth-state-card">
           <div class="auth-success-icon" aria-hidden="true">✓</div>
           <p class="auth-state-title" data-auth="success_title">Email verified</p>
-          <p class="auth-state-text" style="margin-bottom: 8px" data-auth="success_body">Taking you back to GasTrack…</p>
-          <p class="auth-error-detail" data-auth="success_fallback" data-auth-html="true">If nothing happens, <a href="https://gastrack.eu/">open the site</a> or return to the app.</p>
+          <p class="auth-state-text" style="margin-bottom: 8px" id="success-body">Taking you back to GasTrack…</p>
+          <div class="btn-row" id="success-open" style="margin: 20px 0 16px; justify-content: center" hidden>
+            <a class="btn btn-primary" id="open-app" href="https://gastrack-2e476.web.app/link/auth-action/?mode=verified" data-auth="open_app">Open GasTrack</a>
+          </div>
+          <p class="auth-error-detail" id="success-hint" style="text-align: center"></p>
         </div>
       </div>
 
@@ -179,6 +182,9 @@
           error_label: 'We couldn’t finish that', back_home: 'Back to home', contact_support: 'Contact support',
           success_title: 'Email verified', success_body: 'Taking you back to GasTrack…',
           success_fallback: 'If nothing happens, <a href="https://gastrack.eu/">open the site</a> or return to the app.',
+          verified_body: 'Your address is confirmed. Go back to GasTrack — you are still signed in there.',
+          open_app: 'Open GasTrack',
+          verified_hint: 'Opened this on a computer? Just go back to GasTrack on your phone — it notices on its own.',
           heading_error: 'Email link', heading_done: 'All set', technical: 'Technical detail: ',
           invalid_title: 'This link is no longer valid',
           invalid_body: 'Confirmation links expire after a while and can only be used once. Open GasTrack on your device, sign in if you can, and send yourself a new confirmation email from your account or profile settings.',
@@ -201,6 +207,9 @@
           error_label: 'Non siamo riusciti a completare', back_home: 'Torna alla home', contact_support: 'Contatta l’assistenza',
           success_title: 'Email verificata', success_body: 'Ti riportiamo su GasTrack…',
           success_fallback: 'Se non succede nulla, <a href="https://gastrack.eu/">apri il sito</a> o torna all’app.',
+          verified_body: 'Il tuo indirizzo è confermato. Torna su GasTrack: lì sei ancora connesso.',
+          open_app: 'Apri GasTrack',
+          verified_hint: 'L’hai aperta dal computer? Torna su GasTrack dal telefono: se ne accorge da solo.',
           heading_error: 'Link dell’email', heading_done: 'Fatto', technical: 'Dettaglio tecnico: ',
           invalid_title: 'Questo link non è più valido',
           invalid_body: 'I link di conferma scadono dopo un po’ e si possono usare una sola volta. Apri GasTrack sul tuo dispositivo, accedi se puoi e inviati una nuova email di conferma dalle impostazioni dell’account o del profilo.',
@@ -223,6 +232,9 @@
           error_label: 'Nous n’avons pas pu terminer', back_home: 'Retour à l’accueil', contact_support: 'Contacter l’assistance',
           success_title: 'E-mail vérifié', success_body: 'Retour vers GasTrack…',
           success_fallback: 'Si rien ne se passe, <a href="https://gastrack.eu/">ouvrez le site</a> ou revenez à l’app.',
+          verified_body: 'Votre adresse est confirmée. Revenez dans GasTrack — vous y êtes toujours connecté.',
+          open_app: 'Ouvrir GasTrack',
+          verified_hint: 'Ouvert sur un ordinateur ? Revenez simplement dans GasTrack sur votre téléphone — l’app s’en rend compte toute seule.',
           heading_error: 'Lien de l’e-mail', heading_done: 'C’est fait', technical: 'Détail technique : ',
           invalid_title: 'Ce lien n’est plus valide',
           invalid_body: 'Les liens de confirmation expirent au bout d’un moment et ne s’utilisent qu’une fois. Ouvrez GasTrack sur votre appareil, connectez-vous si possible et envoyez-vous un nouvel e-mail de confirmation depuis les réglages du compte ou du profil.',
@@ -241,6 +253,13 @@
         }
       };
       var SUPPORTED = ['en', 'it', 'fr'];
+      /*
+       * "Open GasTrack" goes to the other host the app claims. A universal link only opens the app
+       * when it is followed from a different domain — a link from gastrack.eu to gastrack.eu stays
+       * in the browser — and gastrack-2e476.web.app claims /link/* too. The app reads mode=verified
+       * as "re-read the account" and moves on from its "check your inbox" screen.
+       */
+      var OPEN_APP_URL = 'https://gastrack-2e476.web.app/link/auth-action/?mode=verified';
       function pickLang() {
         var fromLink = (param('lang') || '').slice(0, 2).toLowerCase();
         if (SUPPORTED.indexOf(fromLink) >= 0) return fromLink;
@@ -253,7 +272,7 @@
       var lang = pickLang();
       function tx(key) { return (AUTH_TEXT[lang] && AUTH_TEXT[lang][key]) || AUTH_TEXT.en[key] || ''; }
       /* What the page currently shows, so a language switch can draw it again. */
-      var state = { heading: 'heading_loading', error: null, info: null };
+      var state = { heading: 'heading_loading', error: null, info: null, verified: false };
       function render() {
         document.documentElement.lang = lang;
         document.querySelectorAll('[data-auth]').forEach(function (el) {
@@ -273,6 +292,22 @@
           document.getElementById('info-title').textContent = tx(state.info.title);
           document.getElementById('info-body').textContent = tx(state.info.body);
         }
+        /*
+         * A verified address stays on this page with a way back into the app (UT-75), instead of
+         * being sent to /link/home — which has no page here, so it showed the "closed beta,
+         * request access" fallback, in English, to someone who had just signed up.
+         */
+        var sb = document.getElementById('success-body');
+        var hint = document.getElementById('success-hint');
+        if (state.verified) {
+          sb.textContent = tx('verified_body');
+          hint.textContent = tx('verified_hint');
+          document.getElementById('open-app').href = OPEN_APP_URL + '&lang=' + lang;
+        } else {
+          sb.textContent = tx('success_body');
+          hint.innerHTML = tx('success_fallback');
+        }
+        document.getElementById('success-open').hidden = !state.verified;
       }
       var siteSetLang = window.setLang;
       window.setLang = function (next) {
@@ -327,7 +362,7 @@
       render();
 
       function showErrorPanel(titleKey, bodyKey, techDetail) {
-        state = { heading: 'heading_error', error: { title: titleKey, body: bodyKey, detail: techDetail || '' }, info: null };
+        state = { heading: 'heading_error', error: { title: titleKey, body: bodyKey, detail: techDetail || '' }, info: null, verified: false };
         render();
         hide(viewLoading);
         hide(viewSuccess);
@@ -341,7 +376,7 @@
       }
 
       function showInfo(titleKey, bodyKey) {
-        state = { heading: titleKey, error: null, info: { title: titleKey, body: bodyKey } };
+        state = { heading: titleKey, error: null, info: { title: titleKey, body: bodyKey }, verified: false };
         render();
         hide(viewLoading);
         hide(viewError);
@@ -349,14 +384,28 @@
         show(viewInfo);
       }
 
+      function showVerified() {
+        state = { heading: 'heading_done', error: null, info: null, verified: true };
+        render();
+        hide(viewLoading);
+        hide(viewError);
+        hide(viewInfo);
+        show(viewSuccess);
+      }
+
       function showSuccessThenRedirect() {
-        state = { heading: 'heading_done', error: null, info: null };
+        state = { heading: 'heading_done', error: null, info: null, verified: false };
         render();
         hide(viewLoading);
         hide(viewError);
         hide(viewInfo);
         show(viewSuccess);
         window.location.replace(continueUrl);
+      }
+
+      if (mode === 'verified') {
+        showVerified();
+        return;
       }
 
       if (!oobCode || !apiKey) {
@@ -370,6 +419,9 @@
         projectId: 'gastrack-2e476',
       });
       var auth = firebase.auth();
+      if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+        auth.useEmulator('http://127.0.0.1:9099');
+      }
 
       if (mode === 'resetPassword') {
         showInfo('reset_title', 'reset_body');
@@ -386,7 +438,9 @@
         return;
       }
 
-      auth.applyActionCode(oobCode).then(showSuccessThenRedirect).catch(showError);
+      auth.applyActionCode(oobCode)
+        .then(mode === 'verifyEmail' || !mode ? showVerified : showSuccessThenRedirect)
+        .catch(showError);
     })();
   </script>
 </body>
