@@ -104,26 +104,26 @@
 
   <main class="container">
     <section class="section section--tight">
-      <span class="label">GasTrack · email</span>
-      <h1 id="page-heading">Confirming your email</h1>
+      <span class="label" data-auth="label">GasTrack · email</span>
+      <h1 id="page-heading" data-auth="heading_loading">Confirming your email</h1>
 
       <div id="view-loading" class="auth-state-view">
         <div class="card card-accent auth-state-card">
-          <div class="auth-spinner" role="status" aria-live="polite" aria-label="Loading"></div>
-          <p class="auth-state-title">Verifying your email</p>
-          <p class="auth-state-text">This only takes a moment. You can close this tab once you are redirected.</p>
+          <div class="auth-spinner" role="status" aria-live="polite" aria-label="Loading" data-auth-label="loading_aria"></div>
+          <p class="auth-state-title" data-auth="loading_title">Verifying your email</p>
+          <p class="auth-state-text" data-auth="loading_body">This only takes a moment. You can close this tab once you are redirected.</p>
         </div>
       </div>
 
       <div id="view-error" class="auth-state-view" hidden>
         <div class="deletion-warning auth-state-card">
-          <p class="label" style="margin-bottom: 8px; color: var(--text-secondary)">We couldn’t finish that</p>
+          <p class="label" style="margin-bottom: 8px; color: var(--text-secondary)" data-auth="error_label">We couldn’t finish that</p>
           <h2 class="auth-error-title" id="error-title">Something went wrong</h2>
           <p class="auth-error-body" id="error-body"></p>
           <p class="auth-error-detail" id="error-detail" hidden></p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="https://gastrack.eu/">Back to home</a>
-            <a class="btn btn-secondary" href="mailto:support.gastrack@gmail.com?subject=GasTrack%20email%20link%20issue">Contact support</a>
+            <a class="btn btn-primary" href="https://gastrack.eu/" data-auth="back_home">Back to home</a>
+            <a class="btn btn-secondary" data-auth="contact_support" href="mailto:support.gastrack@gmail.com?subject=GasTrack%20email%20link%20issue">Contact support</a>
           </div>
         </div>
       </div>
@@ -131,9 +131,9 @@
       <div id="view-success" class="auth-state-view" hidden>
         <div class="success-card auth-state-card">
           <div class="auth-success-icon" aria-hidden="true">✓</div>
-          <p class="auth-state-title">Email verified</p>
-          <p class="auth-state-text" style="margin-bottom: 8px">Taking you back to GasTrack…</p>
-          <p class="auth-error-detail">If nothing happens, <a href="https://gastrack.eu/">open the site</a> or return to the app.</p>
+          <p class="auth-state-title" data-auth="success_title">Email verified</p>
+          <p class="auth-state-text" style="margin-bottom: 8px" data-auth="success_body">Taking you back to GasTrack…</p>
+          <p class="auth-error-detail" data-auth="success_fallback" data-auth-html="true">If nothing happens, <a href="https://gastrack.eu/">open the site</a> or return to the app.</p>
         </div>
       </div>
 
@@ -142,7 +142,7 @@
           <p class="auth-state-title" id="info-title"></p>
           <p class="auth-state-text" id="info-body"></p>
           <div class="btn-row" style="margin-top: 20px; justify-content: center">
-            <a class="btn btn-primary" href="https://gastrack.eu/">Back to home</a>
+            <a class="btn btn-primary" href="https://gastrack.eu/" data-auth="back_home">Back to home</a>
           </div>
         </div>
       </div>
@@ -167,6 +167,121 @@
   <script src="https://www.gstatic.com/firebasejs/11.6.0/firebase-auth-compat.js"></script>
   <script>
     (function () {
+      /*
+       * In the reader's language. The app sends `lang` with every email link, so a French
+       * account's link opens in French; otherwise the site's own choice, then the browser's.
+       * The page used to be English whatever the email was in (R054, R076).
+       */
+      var AUTH_TEXT = {
+        en: {
+          label: 'GasTrack · email', heading_loading: 'Confirming your email', loading_aria: 'Loading',
+          loading_title: 'Verifying your email', loading_body: 'This only takes a moment. You can close this tab once you are redirected.',
+          error_label: 'We couldn’t finish that', back_home: 'Back to home', contact_support: 'Contact support',
+          success_title: 'Email verified', success_body: 'Taking you back to GasTrack…',
+          success_fallback: 'If nothing happens, <a href="https://gastrack.eu/">open the site</a> or return to the app.',
+          heading_error: 'Email link', heading_done: 'All set', technical: 'Technical detail: ',
+          invalid_title: 'This link is no longer valid',
+          invalid_body: 'Confirmation links expire after a while and can only be used once. Open GasTrack on your device, sign in if you can, and send yourself a new confirmation email from your account or profile settings.',
+          disabled_title: 'This account can’t be used',
+          disabled_body: 'This sign-in has been disabled. If you think that’s a mistake, contact support with the details below.',
+          generic_title: 'We couldn’t complete this step',
+          generic_body: 'Try opening the link from your most recent GasTrack email. If it still fails, request a new confirmation email from inside the app.',
+          incomplete_title: 'Incomplete link',
+          incomplete_body: 'This page was opened without the data from your email. Return to your inbox and tap GasTrack’s confirmation link again.',
+          reset_title: 'Password reset',
+          reset_body: 'Finish resetting your password in the GasTrack app: on the sign-in screen, use Forgot password and follow the steps there. Links from email are not completed on this web page.',
+          signin_title: 'Sign in with email',
+          signin_body: 'This type of link is completed inside the GasTrack app. Open the app on the same device where you asked for the link, or request a new sign-in email from the app.',
+          other_title: 'Use the GasTrack app',
+          other_body: 'This action type isn’t handled on the website. Open GasTrack on your phone or tablet to continue.'
+        },
+        it: {
+          label: 'GasTrack · email', heading_loading: 'Confermiamo la tua email', loading_aria: 'Caricamento',
+          loading_title: 'Verifica dell’email in corso', loading_body: 'Ci vuole solo un attimo. Puoi chiudere questa scheda quando vieni reindirizzato.',
+          error_label: 'Non siamo riusciti a completare', back_home: 'Torna alla home', contact_support: 'Contatta l’assistenza',
+          success_title: 'Email verificata', success_body: 'Ti riportiamo su GasTrack…',
+          success_fallback: 'Se non succede nulla, <a href="https://gastrack.eu/">apri il sito</a> o torna all’app.',
+          heading_error: 'Link dell’email', heading_done: 'Fatto', technical: 'Dettaglio tecnico: ',
+          invalid_title: 'Questo link non è più valido',
+          invalid_body: 'I link di conferma scadono dopo un po’ e si possono usare una sola volta. Apri GasTrack sul tuo dispositivo, accedi se puoi e inviati una nuova email di conferma dalle impostazioni dell’account o del profilo.',
+          disabled_title: 'Questo account non può essere usato',
+          disabled_body: 'Questo accesso è stato disattivato. Se pensi che sia un errore, contatta l’assistenza con i dettagli qui sotto.',
+          generic_title: 'Non siamo riusciti a completare questo passaggio',
+          generic_body: 'Prova ad aprire il link dalla tua email GasTrack più recente. Se non funziona ancora, richiedi una nuova email di conferma dall’app.',
+          incomplete_title: 'Link incompleto',
+          incomplete_body: 'Questa pagina è stata aperta senza i dati della tua email. Torna alla posta in arrivo e tocca di nuovo il link di conferma di GasTrack.',
+          reset_title: 'Reimpostazione della password',
+          reset_body: 'Completa la reimpostazione della password nell’app GasTrack: nella schermata di accesso usa Password dimenticata e segui i passaggi. I link delle email non si completano su questa pagina.',
+          signin_title: 'Accesso con email',
+          signin_body: 'Questo tipo di link si completa nell’app GasTrack. Apri l’app sullo stesso dispositivo da cui l’hai richiesto, oppure richiedi una nuova email di accesso dall’app.',
+          other_title: 'Usa l’app GasTrack',
+          other_body: 'Questo tipo di azione non si gestisce sul sito. Apri GasTrack sul telefono o sul tablet per continuare.'
+        },
+        fr: {
+          label: 'GasTrack · e-mail', heading_loading: 'Confirmation de votre e-mail', loading_aria: 'Chargement',
+          loading_title: 'Vérification de votre e-mail', loading_body: 'Cela ne prend qu’un instant. Vous pourrez fermer cet onglet une fois redirigé.',
+          error_label: 'Nous n’avons pas pu terminer', back_home: 'Retour à l’accueil', contact_support: 'Contacter l’assistance',
+          success_title: 'E-mail vérifié', success_body: 'Retour vers GasTrack…',
+          success_fallback: 'Si rien ne se passe, <a href="https://gastrack.eu/">ouvrez le site</a> ou revenez à l’app.',
+          heading_error: 'Lien de l’e-mail', heading_done: 'C’est fait', technical: 'Détail technique : ',
+          invalid_title: 'Ce lien n’est plus valide',
+          invalid_body: 'Les liens de confirmation expirent au bout d’un moment et ne s’utilisent qu’une fois. Ouvrez GasTrack sur votre appareil, connectez-vous si possible et envoyez-vous un nouvel e-mail de confirmation depuis les réglages du compte ou du profil.',
+          disabled_title: 'Ce compte ne peut pas être utilisé',
+          disabled_body: 'Cette connexion a été désactivée. Si vous pensez qu’il s’agit d’une erreur, contactez l’assistance avec les détails ci-dessous.',
+          generic_title: 'Nous n’avons pas pu terminer cette étape',
+          generic_body: 'Essayez d’ouvrir le lien depuis votre e-mail GasTrack le plus récent. Si cela échoue encore, demandez un nouvel e-mail de confirmation dans l’app.',
+          incomplete_title: 'Lien incomplet',
+          incomplete_body: 'Cette page a été ouverte sans les données de votre e-mail. Revenez à votre boîte de réception et touchez à nouveau le lien de confirmation de GasTrack.',
+          reset_title: 'Réinitialisation du mot de passe',
+          reset_body: 'Terminez la réinitialisation dans l’app GasTrack : sur l’écran de connexion, touchez Mot de passe oublié et suivez les étapes. Les liens des e-mails ne se terminent pas sur cette page.',
+          signin_title: 'Connexion par e-mail',
+          signin_body: 'Ce type de lien se termine dans l’app GasTrack. Ouvrez l’app sur l’appareil depuis lequel vous l’avez demandé, ou demandez un nouvel e-mail de connexion depuis l’app.',
+          other_title: 'Utilisez l’app GasTrack',
+          other_body: 'Ce type d’action n’est pas géré sur le site. Ouvrez GasTrack sur votre téléphone ou votre tablette pour continuer.'
+        }
+      };
+      var SUPPORTED = ['en', 'it', 'fr'];
+      function pickLang() {
+        var fromLink = (param('lang') || '').slice(0, 2).toLowerCase();
+        if (SUPPORTED.indexOf(fromLink) >= 0) return fromLink;
+        var saved = '';
+        try { saved = localStorage.getItem('gt_lang') || ''; } catch (e) {}
+        if (SUPPORTED.indexOf(saved) >= 0) return saved;
+        var nav = (navigator.language || 'en').slice(0, 2).toLowerCase();
+        return SUPPORTED.indexOf(nav) >= 0 ? nav : 'en';
+      }
+      var lang = pickLang();
+      function tx(key) { return (AUTH_TEXT[lang] && AUTH_TEXT[lang][key]) || AUTH_TEXT.en[key] || ''; }
+      /* What the page currently shows, so a language switch can draw it again. */
+      var state = { heading: 'heading_loading', error: null, info: null };
+      function render() {
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-auth]').forEach(function (el) {
+          var v = tx(el.getAttribute('data-auth'));
+          if (el.getAttribute('data-auth-html') === 'true') el.innerHTML = v; else el.textContent = v;
+        });
+        document.querySelectorAll('[data-auth-label]').forEach(function (el) { el.setAttribute('aria-label', tx(el.getAttribute('data-auth-label'))); });
+        document.getElementById('page-heading').textContent = state.info ? tx(state.info.title) : tx(state.heading);
+        if (state.error) {
+          document.getElementById('error-title').textContent = tx(state.error.title);
+          document.getElementById('error-body').textContent = tx(state.error.body);
+          var det = document.getElementById('error-detail');
+          det.textContent = state.error.detail ? tx('technical') + state.error.detail : '';
+          det.hidden = !state.error.detail;
+        }
+        if (state.info) {
+          document.getElementById('info-title').textContent = tx(state.info.title);
+          document.getElementById('info-body').textContent = tx(state.info.body);
+        }
+      }
+      var siteSetLang = window.setLang;
+      window.setLang = function (next) {
+        if (typeof siteSetLang === 'function') siteSetLang(next);
+        if (SUPPORTED.indexOf(next) >= 0) lang = next;
+        render();
+      };
+      if (typeof siteSetLang === 'function') siteSetLang(lang);
+
       function param(name) {
         var re = new RegExp('[?&]' + name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '=([^&]*)');
         var m = re.exec(location.search);
@@ -188,30 +303,16 @@
           code === 'auth/expired-action-code' ||
           /invalid-action-code|expired-action-code/i.test(rawMsg)
         ) {
-          return {
-            title: 'This link is no longer valid',
-            body:
-              'Confirmation links expire after a while and can only be used once. Open GasTrack on your device, sign in if you can, and send yourself a new confirmation email from your account or profile settings.',
-            detail: code,
-          };
+          return { title: 'invalid_title', body: 'invalid_body', detail: code };
         }
         if (code === 'auth/user-disabled') {
-          return {
-            title: 'This account can’t be used',
-            body: 'This sign-in has been disabled. If you think that’s a mistake, contact support with the details below.',
-            detail: code,
-          };
+          return { title: 'disabled_title', body: 'disabled_body', detail: code };
         }
         var detail = code || rawMsg || '';
         if (detail.indexOf('Firebase: ') === 0) {
           detail = detail.replace(/^Firebase:\s*/, '');
         }
-        return {
-          title: 'We couldn’t complete this step',
-          body:
-            'Try opening the link from your most recent GasTrack email. If it still fails, request a new confirmation email from inside the app.',
-          detail: detail,
-        };
+        return { title: 'generic_title', body: 'generic_body', detail: detail };
       }
 
       var mode = param('mode');
@@ -223,20 +324,11 @@
       var viewError = document.getElementById('view-error');
       var viewSuccess = document.getElementById('view-success');
       var viewInfo = document.getElementById('view-info');
-      var pageHeading = document.getElementById('page-heading');
+      render();
 
-      function showErrorPanel(title, body, techDetail) {
-        document.getElementById('error-title').textContent = title;
-        document.getElementById('error-body').textContent = body;
-        var det = document.getElementById('error-detail');
-        if (techDetail) {
-          det.textContent = 'Technical detail: ' + techDetail;
-          det.hidden = false;
-        } else {
-          det.textContent = '';
-          det.hidden = true;
-        }
-        pageHeading.textContent = 'Email link';
+      function showErrorPanel(titleKey, bodyKey, techDetail) {
+        state = { heading: 'heading_error', error: { title: titleKey, body: bodyKey, detail: techDetail || '' }, info: null };
+        render();
         hide(viewLoading);
         hide(viewSuccess);
         hide(viewInfo);
@@ -248,10 +340,9 @@
         showErrorPanel(mapped.title, mapped.body, mapped.detail || '');
       }
 
-      function showInfo(title, body) {
-        document.getElementById('info-title').textContent = title;
-        document.getElementById('info-body').textContent = body;
-        pageHeading.textContent = title;
+      function showInfo(titleKey, bodyKey) {
+        state = { heading: titleKey, error: null, info: { title: titleKey, body: bodyKey } };
+        render();
         hide(viewLoading);
         hide(viewError);
         hide(viewSuccess);
@@ -259,7 +350,8 @@
       }
 
       function showSuccessThenRedirect() {
-        pageHeading.textContent = 'All set';
+        state = { heading: 'heading_done', error: null, info: null };
+        render();
         hide(viewLoading);
         hide(viewError);
         hide(viewInfo);
@@ -268,11 +360,7 @@
       }
 
       if (!oobCode || !apiKey) {
-        showErrorPanel(
-          'Incomplete link',
-          'This page was opened without the data from your email. Return to your inbox and tap GasTrack’s confirmation link again.',
-          ''
-        );
+        showErrorPanel('incomplete_title', 'incomplete_body', '');
         return;
       }
 
@@ -284,23 +372,17 @@
       var auth = firebase.auth();
 
       if (mode === 'resetPassword') {
-        showInfo(
-          'Password reset',
-          'Finish resetting your password in the GasTrack app: on the sign-in screen, use Forgot password and follow the steps there. Links from email are not completed on this web page.'
-        );
+        showInfo('reset_title', 'reset_body');
         return;
       }
       if (mode === 'signIn') {
-        showInfo(
-          'Sign in with email',
-          'This type of link is completed inside the GasTrack app. Open the app on the same device where you asked for the link, or request a new sign-in email from the app.'
-        );
+        showInfo('signin_title', 'signin_body');
         return;
       }
 
       var applyModes = { verifyEmail: 1, recoverEmail: 1, verifyAndChangeEmail: 1, revertSecondFactorAddition: 1 };
       if (mode && !applyModes[mode]) {
-        showInfo('Use the GasTrack app', 'This action type isn’t handled on the website. Open GasTrack on your phone or tablet to continue.');
+        showInfo('other_title', 'other_body');
         return;
       }
 
