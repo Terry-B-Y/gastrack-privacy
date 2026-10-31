@@ -64,9 +64,9 @@
         "<h2>1. Acceptance of terms</h2>" +
         "<p>By downloading or using GasTrack, you agree to these Terms of Service. If you do not agree, do not use the app.</p>" +
         "<h2>2. Description of service</h2>" +
-        "<p>GasTrack is a mobile application for tracking vehicle-related costs including fuel, parking, maintenance, and related expenses. The app may include optional social features, community data contributions (such as fuel station ratings and parking ratings), and gamification elements. GasTrack is provided by Terry Boakye Yiadom (sole author) and is currently in beta.</p>" +
-        "<h2>3. Beta status</h2>" +
-        "<p>GasTrack is currently in beta testing. Features may change, be removed, or behave unexpectedly. We appreciate your feedback and patience during this period. Beta access may be revoked at any time.</p>" +
+        "<p>GasTrack is a mobile application for tracking vehicle-related costs including fuel, parking, maintenance, and related expenses. The app may include optional social features, community data contributions (such as fuel station ratings and parking ratings), and gamification elements. GasTrack is provided by Terry Boakye Yiadom (sole author). It is available on the App Store for iPhone; the Android version is in beta.</p>" +
+        "<h2>3. Android beta</h2>" +
+        "<p>The Android version of GasTrack is in closed beta testing: its features may change, be removed, or behave unexpectedly, and beta access may be revoked at any time. We appreciate your feedback and patience during this period. The iPhone version is publicly available on the App Store.</p>" +
         "<h2>4. User accounts</h2>" +
         "<p>You must create an account to use most features. You are responsible for keeping your credentials secure. You may not share your account or use another person’s account without permission. You must provide accurate information during registration.</p>" +
         "<h2>5. Acceptable use</h2>" +
@@ -158,9 +158,9 @@
         "<h2>1. Accettazione dei termini</h2>" +
         "<p>Scaricando o usando GasTrack, accetti questi Termini di servizio. Se non accetti, non usare l’app.</p>" +
         "<h2>2. Descrizione del servizio</h2>" +
-        "<p>GasTrack è un’applicazione mobile per tracciare costi legati al veicolo, inclusi carburante, parcheggio, manutenzione e spese correlate. L’app può includere funzioni social opzionali, contributi della community (come valutazioni di stazioni di servizio e parcheggi) ed elementi di gamification. GasTrack è offerta da Terry Boakye Yiadom (unico autore) ed è attualmente in beta.</p>" +
-        "<h2>3. Stato beta</h2>" +
-        "<p>GasTrack è attualmente in fase di test beta. Le funzioni possono cambiare, essere rimosse o comportarsi in modo imprevisto. Apprezziamo feedback e pazienza in questo periodo. L’accesso beta può essere revocato in qualsiasi momento.</p>" +
+        "<p>GasTrack è un’applicazione mobile per tracciare costi legati al veicolo, inclusi carburante, parcheggio, manutenzione e spese correlate. L’app può includere funzioni social opzionali, contributi della community (come valutazioni di stazioni di servizio e parcheggi) ed elementi di gamification. GasTrack è offerta da Terry Boakye Yiadom (unico autore). È disponibile su App Store per iPhone; la versione Android è in beta.</p>" +
+        "<h2>3. Beta Android</h2>" +
+        "<p>La versione Android di GasTrack è in fase di test beta chiusa: le funzioni possono cambiare, essere rimosse o comportarsi in modo imprevisto, e l’accesso beta può essere revocato in qualsiasi momento. Apprezziamo feedback e pazienza in questo periodo. La versione per iPhone è disponibile pubblicamente su App Store.</p>" +
         "<h2>4. Account utente</h2>" +
         "<p>Per usare la maggior parte delle funzioni devi creare un account. Sei responsabile della sicurezza delle credenziali. Non puoi condividere il tuo account o usare l’account di altri senza permesso. Devi fornire informazioni accurate in fase di registrazione.</p>" +
         "<h2>5. Uso consentito</h2>" +
@@ -252,9 +252,9 @@
         "<h2>1. Acceptation des conditions</h2>" +
         "<p>En téléchargeant ou en utilisant GasTrack, vous acceptez les présentes conditions d’utilisation. Si vous n’acceptez pas, n’utilisez pas l’app.</p>" +
         "<h2>2. Description du service</h2>" +
-        "<p>GasTrack est une application mobile de suivi des coûts liés au véhicule : carburant, stationnement, entretien et dépenses associées. L’app peut inclure des fonctions sociales facultatives, des contributions de la communauté (notamment notes sur les stations-service et le stationnement) et des éléments de gamification. GasTrack est fournie par Terry Boakye Yiadom (auteur unique) et est actuellement en version bêta.</p>" +
-        "<h2>3. Statut bêta</h2>" +
-        "<p>GasTrack est en phase de test bêta. Les fonctionnalités peuvent changer, être retirées ou se comporter de façon inattendue. Nous vous remercions pour vos retours et votre patience pendant cette période. L’accès bêta peut être retiré à tout moment.</p>" +
+        "<p>GasTrack est une application mobile de suivi des coûts liés au véhicule : carburant, stationnement, entretien et dépenses associées. L’app peut inclure des fonctions sociales facultatives, des contributions de la communauté (notamment notes sur les stations-service et le stationnement) et des éléments de gamification. GasTrack est fournie par Terry Boakye Yiadom (auteur unique). Elle est disponible sur l’App Store pour iPhone ; la version Android est en bêta.</p>" +
+        "<h2>3. Bêta Android</h2>" +
+        "<p>La version Android de GasTrack est en phase de test bêta fermée : ses fonctionnalités peuvent changer, être retirées ou se comporter de façon inattendue, et l’accès bêta peut être retiré à tout moment. Nous vous remercions pour vos retours et votre patience pendant cette période. La version iPhone est disponible publiquement sur l’App Store.</p>" +
         "<h2>4. Comptes utilisateurs</h2>" +
         "<p>Vous devez créer un compte pour utiliser la plupart des fonctions. Vous êtes responsable de la sécurité de vos identifiants. Vous ne devez pas partager votre compte ni utiliser le compte d’une autre personne sans autorisation. Vous devez fournir des informations exactes lors de l’inscription.</p>" +
         "<h2>5. Usage acceptable</h2>" +
