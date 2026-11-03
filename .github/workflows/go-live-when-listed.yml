@@ -1,0 +1,87 @@
+# The site for GasTrack on the App Store waits on branch release-ios-store until the listing exists.
+# Every 6 hours this asks Apple. The first time the listing answers, it merges that branch into main,
+# publishes the site, opens an issue to say so and switches itself off.
+name: Go live when listed
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      rehearse:
+        description: Act as if the listing were live, but push nothing (republishes main as it stands)
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  actions: write
+  issues: write
+
+concurrency:
+  group: go-live
+  cancel-in-progress: false
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  BRANCH: release-ios-store
+  APP_ID: '6762223301'
+  BUNDLE_ID: com.gastrack.terry
+
+jobs:
+  go-live:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ask Apple
+        id: apple
+        run: |
+          live=false
+          for country in it us gb fr; do
+            # A failed request counts as not listed: the next run asks again.
+            answer=$(curl -fsS --retry 3 --max-time 30 "https://itunes.apple.com/lookup?id=$APP_ID&country=$country" || true)
+            bundle=$(jq -r '.results[0].bundleId // empty' <<< "$answer" 2>/dev/null || true)
+            if [ "$bundle" = "$BUNDLE_ID" ]; then
+              echo "Listed in $country"
+              live=true
+              break
+            fi
+          done
+          echo "Listed: $live"
+          echo "live=$live" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+        if: steps.apple.outputs.live == 'true' || inputs.rehearse
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Merge and publish
+        if: steps.apple.outputs.live == 'true' || inputs.rehearse
+        env:
+          REHEARSE: ${{ inputs.rehearse }}
+        run: |
+          if git merge-base --is-ancestor "origin/$BRANCH" HEAD; then
+            echo "Already on main."
+            [ "$REHEARSE" = true ] || gh workflow disable "$GITHUB_WORKFLOW"
+            exit 0
+          fi
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git merge --no-ff -m 'Site: GasTrack is on the App Store' "origin/$BRANCH"
+          git diff --stat HEAD^1 HEAD | tail -1
+
+          # A push made with this token does not start other workflows, so Pages is asked directly.
+          if [ "$REHEARSE" = true ]; then
+            git push --dry-run origin main
+            gh workflow run pages.yml --ref main
+            echo "Rehearsal: main was not changed."
+            exit 0
+          fi
+
+          git push origin main
+          gh workflow run pages.yml --ref main
+          gh issue create --assignee "$GITHUB_REPOSITORY_OWNER" \
+            --title 'The site went live: GasTrack is on the App Store' \
+            --body "Apple's listing answered, so \`$BRANCH\` was merged into \`main\` and the site is publishing. This check has switched itself off. Still by hand: the app's iOS update link and minimum build in Mission Control, and Firebase hosting."
+          gh workflow disable "$GITHUB_WORKFLOW"
