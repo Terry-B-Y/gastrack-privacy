@@ -48,6 +48,7 @@
           <input type="hidden" name="_subject" value="GasTrack — Android beta access request" />
           <input type="hidden" name="form_type" value="beta_access" />
           <input type="hidden" name="_replyto" id="beta-reply-to" value="" />
+          <input type="hidden" name="invite_code" id="beta-invite-code" value="" />
 
           <div class="field">
             <label for="first_name" data-i18n="beta_label_first_name">First name</label>
@@ -140,6 +141,10 @@
   <script src="js/i18n.js"></script>
   <script>
     (function () {
+      // Came from a friend's invite link: the code goes with the request.
+      var invite = new URLSearchParams(location.search).get("invite") || "";
+      if (/^[A-HJKMNP-Z2-9]{6}$/.test(invite)) document.getElementById("beta-invite-code").value = invite;
+
       var form = document.getElementById("beta-access-form");
       var block = document.getElementById("beta-form-block");
       var success = document.getElementById("success-message");
