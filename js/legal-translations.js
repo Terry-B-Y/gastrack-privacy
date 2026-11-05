@@ -12,6 +12,7 @@
         "<ul>" +
         "<li><strong>Account</strong> — your email address, the name you give and how you sign in (email and password, Google or Apple), managed by <strong>Google Firebase Authentication</strong>; and your language, units, currency and other settings.</li>" +
         "<li><strong>Age</strong> — GasTrack is for people aged 16 and over (section 8), so we ask everyone to confirm it and keep the answer and when it was given. We do not ask for or keep your date of birth, and we never take it from Google or Apple. If you use the app without an account, the answer stays on your phone.</li>" +
+        "<li><strong>Using GasTrack without an account</strong> — you can use your garage, logs and costs with no account. Your data is kept under a random code, with no name or email, and is tied to that phone. If the app is not opened for 6 months the data is deleted; you accept this when you start, and we record when you did.</li>" +
         "<li><strong>Vehicles and logs</strong> — the vehicles you add (make, model, year, and a number plate or VIN if you enter one) and what you log for them: fill-ups and charges (amounts, prices, odometer, the station), parking sessions, services, expenses, fines, recurring costs, insurance policies, purchase or finance details, and notes. Archived vehicles stay under your account until you restore or delete them.</li>" +
         "<li><strong>Documents</strong> — files you keep in a vehicle’s document vault, such as a registration document or an insurance certificate. Only you can see them.</li>" +
         "<li><strong>Saved trips</strong> — the places, date and cost estimate of trips you save from the trip calculator. Only you can see them.</li>" +
@@ -38,6 +39,7 @@
         "<p>Where the GDPR applies we rely on <strong>contract</strong> (providing the app you signed up for), <strong>legitimate interests</strong> (security, preventing abuse, moderating shared content) and <strong>consent</strong> for usage analytics, crash reporting, performance monitoring and optional AI features. You can withdraw consent at any time in the app; that does not affect processing before you did.</p>" +
         "<p>Recording that you confirmed you are 16 or over, and keeping the scrambled address that stops an invite reward being claimed twice, rest on our <strong>legitimate interests</strong>: keeping the app to people aged 16 and over, and preventing abuse.</p>" +
         "<h2>4. Who processes your data</h2>" +
+        "<p>Google, which stores and processes your data for us, is bound by data-processing terms to protect it at least as well as this policy does. Any other provider that handles personal data for us must do the same. The open services named below get only what they need to answer a search, never your account, and we share nothing else with them.</p>" +
         "<p>The app runs on <strong>Google Firebase and Google Cloud</strong>: Authentication, Firestore, Storage, Cloud Functions, Hosting and Cloud Messaging, and, if you agree, Analytics, Crashlytics and Performance Monitoring. Your records are stored in the European Union (Firestore multi-region <em>eur3</em>; servers in Belgium and Italy). Google may process some data outside the EU under its standard contractual clauses.</p>" +
         "<p>Some features send what you search for to open services that answer it. They receive the place, area or coordinates and your device’s IP address, never your account:</p>" +
         "<ul>" +
@@ -48,7 +50,7 @@
         "</ul>" +
         "<p>Fuel prices come from the open data of the Italian Ministry of Enterprises (MIMIT); nothing about you is sent to get them. When you open a place in Apple Maps, Google Maps or Waze, that app receives the destination. If receipt scanning is offered, the photo is sent to <strong>Google Gemini</strong> to read the amounts. Emails about your account (verification, password reset, replies to feedback) go through our email delivery service.</p>" +
         "<h2>5. How long we keep it</h2>" +
-        "<p>Until you delete the content or your account. Deleting your account is final 30 days after you ask (see below). Analytics data is kept for the retention period set in Google Analytics, and our cloud providers keep short-lived backups as described in their own policies.</p>" +
+        "<p>Until you delete the content or your account, or, without an account, until the app has gone 6 months unopened. Deleting your account is final 30 days after you ask (see below). Analytics data is kept for the retention period set in Google Analytics, and our cloud providers keep short-lived backups as described in their own policies.</p>" +
         "<h2>6. Deleting your account and data</h2>" +
         "<p><strong>In the app:</strong> open <strong>Settings → Privacy &amp; Data</strong> and choose <strong>Erase all my data</strong> (or <strong>Delete account</strong> in Settings). Nothing is deleted straight away: deletion is scheduled for 30 days later, and you can cancel until then by signing in. After that your account and everything in it — logs, vehicles, documents, trips, photos, profile and posts — is permanently erased.</p>" +
         "<p><strong>If you cannot use the app</strong> (for example you lost access to your device or email), send an <strong>account and data deletion request</strong> with our web form. We check that the account is yours, then delete it or help you get back in:</p>" +
@@ -71,14 +73,14 @@
         "<h2>3. Android beta</h2>" +
         "<p>The Android version of GasTrack is in closed beta testing: its features may change, be removed, or behave unexpectedly, and beta access may be revoked at any time. We appreciate your feedback and patience during this period. The iPhone version is publicly available on the App Store.</p>" +
         "<h2>4. User accounts</h2>" +
-        "<p>You must create an account to use most features. You are responsible for keeping your credentials secure. You may not share your account or use another person’s account without permission. You must provide accurate information during registration. You must be at least 16 to use GasTrack, and you confirm this when you start using it; we may close an account that does not meet this.</p>" +
+        "<p>You can use GasTrack without an account. You need one for what involves other people, such as friends and shared vehicles, and to reach your data from another device. You are responsible for keeping your credentials secure. You may not share your account or use another person’s account without permission. You must provide accurate information during registration. You must be at least 16 to use GasTrack, and you confirm this when you start using it; we may close an account that does not meet this.</p>" +
         "<h2>5. Acceptable use</h2>" +
         "<p>You agree not to:</p>" +
         "<ul>" +
         "<li>use the app for any unlawful purpose;</li>" +
         "<li>attempt to reverse-engineer, decompile, or tamper with the app;</li>" +
         "<li>upload false, misleading, or harmful content including community ratings;</li>" +
-        "<li>harass, impersonate, or harm other users via social features;</li>" +
+        "<li>harass, impersonate, or harm other users via social features. We do not tolerate objectionable content or abusive users: you can report and block them in the app, and we remove what breaks these terms and close the accounts responsible;</li>" +
         "<li>attempt to gain unauthorised access to other users’ data or app infrastructure;</li>" +
         "<li>use automated tools to scrape or abuse the app’s APIs.</li>" +
         "</ul>" +
@@ -118,6 +120,7 @@
         "<ul>" +
         "<li><strong>Account</strong> — il tuo indirizzo email, il nome che indichi e il modo in cui accedi (email e password, Google o Apple), gestiti da <strong>Google Firebase Authentication</strong>; inoltre lingua, unità, valuta e le altre impostazioni.</li>" +
         "<li><strong>Età</strong> — GasTrack è per chi ha almeno 16 anni (sezione 8), quindi chiediamo a tutti di confermarlo e conserviamo la risposta e quando è stata data. Non chiediamo né conserviamo la data di nascita, e non la prendiamo mai da Google o Apple. Se usi l’app senza account, la risposta resta sul tuo telefono.</li>" +
+        "<li><strong>Usare GasTrack senza account</strong> — puoi usare garage, registrazioni e costi senza account. I dati restano sotto un codice casuale, senza nome né email, e sono legati a quel telefono. Se l’app non viene aperta per 6 mesi i dati vengono eliminati; lo accetti quando inizi, e registriamo quando lo hai fatto.</li>" +
         "<li><strong>Veicoli e registrazioni</strong> — i veicoli che aggiungi (marca, modello, anno e, se li inserisci, targa o numero di telaio) e quello che registri: rifornimenti e ricariche (quantità, prezzi, contachilometri, distributore), soste, interventi, spese, multe, costi ricorrenti, polizze, dati di acquisto o finanziamento e note. I veicoli archiviati restano nel tuo account finché non li ripristini o li elimini.</li>" +
         "<li><strong>Documenti</strong> — i file che conservi nell’archivio documenti di un veicolo, come il libretto o il certificato assicurativo. Solo tu puoi vederli.</li>" +
         "<li><strong>Viaggi salvati</strong> — i luoghi, la data e la stima dei costi dei viaggi che salvi dal calcolatore. Solo tu puoi vederli.</li>" +
@@ -144,6 +147,7 @@
         "<p>Dove si applica il GDPR ci basiamo sul <strong>contratto</strong> (fornirti l’app a cui ti sei iscritto), sul <strong>legittimo interesse</strong> (sicurezza, prevenzione degli abusi, moderazione dei contenuti condivisi) e sul <strong>consenso</strong> per statistiche d’uso, rapporti sugli arresti anomali, monitoraggio delle prestazioni e funzioni AI facoltative. Puoi revocare il consenso in qualsiasi momento nell’app; ciò non incide sul trattamento precedente.</p>" +
         "<p>Registrare la conferma di avere almeno 16 anni, e conservare la copia cifrata dell’indirizzo che impedisce di ottenere due volte il premio per un invito, rientrano nei nostri <strong>interessi legittimi</strong>: tenere l’app riservata a chi ha almeno 16 anni e prevenire gli abusi.</p>" +
         "<h2>4. Chi tratta i tuoi dati</h2>" +
+        "<p>Google, che conserva e tratta i dati per nostro conto, è vincolata da condizioni sul trattamento dei dati a proteggerli almeno quanto questa informativa. Lo stesso vale per qualsiasi altro fornitore che tratti dati personali per noi. I servizi aperti indicati sotto ricevono solo ciò che serve a rispondere a una ricerca, mai il tuo account, e non condividiamo altro con loro.</p>" +
         "<p>L’app funziona su <strong>Google Firebase e Google Cloud</strong>: Authentication, Firestore, Storage, Cloud Functions, Hosting e Cloud Messaging e, se acconsenti, Analytics, Crashlytics e Performance Monitoring. I tuoi dati sono conservati nell’Unione europea (Firestore multi-regione <em>eur3</em>; server in Belgio e in Italia). Google può trattare alcuni dati fuori dall’UE sulla base delle clausole contrattuali standard.</p>" +
         "<p>Alcune funzioni inviano ciò che cerchi a servizi aperti che rispondono alla ricerca. Ricevono il luogo, l’area o le coordinate e l’indirizzo IP del dispositivo, mai il tuo account:</p>" +
         "<ul>" +
@@ -154,7 +158,7 @@
         "</ul>" +
         "<p>I prezzi dei carburanti provengono dagli open data del Ministero delle Imprese e del Made in Italy (MIMIT); per ottenerli non inviamo nulla che ti riguardi. Quando apri un luogo in Apple Mappe, Google Maps o Waze, quell’app riceve la destinazione. Se è disponibile la lettura scontrini, la foto viene inviata a <strong>Google Gemini</strong> per leggerne gli importi. Le email sul tuo account (verifica, reimpostazione della password, risposte ai feedback) passano dal nostro servizio di invio email.</p>" +
         "<h2>5. Per quanto tempo li conserviamo</h2>" +
-        "<p>Finché non elimini i contenuti o l’account. L’eliminazione dell’account diventa definitiva 30 giorni dopo la richiesta (vedi sotto). I dati di Analytics sono conservati per il periodo impostato in Google Analytics, e i nostri fornitori cloud mantengono backup di breve durata come descritto nelle loro informative.</p>" +
+        "<p>Finché non elimini i contenuti o l’account o, senza account, finché l’app non resta 6 mesi senza essere aperta. L’eliminazione dell’account diventa definitiva 30 giorni dopo la richiesta (vedi sotto). I dati di Analytics sono conservati per il periodo impostato in Google Analytics, e i nostri fornitori cloud mantengono backup di breve durata come descritto nelle loro informative.</p>" +
         "<h2>6. Eliminare account e dati</h2>" +
         "<p><strong>Nell’app:</strong> apri <strong>Impostazioni → Privacy e dati</strong> e scegli <strong>Elimina tutti i dati</strong> (oppure <strong>Elimina account</strong> nelle Impostazioni). Nulla viene eliminato subito: l’eliminazione è programmata 30 giorni dopo e fino ad allora puoi annullarla accedendo. Dopo, il tuo account e tutto ciò che contiene — registrazioni, veicoli, documenti, viaggi, foto, profilo e post — vengono cancellati in modo definitivo.</p>" +
         "<p><strong>Se non puoi usare l’app</strong> (per esempio hai perso l’accesso al dispositivo o all’email), invia una <strong>richiesta di eliminazione di account e dati</strong> con il nostro modulo web. Verifichiamo che l’account sia tuo, poi lo eliminiamo o ti aiutiamo a rientrare:</p>" +
@@ -177,14 +181,14 @@
         "<h2>3. Beta Android</h2>" +
         "<p>La versione Android di GasTrack è in fase di test beta chiusa: le funzioni possono cambiare, essere rimosse o comportarsi in modo imprevisto, e l’accesso beta può essere revocato in qualsiasi momento. Apprezziamo feedback e pazienza in questo periodo. La versione per iPhone è disponibile pubblicamente su App Store.</p>" +
         "<h2>4. Account utente</h2>" +
-        "<p>Per usare la maggior parte delle funzioni devi creare un account. Sei responsabile della sicurezza delle credenziali. Non puoi condividere il tuo account o usare l’account di altri senza permesso. Devi fornire informazioni accurate in fase di registrazione. Devi avere almeno 16 anni per usare GasTrack, e lo confermi quando inizi a usarla; possiamo chiudere un account che non rispetta questa regola.</p>" +
+        "<p>Puoi usare GasTrack senza account. Ne serve uno per ciò che coinvolge altre persone, come amici e veicoli condivisi, e per ritrovare i dati su un altro dispositivo. Sei responsabile della sicurezza delle credenziali. Non puoi condividere il tuo account o usare l’account di altri senza permesso. Devi fornire informazioni accurate in fase di registrazione. Devi avere almeno 16 anni per usare GasTrack, e lo confermi quando inizi a usarla; possiamo chiudere un account che non rispetta questa regola.</p>" +
         "<h2>5. Uso consentito</h2>" +
         "<p>Accetti di non:</p>" +
         "<ul>" +
         "<li>usare l’app per scopi illeciti;</li>" +
         "<li>tentare di reverse engineering, decompilare o manomettere l’app;</li>" +
         "<li>caricare contenuti falsi, fuorvianti o dannosi, incluse valutazioni della community;</li>" +
-        "<li>molestare, impersonare o danneggiare altri utenti tramite le funzioni social;</li>" +
+        "<li>molestare, impersonare o danneggiare altri utenti tramite le funzioni social. Non tolleriamo contenuti inappropriati o utenti offensivi: puoi segnalarli e bloccarli nell’app, e rimuoviamo ciò che viola questi termini chiudendo gli account responsabili;</li>" +
         "<li>tentare di ottenere accesso non autorizzato ai dati di altri utenti o all’infrastruttura dell’app;</li>" +
         "<li>usare strumenti automatizzati per scraping o abuso delle API dell’app.</li>" +
         "</ul>" +
@@ -224,6 +228,7 @@
         "<ul>" +
         "<li><strong>Compte</strong> — votre adresse e-mail, le nom que vous indiquez et votre mode de connexion (e-mail et mot de passe, Google ou Apple), gérés par <strong>Google Firebase Authentication</strong> ; ainsi que votre langue, vos unités, votre devise et vos autres réglages.</li>" +
         "<li><strong>Âge</strong> — GasTrack s’adresse aux personnes de 16 ans et plus (section 8) : nous demandons donc à chacun de le confirmer et conservons la réponse et sa date. Nous ne demandons ni ne conservons votre date de naissance, et nous ne la prenons jamais chez Google ou Apple. Si vous utilisez l’app sans compte, la réponse reste sur votre téléphone.</li>" +
+        "<li><strong>Utiliser GasTrack sans compte</strong> — vous pouvez utiliser votre garage, vos enregistrements et vos coûts sans compte. Vos données restent sous un code aléatoire, sans nom ni e-mail, et sont liées à ce téléphone. Si l’app n’est pas ouverte pendant 6 mois, les données sont supprimées ; vous l’acceptez au démarrage, et nous enregistrons quand vous l’avez fait.</li>" +
         "<li><strong>Véhicules et enregistrements</strong> — les véhicules que vous ajoutez (marque, modèle, année et, si vous les saisissez, plaque ou numéro VIN) et ce que vous enregistrez : pleins et recharges (quantités, prix, compteur, station), stationnements, entretiens, dépenses, amendes, coûts récurrents, assurances, détails d’achat ou de financement, et notes. Les véhicules archivés restent dans votre compte jusqu’à ce que vous les restauriez ou les supprimiez.</li>" +
         "<li><strong>Documents</strong> — les fichiers que vous gardez dans le coffre de documents d’un véhicule, comme la carte grise ou l’attestation d’assurance. Vous seul pouvez les voir.</li>" +
         "<li><strong>Trajets enregistrés</strong> — les lieux, la date et l’estimation de coût des trajets que vous enregistrez depuis le calculateur. Vous seul pouvez les voir.</li>" +
@@ -250,6 +255,7 @@
         "<p>Lorsque le RGPD s’applique, nous nous fondons sur le <strong>contrat</strong> (fournir l’application à laquelle vous vous êtes inscrit), l’<strong>intérêt légitime</strong> (sécurité, prévention des abus, modération des contenus partagés) et le <strong>consentement</strong> pour les statistiques d’utilisation, les rapports de plantage, le suivi des performances et les fonctions d’IA facultatives. Vous pouvez retirer votre consentement à tout moment dans l’application ; cela n’affecte pas le traitement antérieur.</p>" +
         "<p>L’enregistrement de votre confirmation d’avoir 16 ans ou plus, et la conservation de la copie chiffrée de l’adresse qui empêche d’obtenir deux fois la récompense d’une invitation, reposent sur nos <strong>intérêts légitimes</strong> : réserver l’app aux personnes de 16 ans et plus, et prévenir les abus.</p>" +
         "<h2>4. Qui traite vos données</h2>" +
+        "<p>Google, qui conserve et traite vos données pour nous, est tenue par des conditions de traitement de les protéger au moins aussi bien que cette politique. Il en va de même pour tout autre prestataire traitant des données personnelles pour nous. Les services ouverts cités ci-dessous ne reçoivent que ce qu’il faut pour répondre à une recherche, jamais votre compte, et nous ne partageons rien d’autre avec eux.</p>" +
         "<p>L’application fonctionne sur <strong>Google Firebase et Google Cloud</strong> : Authentication, Firestore, Storage, Cloud Functions, Hosting et Cloud Messaging et, si vous l’acceptez, Analytics, Crashlytics et Performance Monitoring. Vos données sont stockées dans l’Union européenne (Firestore multirégion <em>eur3</em> ; serveurs en Belgique et en Italie). Google peut traiter certaines données hors de l’UE sur la base des clauses contractuelles types.</p>" +
         "<p>Certaines fonctions envoient ce que vous recherchez à des services ouverts qui y répondent. Ils reçoivent le lieu, la zone ou les coordonnées et l’adresse IP de votre appareil, jamais votre compte :</p>" +
         "<ul>" +
@@ -260,7 +266,7 @@
         "</ul>" +
         "<p>Les prix des carburants proviennent des données ouvertes du ministère italien des Entreprises (MIMIT) ; rien vous concernant n’est envoyé pour les obtenir. Quand vous ouvrez un lieu dans Plans d’Apple, Google Maps ou Waze, cette application reçoit la destination. Si la lecture des tickets est proposée, la photo est envoyée à <strong>Google Gemini</strong> pour en lire les montants. Les e-mails concernant votre compte (vérification, réinitialisation du mot de passe, réponses aux retours) passent par notre service d’envoi d’e-mails.</p>" +
         "<h2>5. Durée de conservation</h2>" +
-        "<p>Jusqu’à ce que vous supprimiez le contenu ou votre compte. La suppression du compte devient définitive 30 jours après la demande (voir ci-dessous). Les données d’Analytics sont conservées pendant la durée réglée dans Google Analytics, et nos fournisseurs cloud conservent des sauvegardes de courte durée comme décrit dans leurs politiques.</p>" +
+        "<p>Jusqu’à ce que vous supprimiez le contenu ou votre compte ou, sans compte, jusqu’à ce que l’app reste 6 mois sans être ouverte. La suppression du compte devient définitive 30 jours après la demande (voir ci-dessous). Les données d’Analytics sont conservées pendant la durée réglée dans Google Analytics, et nos fournisseurs cloud conservent des sauvegardes de courte durée comme décrit dans leurs politiques.</p>" +
         "<h2>6. Supprimer votre compte et vos données</h2>" +
         "<p><strong>Dans l’application :</strong> ouvrez <strong>Paramètres → Confidentialité et données</strong> et choisissez <strong>Effacer toutes mes données</strong> (ou <strong>Supprimer le compte</strong> dans les Paramètres). Rien n’est supprimé immédiatement : la suppression est programmée 30 jours plus tard, et vous pouvez l’annuler jusque-là en vous connectant. Ensuite, votre compte et tout ce qu’il contient — enregistrements, véhicules, documents, trajets, photos, profil et publications — sont définitivement effacés.</p>" +
         "<p><strong>Si vous ne pouvez pas utiliser l’application</strong> (par exemple si vous avez perdu l’accès à votre appareil ou à votre e-mail), envoyez une <strong>demande de suppression du compte et des données</strong> via notre formulaire web. Nous vérifions que le compte vous appartient, puis nous le supprimons ou vous aidons à vous reconnecter :</p>" +
@@ -283,14 +289,14 @@
         "<h2>3. Bêta Android</h2>" +
         "<p>La version Android de GasTrack est en phase de test bêta fermée : ses fonctionnalités peuvent changer, être retirées ou se comporter de façon inattendue, et l’accès bêta peut être retiré à tout moment. Nous vous remercions pour vos retours et votre patience pendant cette période. La version iPhone est disponible publiquement sur l’App Store.</p>" +
         "<h2>4. Comptes utilisateurs</h2>" +
-        "<p>Vous devez créer un compte pour utiliser la plupart des fonctions. Vous êtes responsable de la sécurité de vos identifiants. Vous ne devez pas partager votre compte ni utiliser le compte d’une autre personne sans autorisation. Vous devez fournir des informations exactes lors de l’inscription. Vous devez avoir au moins 16 ans pour utiliser GasTrack, et vous le confirmez lorsque vous commencez à l’utiliser ; nous pouvons fermer un compte qui ne respecte pas cette règle.</p>" +
+        "<p>Vous pouvez utiliser GasTrack sans compte. Il en faut un pour ce qui implique d’autres personnes, comme les amis et les véhicules partagés, et pour retrouver vos données sur un autre appareil. Vous êtes responsable de la sécurité de vos identifiants. Vous ne devez pas partager votre compte ni utiliser le compte d’une autre personne sans autorisation. Vous devez fournir des informations exactes lors de l’inscription. Vous devez avoir au moins 16 ans pour utiliser GasTrack, et vous le confirmez lorsque vous commencez à l’utiliser ; nous pouvons fermer un compte qui ne respecte pas cette règle.</p>" +
         "<h2>5. Usage acceptable</h2>" +
         "<p>Vous acceptez de ne pas :</p>" +
         "<ul>" +
         "<li>utiliser l’app à des fins illégales ;</li>" +
         "<li>tenter d’effectuer de l’ingénierie inverse, de décompiler ou d’altérer l’app ;</li>" +
         "<li>publier du contenu faux, trompeur ou nuisible, y compris des notes communautaires ;</li>" +
-        "<li>harceler, usurper l’identité ou nuire à d’autres utilisateurs via les fonctions sociales ;</li>" +
+        "<li>harceler, usurper l’identité ou nuire à d’autres utilisateurs via les fonctions sociales. Nous ne tolérons ni les contenus inappropriés ni les utilisateurs abusifs : vous pouvez les signaler et les bloquer dans l’app, et nous retirons ce qui enfreint ces conditions et fermons les comptes responsables ;</li>" +
         "<li>tenter d’obtenir un accès non autorisé aux données d’autres utilisateurs ou à l’infrastructure de l’app ;</li>" +
         "<li>utiliser des outils automatisés pour extraire ou abuser des API de l’app.</li>" +
         "</ul>" +

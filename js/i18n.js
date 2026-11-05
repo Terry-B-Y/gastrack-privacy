@@ -90,11 +90,11 @@ const TRANSLATIONS = {
     invite_note: "If you use the code, the person who invited you will see your first name. This page knows only the code: nothing about you has reached us.",
 
     privacy_title: "GasTrack — Privacy Policy",
-    privacy_updated: "Last updated: 3 November 2026",
+    privacy_updated: "Last updated: 5 November 2026",
     privacy_intro:
       'This policy describes how <strong>GasTrack</strong> (\u201Cthe app\u201D) handles personal information when you use our mobile application. GasTrack is operated by <strong>Terry Boakye Yiadom</strong>, sole author. Distribution is currently a <strong>closed beta</strong> (not a public store listing yet). If you have questions, contact us at <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Terms of Service",
-    terms_updated: "Last updated: 3 November 2026",
+    terms_updated: "Last updated: 5 November 2026",
     terms_intro:
       "These terms govern your use of the GasTrack mobile application. By downloading or using GasTrack, you agree to these terms and to our Privacy Policy.",
     delete_meta_title: "GasTrack — Delete account",
@@ -221,11 +221,11 @@ const TRANSLATIONS = {
     invite_note: "Se usi il codice, chi ti ha invitato vedrà il tuo nome. Questa pagina conosce solo il codice: non ci è arrivato nulla su di te.",
 
     privacy_title: "GasTrack — Informativa sulla privacy",
-    privacy_updated: "Ultimo aggiornamento: 3 novembre 2026",
+    privacy_updated: "Ultimo aggiornamento: 5 novembre 2026",
     privacy_intro:
       'Questa informativa descrive come <strong>GasTrack</strong> (“l’app”) tratta i dati personali quando usi la nostra applicazione mobile. GasTrack è gestita da <strong>Terry Boakye Yiadom</strong>, unico autore. La distribuzione è attualmente una <strong>beta chiusa</strong> (non ancora scheda store pubblica). Per domande, contattaci a <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Termini di servizio",
-    terms_updated: "Ultimo aggiornamento: 3 novembre 2026",
+    terms_updated: "Ultimo aggiornamento: 5 novembre 2026",
     terms_intro:
       "Questi termini disciplinano l’uso dell’app mobile GasTrack. Scaricando o usando GasTrack, accetti questi termini e la nostra Informativa sulla privacy.",
     delete_meta_title: "GasTrack — Elimina account",
@@ -353,11 +353,11 @@ const TRANSLATIONS = {
     invite_note: "Si vous utilisez le code, la personne qui vous invite verra votre prénom. Cette page ne connaît que le code : rien sur vous ne nous est parvenu.",
 
     privacy_title: "GasTrack — Politique de confidentialité",
-    privacy_updated: "Dernière mise à jour : 3 novembre 2026",
+    privacy_updated: "Dernière mise à jour : 5 novembre 2026",
     privacy_intro:
       'Cette politique décrit comment <strong>GasTrack</strong> (« l’application ») traite les informations personnelles lorsque vous utilisez notre application mobile. GasTrack est exploitée par <strong>Terry Boakye Yiadom</strong>, auteur unique. La distribution est actuellement une <strong>bêta fermée</strong> (pas encore de fiche store publique). Pour toute question, contactez-nous à <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
     terms_title: "GasTrack — Conditions d’utilisation",
-    terms_updated: "Dernière mise à jour : 3 novembre 2026",
+    terms_updated: "Dernière mise à jour : 5 novembre 2026",
     terms_intro:
       "Les présentes conditions régissent votre utilisation de l’application mobile GasTrack. En téléchargeant ou en utilisant GasTrack, vous acceptez ces conditions et notre Politique de confidentialité.",
     delete_meta_title: "GasTrack — Supprimer le compte",
