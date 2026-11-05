@@ -110,6 +110,8 @@ const TRANSLATIONS = {
     delete_what_4: "Financial data and settings",
     delete_what_5: "Social profile, friends, and feed posts",
     delete_what_6: "Achievements and XP",
+    delete_kept:
+      "Usage statistics you allowed stay in Google Analytics for its retention period, tied to a random code, not to your name or email. Our cloud providers’ short-lived backups expire on their own.",
     delete_warning: "This action is irreversible. Once deleted, your data cannot be recovered.",
     delete_email_label: "Your email address",
     delete_email_placeholder: "email@example.com",
@@ -241,6 +243,8 @@ const TRANSLATIONS = {
     delete_what_4: "Dati finanziari e impostazioni",
     delete_what_5: "Profilo social, amici e post",
     delete_what_6: "Achievement e XP",
+    delete_kept:
+      "Le statistiche d’uso che hai consentito restano in Google Analytics per il suo periodo di conservazione, legate a un codice casuale, non al tuo nome o alla tua email. I backup di breve durata dei nostri fornitori cloud scadono da soli.",
     delete_warning: "Questa azione è irreversibile. Una volta eliminati, i dati non possono essere recuperati.",
     delete_email_label: "Il tuo indirizzo email",
     delete_email_placeholder: "email@esempio.com",
@@ -373,6 +377,8 @@ const TRANSLATIONS = {
     delete_what_4: "Données financières et paramètres",
     delete_what_5: "Profil social, amis et publications du fil",
     delete_what_6: "Succès et points d’expérience",
+    delete_kept:
+      "Les statistiques d’usage que vous avez autorisées restent dans Google Analytics pendant sa durée de conservation, liées à un code aléatoire, pas à votre nom ni à votre e-mail. Les sauvegardes de courte durée de nos fournisseurs cloud expirent d’elles-mêmes.",
     delete_warning:
       "Cette action est irréversible. Une fois supprimées, vos données ne pourront pas être récupérées.",
     delete_email_label: "Votre adresse e-mail",
