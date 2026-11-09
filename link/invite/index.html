@@ -12,6 +12,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#0A0A0F">
   <link rel="stylesheet" href="/css/style.css" />
+  <script>document.documentElement.classList.add("js")</script>
   <style>
     .invite-code { margin: 24px 0; padding: 20px; border: 1px solid var(--border, rgba(255, 255, 255, 0.12)); border-radius: 16px; max-width: 28rem; }
     .invite-code-value { font-size: 34px; font-weight: 600; letter-spacing: 0.14em; margin: 4px 0 14px; user-select: all; }
@@ -22,13 +23,16 @@
 </head>
 <body data-page="invite">
   <nav class="nav">
-    <a href="https://gastrack.eu/" class="nav-logo">GasTrack</a>
-    <div class="nav-links">
-      <div class="lang-switcher">
-        <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    <a href="/" class="nav-brand" aria-label="GasTrack"><img src="/assets/gt-logo.svg" alt="" width="62" height="17" /><span class="wordmark">GasTrack</span></a>
+    <div class="nav-end">
+      <a href="/privacy.html" class="nav-link" data-i18n="nav_privacy">Privacy</a>
+      <a href="/terms.html" class="nav-link" data-i18n="nav_terms">Terms</a>
+      <div class="lang-switcher" role="group" data-i18n-aria="lang_aria" aria-label="Language">
         <button type="button" class="lang-btn" data-lang="it" onclick="setLang('it')">IT</button>
+        <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
         <button type="button" class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
       </div>
+      <a class="nav-cta" href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer" data-get-app data-i18n="nav_get">Get the app</a>
     </div>
   </nav>
 
@@ -55,27 +59,40 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-logo">GasTrack · gastrack.eu</div>
-    <div class="footer-links">
-      <a href="https://gastrack.eu/privacy.html" class="footer-link" data-i18n="nav_privacy">Privacy</a>
-      <a href="https://gastrack.eu/terms.html" class="footer-link" data-i18n="nav_terms">Terms</a>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/gt-logo.svg" alt="GasTrack" width="76" height="21" />
+        <p class="footer-copy" data-i18n="footer_copy">© 2025–2026 GasTrack. All rights reserved.</p>
+      </div>
+      <div>
+        <h3 data-i18n="footer_app">App</h3>
+        <ul>
+          <li><a href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer">App Store</a></li>
+          <li><a href="/beta-access.html" data-i18n="footer_beta_access">Android beta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer_legal">Legal</h3>
+        <ul>
+          <li><a href="/privacy.html" data-i18n="nav_privacy">Privacy</a></li>
+          <li><a href="/terms.html" data-i18n="nav_terms">Terms</a></li>
+          <li><a href="/delete-account.html" data-i18n="footer_delete_account">Delete account</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3 data-i18n="footer_contact">Contact</h3>
+        <ul>
+          <li><a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a></li>
+        </ul>
+      </div>
     </div>
   </footer>
 
   <script src="/js/legal-translations.js"></script>
   <script src="/js/i18n.js"></script>
+  <script src="/js/site.js"></script>
   <script>
     (function () {
-      // Someone arriving from a friend's message has chosen nothing yet: the phone's language, not stored.
-      if (!localStorage.getItem("gt_lang")) {
-        var phone = (navigator.language || "").slice(0, 2);
-        if (phone === "it" || phone === "fr") {
-          currentLang = phone;
-          applyTranslations();
-          document.documentElement.lang = phone;
-        }
-      }
-
       var raw = new URLSearchParams(location.search).get("c") || "";
       var code = /^[A-HJKMNP-Z2-9]{6}$/.test(raw.toUpperCase()) ? raw.toUpperCase() : "";
       if (code) {
