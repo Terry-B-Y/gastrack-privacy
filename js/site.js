@@ -219,6 +219,19 @@
     steps.forEach(function (step) { watch.observe(step); });
   }
 
+  /* ——— The ladder of ranks: lit from Bronze up to the example driver's rank ——— */
+  function initLadder() {
+    var ladder = $(".ladder");
+    if (!ladder) return;
+    if (calm || !("IntersectionObserver" in window)) { ladder.classList.add("go"); return; }
+    var seen = new IntersectionObserver(function (entries) {
+      if (!entries[0].isIntersecting) return;
+      seen.disconnect();
+      ladder.classList.add("go");
+    }, { threshold: 0.6 });
+    seen.observe(ladder);
+  }
+
   /* ——— Contents of the legal pages, rebuilt from their headings in each language ——— */
   var tocWatch = null;
 
@@ -287,6 +300,7 @@
   initPump();
   initFilm();
   initTour();
+  initLadder();
   initToc();
   initAndroid();
 })();
