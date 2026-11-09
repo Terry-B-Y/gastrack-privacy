@@ -945,11 +945,12 @@ html:not([lang="en"]) .pump-euro {
 }
 
 .end-contact {
-  max-width: 34em;
-  margin: 40px auto 0;
+  justify-content: center;
+  margin-top: 28px;
 }
-.end-contact a {
-  white-space: nowrap;
+.end-contact .btn {
+  min-height: 46px;
+  font-size: 1rem;
 }
 
 /* ——— Footer ——— */
@@ -1082,6 +1083,15 @@ html:not([lang="en"]) .pump-euro {
   text-decoration: underline;
   text-underline-offset: 2px;
   overflow-wrap: anywhere;
+}
+
+.legal-action {
+  margin-block: 1.1em 0.4em;
+}
+
+.legal a.btn {
+  color: var(--text);
+  text-decoration: none;
 }
 
 .doc-contact {
@@ -1218,7 +1228,15 @@ html:not([lang="en"]) .pump-euro {
 .form-error {
   margin-bottom: 14px;
   font-size: 0.9375rem;
+}
+.form-error p {
+  margin-bottom: 10px;
   color: var(--danger);
+}
+.form-error .btn {
+  width: 100%;
+  min-height: 46px;
+  font-size: 1rem;
 }
 
 .deletion-warning {
