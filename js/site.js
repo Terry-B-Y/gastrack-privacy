@@ -274,13 +274,51 @@
     });
   }
 
+  /* ——— On a computer, "get the app" asks which phone it is for ——— */
+  var chooser = null;
+
+  function drawChooser() {
+    if (!chooser) return;
+    var dict = TRANSLATIONS[currentLang];
+    $("#choose-title", chooser).textContent = dict.choose_title;
+    $("[data-note]", chooser).textContent = dict.choose_android;
+    $(".choose-close", chooser).setAttribute("aria-label", dict.choose_close);
+  }
+
+  function initChooser() {
+    var dialog = document.createElement("dialog");
+    if (typeof dialog.showModal !== "function") return;
+    dialog.className = "choose";
+    dialog.setAttribute("aria-labelledby", "choose-title");
+    dialog.innerHTML =
+      '<div class="choose-inner">' +
+      '<button type="button" class="choose-close"><span aria-hidden="true">\u00D7</span></button>' +
+      '<h2 id="choose-title"></h2>' +
+      '<div class="choose-row">' +
+      '<a href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer"><strong>iPhone</strong><span>App Store</span></a>' +
+      '<a href="/beta-access.html"><strong>Android</strong><span data-note></span></a>' +
+      "</div></div>";
+    document.body.appendChild(dialog);
+    chooser = dialog;
+    drawChooser();
+    $(".choose-close", dialog).addEventListener("click", function () { dialog.close(); });
+    // The backdrop counts as the dialog itself; everything inside is the inner box.
+    dialog.addEventListener("click", function (e) { if (e.target === dialog) dialog.close(); });
+    $$("[data-get-app]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        dialog.showModal();
+      });
+    });
+  }
+
   /* ——— Each phone sees only what it can install; a computer sees both ——— */
   function initPlatform() {
     var ua = navigator.userAgent;
     var android = /android/i.test(ua);
     // An iPad reports itself as a Mac; only the touch screen gives it away.
     var ios = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    if (!android && !ios) return;
+    if (!android && !ios) { initChooser(); return; }
     if (android) $$("[data-get-app]").forEach(function (a) { a.href = "/beta-access.html"; });
     $$("[data-store]").forEach(function (store) {
       var iosLink = $("[data-ios]", store), androidLink = $("[data-android]", store);
@@ -301,6 +339,7 @@
     drawPictures();
     resetFilm();
     buildToc();
+    drawChooser();
   }
 
   document.addEventListener("gt:lang", drawForLanguage);

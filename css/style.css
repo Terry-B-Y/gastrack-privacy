@@ -383,6 +383,87 @@ strong {
   background: #ffb63d;
 }
 
+/* ——— "Which phone do you have?" on a computer ——— */
+.choose {
+  width: min(460px, calc(100vw - 32px));
+  margin: auto;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+}
+.choose::backdrop {
+  background: rgba(5, 5, 8, 0.74);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+.choose-inner {
+  position: relative;
+  padding: 28px;
+}
+
+.choose h2 {
+  margin-bottom: 20px;
+  padding-right: 36px;
+  font-size: 2.25rem;
+}
+
+.choose-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  font-size: 1.625rem;
+  line-height: 1;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.choose-close:hover {
+  color: var(--text);
+  background: var(--raised);
+}
+
+.choose-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.choose-row a {
+  display: block;
+  padding: 20px 18px;
+  color: var(--text);
+  background: var(--ground);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  transition: border-color 0.15s, transform 0.15s;
+}
+.choose-row a:hover {
+  border-color: var(--gold);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.choose-row strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.choose-row span {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
 /* ——— Buttons ——— */
 .btn-row {
   display: flex;
