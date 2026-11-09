@@ -48,9 +48,9 @@
         <button type="button" class="btn btn-secondary" id="invite-copy" data-i18n="invite_copy">Copy code</button>
       </div>
 
-      <div class="btn-row" id="invite-actions" style="margin: 24px 0;">
-        <a class="btn btn-primary" id="invite-ios" href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer" data-i18n="invite_ios">Download on the App Store</a>
-        <a class="btn btn-secondary" id="invite-android" href="/beta-access.html" data-i18n="invite_android">Request the Android beta</a>
+      <div class="btn-row" id="invite-actions" data-store style="margin: 24px 0;">
+        <a class="btn btn-primary" id="invite-ios" data-ios href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer" data-i18n="invite_ios">Download on the App Store</a>
+        <a class="btn btn-secondary" id="invite-android" data-android href="/beta-access.html" data-i18n="invite_android">Request the Android beta</a>
       </div>
 
       <ol class="invite-steps" data-i18n="invite_steps_html" data-i18n-html="true"></ol>
@@ -107,14 +107,6 @@
           copy.textContent = TRANSLATIONS[currentLang].invite_copied;
         });
       });
-      // The button for the phone in hand comes first.
-      if (/android/i.test(navigator.userAgent)) {
-        var ios = document.getElementById("invite-ios");
-        var android = document.getElementById("invite-android");
-        ios.className = "btn btn-secondary";
-        android.className = "btn btn-primary";
-        ios.parentNode.insertBefore(android, ios);
-      }
     })();
   </script>
 </body>

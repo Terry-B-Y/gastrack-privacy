@@ -274,16 +274,24 @@
     });
   }
 
-  /* ——— The button for the phone in hand comes first ——— */
-  function initAndroid() {
-    if (!/android/i.test(navigator.userAgent)) return;
-    $$("[data-get-app]").forEach(function (a) { a.href = "/beta-access.html"; });
+  /* ——— Each phone sees only what it can install; a computer sees both ——— */
+  function initPlatform() {
+    var ua = navigator.userAgent;
+    var android = /android/i.test(ua);
+    // An iPad reports itself as a Mac; only the touch screen gives it away.
+    var ios = /iphone|ipad|ipod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    if (!android && !ios) return;
+    if (android) $$("[data-get-app]").forEach(function (a) { a.href = "/beta-access.html"; });
     $$("[data-store]").forEach(function (store) {
-      var ios = $("[data-ios]", store), android = $("[data-android]", store);
-      if (!ios || !android) return;
-      android.classList.remove("btn-secondary");
-      android.classList.add("btn-primary");
-      store.insertBefore(android, ios);
+      var iosLink = $("[data-ios]", store), androidLink = $("[data-android]", store);
+      if (!iosLink || !androidLink) return;
+      if (android) {
+        androidLink.classList.remove("btn-secondary");
+        androidLink.classList.add("btn-primary");
+        iosLink.hidden = true;
+      } else {
+        androidLink.hidden = true;
+      }
     });
   }
 
@@ -302,5 +310,5 @@
   initTour();
   initLadder();
   initToc();
-  initAndroid();
+  initPlatform();
 })();
