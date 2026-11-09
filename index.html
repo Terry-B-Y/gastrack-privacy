@@ -3,118 +3,237 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GasTrack — Your vehicle, under control.</title>
-  <meta name="description" content="GasTrack — fuel, parking, maintenance, and real costs. Request closed beta access via the form on gastrack.eu. Not publicly listed in stores yet." />
+  <title>GasTrack · You see the fill-up. Not the rest.</title>
+  <meta name="description" content="GasTrack puts fuel, servicing, insurance and parking on one bill, so you know what your car really costs. On the App Store for iPhone; Android in beta." />
+  <meta name="apple-itunes-app" content="app-id=6762223301" />
   <meta name="copyright" content="© 2025–2026 GasTrack. All rights reserved." />
-  <!-- Favicon -->
+  <!-- What a shared link shows. Italian, because that is who it gets shared with first. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GasTrack" />
+  <meta property="og:url" content="https://gastrack.eu/" />
+  <meta property="og:title" content="GasTrack · Il pieno lo vedi. Il resto no." />
+  <meta property="og:description" content="Carburante, manutenzione, assicurazione e parcheggio in un conto solo, così sai quanto ti costa davvero l’auto." />
+  <meta property="og:image" content="https://gastrack.eu/assets/media/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:locale:alternate" content="en_GB" />
+  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <!-- PWA / social sharing -->
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0A0A0F">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/barlow-semi-condensed-800-normal-latin.woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css" />
+  <script>document.documentElement.classList.add("js")</script>
 </head>
 <body data-page="home">
   <nav class="nav">
-    <a href="https://gastrack.eu/" class="nav-logo">GasTrack</a>
-    <div class="nav-links">
-      <a href="https://gastrack.eu/" class="nav-link active" data-i18n="nav_home">Home</a>
-      <a href="https://gastrack.eu/privacy.html" class="nav-link" data-i18n="nav_privacy">Privacy</a>
-      <a href="https://gastrack.eu/terms.html" class="nav-link" data-i18n="nav_terms">Terms</a>
-      <div class="lang-switcher">
-        <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    <a href="/" class="nav-brand" aria-label="GasTrack"><img src="/assets/gt-logo.svg" alt="" width="62" height="17" /><span class="wordmark">GasTrack</span></a>
+    <div class="nav-end">
+      <a href="/privacy.html" class="nav-link" data-i18n="nav_privacy">Privacy</a>
+      <a href="/terms.html" class="nav-link" data-i18n="nav_terms">Terms</a>
+      <div class="lang-switcher" role="group" data-i18n-aria="lang_aria" aria-label="Language">
         <button type="button" class="lang-btn" data-lang="it" onclick="setLang('it')">IT</button>
+        <button type="button" class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
         <button type="button" class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
       </div>
+      <a class="nav-cta" href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer" data-get-app data-i18n="nav_get">Get the app</a>
     </div>
   </nav>
 
   <main>
-    <section class="hero container">
-      <div class="badge fade-in delay-1"><span aria-hidden="true">⚡</span> <span data-i18n="home_badge">Closed beta</span></div>
-      <h1 class="display fade-in delay-1">
-        <span data-i18n="home_headline_1">Your vehicle,</span><br />
-        <span class="accent fade-in delay-2" data-i18n="home_headline_2">under control.</span>
-      </h1>
-      <p class="sub fade-in delay-3" data-i18n="home_sub" data-i18n-html="true">GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. The app is in a <strong>closed beta</strong> (not a public store listing yet). Use the <strong>beta request form</strong> on this site to ask to be added.</p>
-      <div class="btn-row fade-in delay-4">
-        <a class="btn btn-primary" href="https://gastrack.eu/beta-access.html" rel="noopener noreferrer" data-i18n="home_cta_primary">Request beta access</a>
-        <a class="btn btn-secondary" href="mailto:support.gastrack@gmail.com?subject=GasTrack%20%E2%80%94%20beta%20feedback" rel="noopener noreferrer" data-i18n="home_cta_secondary">Beta feedback</a>
+    <section class="hero">
+      <img class="hero-mark" src="/assets/gt-mark.svg" alt="" aria-hidden="true" />
+      <div class="wrap hero-grid">
+        <div>
+          <p class="status" data-i18n="home_badge">On the App Store · Android in beta</p>
+          <h1 class="headline">
+            <span data-i18n="home_h1_a">You see the fill-up.</span>
+            <span class="lights-up" data-i18n="home_h1_b">Not the rest.</span>
+          </h1>
+          <p class="sub" data-i18n="home_sub">GasTrack puts fuel, servicing, insurance and parking on one bill, so you know what your car really costs.</p>
+          <div class="store" data-store>
+            <a class="store-badge" href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer" data-ios>
+              <img src="/assets/badges/app-store-en.svg" data-badge data-i18n-alt="home_store_alt" alt="Download on the App Store" width="162" height="54" />
+            </a>
+            <a class="btn btn-secondary" href="/beta-access.html" data-android data-i18n="home_android">Android beta access</a>
+          </div>
+        </div>
+
+        <aside class="pump" id="pump">
+          <div class="pump-plate">
+            <span class="pump-label" data-i18n="pump_label">Total, one year</span>
+            <div class="pump-read">
+              <span class="pump-euro" aria-hidden="true">€</span>
+              <span class="seg" id="pump-digits" role="img"></span>
+            </div>
+          </div>
+          <ul class="pump-rows">
+            <li style="--c: var(--cost-fuel)"><span class="pump-dot"></span><span data-i18n="cost_fuel">Fuel</span><span class="pump-bar"><i></i></span><span class="pump-amount"></span></li>
+            <li style="--c: var(--cost-service)"><span class="pump-dot"></span><span data-i18n="cost_service">Service</span><span class="pump-bar"><i></i></span><span class="pump-amount"></span></li>
+            <li style="--c: var(--cost-insurance)"><span class="pump-dot"></span><span data-i18n="cost_insurance">Insurance</span><span class="pump-bar"><i></i></span><span class="pump-amount"></span></li>
+            <li style="--c: var(--cost-oneoff)"><span class="pump-dot"></span><span data-i18n="cost_oneoff">One-off</span><span class="pump-bar"><i></i></span><span class="pump-amount"></span></li>
+            <li style="--c: var(--cost-parking)"><span class="pump-dot"></span><span data-i18n="cost_parking">Parking</span><span class="pump-bar"><i></i></span><span class="pump-amount"></span></li>
+          </ul>
+          <p class="pump-note" data-i18n="pump_note">La C4, one year of costs · demo garage in the app</p>
+        </aside>
       </div>
     </section>
 
-    <section class="section container">
-      <span class="label fade-in" data-i18n="home_features_label">What GasTrack does</span>
-      <div class="features-grid">
-        <article class="card card-accent fade-in delay-1">
-          <div class="feat-emoji" aria-hidden="true">⛽</div>
-          <h2 class="feat-title" data-i18n="home_feat1_title">Fuel tracking</h2>
-          <p class="feat-body" data-i18n="home_feat1_body">Log every fill-up, track consumption, and spot trends. Supports petrol, diesel, LPG, methane, electric, and hybrid vehicles.</p>
-        </article>
-        <article class="card card-accent fade-in delay-2">
-          <div class="feat-emoji" aria-hidden="true">🅿️</div>
-          <h2 class="feat-title" data-i18n="home_feat2_title">Parking &amp; maintenance</h2>
-          <p class="feat-body" data-i18n="home_feat2_body">Never lose track of a parking session or service record. GasTrack keeps your full vehicle history in one place.</p>
-        </article>
-        <article class="card card-accent fade-in delay-3">
-          <div class="feat-emoji" aria-hidden="true">📊</div>
-          <h2 class="feat-title" data-i18n="home_feat3_title">Real costs</h2>
-          <p class="feat-body" data-i18n="home_feat3_body">See what your vehicle actually costs per month — fuel, insurance, tax, finance, maintenance, all in one dashboard.</p>
-        </article>
-        <article class="card card-accent fade-in delay-4">
-          <div class="feat-emoji" aria-hidden="true">📡</div>
-          <h2 class="feat-title" data-i18n="home_feat4_title">Radar</h2>
-          <p class="feat-body" data-i18n="home_feat4_body" data-i18n-html="true">Find nearby fuel stations with live prices and community ratings. Fuel Radar is in testing with the rest of the app.</p>
-        </article>
-        <article class="card card-accent fade-in delay-5">
-          <div class="feat-emoji" aria-hidden="true">👥</div>
-          <h2 class="feat-title" data-i18n="home_feat5_title">Social</h2>
-          <p class="feat-body" data-i18n="home_feat5_body">Compare efficiency with friends, share achievements, and see how your driving stacks up.</p>
-        </article>
-        <article class="card card-accent fade-in delay-6">
-          <div class="feat-emoji" aria-hidden="true">🏆</div>
-          <h2 class="feat-title" data-i18n="home_feat6_title">Gamification</h2>
-          <p class="feat-body" data-i18n="home_feat6_body">Earn XP, level up, and unlock achievements as you track your vehicle. Staying on top of costs has never been this satisfying.</p>
-        </article>
+    <section class="film wrap" id="film">
+      <div class="film-head">
+        <h2 data-i18n="film_title">The real app, in 22 seconds.</h2>
+        <p class="film-credit" data-i18n="film_credit">Music: Sascha Ende, ende.app (CC BY 4.0)</p>
+      </div>
+      <div class="film-frame">
+        <video id="film-video" playsinline preload="none"></video>
+        <button type="button" class="film-play" id="film-play" data-i18n-aria="film_play" aria-label="Play the video">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19L21 12z" /></svg></span>
+        </button>
       </div>
     </section>
 
-    <section class="section container section--tight">
-      <div class="card fade-in" style="text-align: center; max-width: 520px; margin: 0 auto;">
-        <span class="label" data-i18n="home_contact_label">Contact</span>
-        <h2 style="font-size: 1.5rem; margin-bottom: 12px;" data-i18n="home_contact_title">Questions or feedback?</h2>
-        <p style="margin-bottom: 20px;" data-i18n="home_contact_body" data-i18n-html="true">GasTrack is built by an independent developer. Use the <strong>beta access form</strong> to request an invite, or email us for anything else — we read every message.</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center;">
-          <a class="btn btn-primary" href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>
-          <a
-            class="btn btn-ghost"
-            href="https://www.linkedin.com/in/terry-boakye-yiadom-a8738426a/"
-            rel="me noopener noreferrer"
-            target="_blank"
-            data-i18n="home_contact_linkedin"
-          >LinkedIn</a>
+    <section class="tour">
+      <div class="wrap tour-grid">
+        <div class="tour-steps">
+          <article class="step" data-step="costs">
+            <span class="plate"><span class="plate-read"><span class="plate-euro" aria-hidden="true">€</span><span class="seg" data-num="219.77" data-dec="2"></span></span><span class="plate-unit" data-i18n="step1_unit">a month</span></span>
+            <h2 data-i18n="step1_title">One bill for the whole car.</h2>
+            <p data-i18n="step1_body">Fuel, servicing, insurance, road tax, fines and parking. Log it once, then see what the car costs you every month and every kilometre.</p>
+            <div class="phone phone--inline"><div class="phone-screen"><img data-shot="costs" data-i18n-alt="shot_costs" alt="" loading="lazy" /></div></div>
+          </article>
+
+          <article class="step" data-step="radar">
+            <span class="plate"><span class="plate-read"><span class="plate-euro" aria-hidden="true">€</span><span class="seg" data-num="1.96" data-dec="3"></span></span><span class="plate-unit" data-i18n="step2_unit">per litre, cheapest within 10 km</span></span>
+            <h2 data-i18n="step2_title">The cheapest fill-up, near you.</h2>
+            <p data-i18n="step2_body">Official Italian prices, every day, from the Ministry’s open data. Chargers, parking and workshops are on the map too.</p>
+            <div class="phone phone--inline"><div class="phone-screen"><img data-shot="radar" data-i18n-alt="shot_radar" alt="" loading="lazy" /></div></div>
+          </article>
+
+          <article class="step" data-step="due">
+            <span class="plate"><span class="plate-read"><span class="seg" data-num="21"></span></span><span class="plate-unit" data-i18n="step3_unit">days to the road tax</span></span>
+            <h2 data-i18n="step3_title">Road tax and MOT? No surprises.</h2>
+            <p data-i18n="step3_body">Everything with a date lands on one timeline: insurance, road tax, inspection, servicing. We’ll remind you before it’s due.</p>
+            <div class="phone phone--inline"><div class="phone-screen"><img data-shot="due" data-i18n-alt="shot_due" alt="" loading="lazy" /></div></div>
+          </article>
+
+          <article class="step" data-step="home">
+            <span class="plate"><span class="plate-read"><span class="seg" data-num="555"></span></span><span class="plate-unit" data-i18n="step4_unit">km left</span></span>
+            <h2 data-i18n="step4_title">How far the tank will go.</h2>
+            <p data-i18n="step4_body">Worked out from your own fill-ups, not from a brochure. The more you log, the closer it gets.</p>
+            <div class="phone phone--inline"><div class="phone-screen"><img data-shot="home" data-i18n-alt="shot_home" alt="" loading="lazy" /></div></div>
+          </article>
+
+          <article class="step" data-step="ranks">
+            <span class="plate"><span class="plate-read"><span class="seg" data-num="7"></span></span><span class="plate-unit" data-i18n="step5_unit">level, Platinum V</span></span>
+            <h2 data-i18n="step5_title" data-i18n-html="true">Bronze today.<br />Legendary one day.</h2>
+            <p data-i18n="step5_body">Every fill-up earns points. Climb seven ranks, collect badges and take on three new missions every week. Some badges are so rare that only a handful of drivers have them.</p>
+            <ol class="ladder">
+              <li style="--c: #F0445E; --w: 100%; --i: 6"><span data-i18n="rank_legendary">Legendary</span></li>
+              <li style="--c: #6FA8FF; --w: 91%; --i: 5"><span data-i18n="rank_diamond">Diamond</span></li>
+              <li style="--c: #2EBD6B; --w: 82%; --i: 4"><span data-i18n="rank_emerald">Emerald</span></li>
+              <li class="earned" style="--c: #4FC3C3; --w: 73%; --i: 3"><span data-i18n="rank_platinum">Platinum</span></li>
+              <li class="earned" style="--c: #E2B33C; --w: 64%; --i: 2"><span data-i18n="rank_gold">Gold</span></li>
+              <li class="earned" style="--c: #9AA4B2; --w: 55%; --i: 1"><span data-i18n="rank_silver">Silver</span></li>
+              <li class="earned" style="--c: #CD7F32; --w: 46%; --i: 0"><span data-i18n="rank_bronze">Bronze</span></li>
+            </ol>
+            <div class="phone phone--inline"><div class="phone-screen"><img data-shot="ranks" data-i18n-alt="shot_ranks" alt="" loading="lazy" /></div></div>
+          </article>
+
+          <p class="tour-note" data-i18n="tour_note">Screens and figures from the demo garage in the app.</p>
+        </div>
+
+        <div class="tour-phone" aria-hidden="true">
+          <div class="phone"><div class="phone-screen">
+            <img data-shot="costs" class="on" alt="" />
+            <img data-shot="radar" alt="" />
+            <img data-shot="due" alt="" />
+            <img data-shot="home" alt="" />
+            <img data-shot="ranks" alt="" />
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="also wrap">
+      <h2 data-i18n="also_title">And there’s more.</h2>
+      <ul class="also-grid">
+        <li><h3 data-i18n="also1_t">Every fuel</h3><p data-i18n="also1_b">Petrol, diesel, LPG, CNG, hybrid, electric. Two-tank cars too.</p></li>
+        <li><h3 data-i18n="also2_t">Trips</h3><p data-i18n="also2_b">What a journey will cost before you set off.</p></li>
+        <li><h3 data-i18n="also3_t">Passport</h3><p data-i18n="also3_b">The car’s whole history in one PDF, for you or the next buyer.</p></li>
+        <li><h3 data-i18n="also4_t">Sharing</h3><p data-i18n="also4_b">A co-driver can log fuel and services. By invitation only.</p></li>
+        <li><h3 data-i18n="also5_t">Work car</h3><p data-i18n="also5_b">Self-employed? Your accountant has it all at year end.</p></li>
+        <li><h3 data-i18n="also6_t">Friends</h3><p data-i18n="also6_b">See how you stack up against your friends, and show off your badges.</p></li>
+      </ul>
+    </section>
+
+    <section class="band">
+      <div class="wrap band-grid">
+        <div>
+          <h2 data-i18n="band_title">Your numbers are yours.</h2>
+          <p data-i18n="band_body">You can use GasTrack without an account, and delete everything whenever you want.</p>
+          <a href="/privacy.html" data-i18n="band_link">Read the privacy policy</a>
+        </div>
+        <ul class="band-list">
+          <li data-i18n="band_1">No ads.</li>
+          <li data-i18n="band_2">No data sold.</li>
+          <li data-i18n="band_3">Stored in the EU.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="end">
+      <img class="end-mark" src="/assets/gt-mark.svg" alt="" aria-hidden="true" />
+      <div class="wrap">
+        <h2 data-i18n="end_title" data-i18n-html="true">Now you see <em>the rest.</em></h2>
+        <div class="store" data-store>
+          <a class="store-badge" href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer" data-ios>
+            <img src="/assets/badges/app-store-en.svg" data-badge data-i18n-alt="home_store_alt" alt="Download on the App Store" width="162" height="54" />
+          </a>
+          <a class="btn btn-secondary" href="/beta-access.html" data-android data-i18n="home_android">Android beta access</a>
+        </div>
+        <div class="btn-row end-contact">
+          <a class="btn btn-ghost" href="mailto:support.gastrack@gmail.com" data-i18n="contact_write">Write to us</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/terry-boakye-yiadom-a8738426a/" rel="me noopener noreferrer" target="_blank">LinkedIn</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-logo">GasTrack · gastrack.eu</div>
-    <div class="footer-links">
-      <a href="https://gastrack.eu/" class="footer-link" data-i18n="nav_home">Home</a>
-      <a href="https://gastrack.eu/privacy.html" class="footer-link" data-i18n="nav_privacy">Privacy</a>
-      <a href="https://gastrack.eu/terms.html" class="footer-link" data-i18n="nav_terms">Terms</a>
-      <a href="https://gastrack.eu/beta-access.html" class="footer-link" data-i18n="footer_beta_access">Beta access</a>
-      <a href="https://gastrack.eu/delete-account.html" class="footer-link" data-i18n="footer_delete_account" style="color: var(--text-tertiary);">Delete account</a>
-      <a href="mailto:support.gastrack@gmail.com" class="footer-link">support.gastrack@gmail.com</a>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/gt-logo.svg" alt="GasTrack" width="76" height="21" />
+        <p class="footer-copy" data-i18n="footer_copy">© 2025–2026 GasTrack. All rights reserved.</p>
+      </div>
+      <div>
+        <h3 data-i18n="footer_app">App</h3>
+        <ul>
+          <li><a href="https://apps.apple.com/app/id6762223301" rel="noopener noreferrer">App Store</a></li>
+          <li><a href="/beta-access.html" data-i18n="footer_beta_access">Android beta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 data-i18n="footer_legal">Legal</h3>
+        <ul>
+          <li><a href="/privacy.html" data-i18n="nav_privacy">Privacy</a></li>
+          <li><a href="/terms.html" data-i18n="nav_terms">Terms</a></li>
+          <li><a href="/delete-account.html" data-i18n="footer_delete_account">Delete account</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3 data-i18n="footer_contact">Contact</h3>
+        <ul>
+          <li><a href="mailto:support.gastrack@gmail.com" data-i18n="contact_write">Write to us</a></li>
+        </ul>
+      </div>
     </div>
-    <p class="footer-copy" data-i18n="footer_copy">© 2025–2026 GasTrack. All rights reserved.</p>
   </footer>
-  <script src="js/i18n.js"></script>
+  <script src="/js/i18n.js"></script>
+  <script src="/js/site.js"></script>
 </body>
 </html>

@@ -1,96 +1,58 @@
 /**
- * GasTrack public site — i18n + motion (Task 53)
- * No frameworks. Relative paths only.
+ * GasTrack public site: the texts in three languages, and the language switch. No frameworks.
+ * Fires `gt:lang` after every change so js/site.js can redraw numbers, pictures and the film.
  */
 
 const TRANSLATIONS = {
   en: {
     nf_badge: "GasTrack link",
     nf_title_generic: "Page not found",
-    nf_sub_generic:
-      "That page doesn\u2019t exist. The links below will get you where you\u2019re going.",
+    nf_sub_generic: "That page doesn’t exist. The links below will get you where you’re going.",
     nf_title_link: "Open this in GasTrack",
-    nf_sub_link:
-      "This link opens inside the GasTrack app. If you have it installed, it will have opened already \u2014 otherwise the app is still in closed beta, and you can request access below.",
-    nf_cta_beta: "Request beta access",
+    nf_sub_link: "This link opens inside the GasTrack app. If you have it, it has already opened. If not, get it on the App Store for iPhone, or ask to try it on Android below.",
+    nf_cta_beta: "Try it on Android",
+    nf_cta_store: "Download on the App Store",
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Terms",
-    home_badge: "Closed beta",
-    home_headline_1: "Your vehicle,",
-    home_headline_2: "under control.",
-    home_sub:
-      "GasTrack helps you track fuel, parking, maintenance, and real costs — with optional radar, social, and gamification. Built for drivers who want clarity, not clutter. The app is in a <strong>closed beta</strong> (not a public store listing yet). Use the <strong>beta request form</strong> on this site to ask to be added.",
-    home_meta_description:
-      "GasTrack — fuel, parking, maintenance, and real costs. Request closed beta access via the form on gastrack.eu. Not publicly listed in stores yet.",
-    home_cta_primary: "Request beta access",
-    home_cta_secondary: "Beta feedback",
-    home_features_label: "What GasTrack does",
-    home_feat1_title: "Fuel tracking",
-    home_feat1_body:
-      "Log every fill-up, track consumption, and spot trends. Supports petrol, diesel, LPG, methane, electric, and hybrid vehicles.",
-    home_feat2_title: "Parking & maintenance",
-    home_feat2_body:
-      "Never lose track of a parking session or service record. GasTrack keeps your full vehicle history in one place.",
-    home_feat3_title: "Real costs",
-    home_feat3_body:
-      "See what your vehicle actually costs per month — fuel, insurance, tax, finance, maintenance, all in one dashboard.",
-    home_feat4_title: "Radar",
-    home_feat4_body:
-      "Find nearby fuel stations with live prices and community ratings. Fuel Radar is in testing with the rest of the app.",
-    home_feat5_title: "Social",
-    home_feat5_body:
-      "Compare efficiency with friends, share achievements, and see how your driving stacks up.",
-    home_feat6_title: "Gamification",
-    home_feat6_body:
-      "Earn XP, level up, and unlock achievements as you track your vehicle. Staying on top of costs has never been this satisfying.",
-    home_contact_label: "Contact",
-    home_contact_title: "Questions or feedback?",
-    home_contact_body:
-      "GasTrack is built by an independent developer. Use the <strong>beta access form</strong> to request an invite, or email us for anything else — we read every message.",
-    home_contact_linkedin: "LinkedIn",
-
-    beta_meta_title: "GasTrack — Request beta access",
-    beta_meta_description:
-      "Apply for the GasTrack closed beta. Provide your details and confirm the Terms, Privacy, and beta limitations.",
-
+    beta_meta_title: "GasTrack · Try it on Android",
+    beta_meta_description: "Ask to try GasTrack on Android. On iPhone, GasTrack is on the App Store.",
     beta_back: "← Back to home",
-    beta_eyebrow: "CLOSED BETA",
-    beta_title: "Request beta access",
-    beta_intro_html:
-      "<p>Use this form to ask to join the <strong>closed beta</strong>. We read every request. We may email you if a spot opens. This creates <strong>no obligation</strong> on either side — it is only a request to be considered.</p>",
-    beta_notice_html:
-      "<p><strong>What we use your answers for:</strong> we use what you submit here only to decide whether to invite you to the beta and to reply at the email you give. Full details are in our <a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>.</p><p><strong>Plain language, not legal advice:</strong> if you need advice for your situation, speak to a qualified professional.</p>",
-
+    beta_eyebrow: "ANDROID · BY REQUEST",
+    beta_title: "Ask to try GasTrack on Android",
+    beta_intro_html: "<p>On <strong>iPhone</strong>, GasTrack is on the <a href=\"https://apps.apple.com/app/id6762223301\" target=\"_blank\" rel=\"noopener noreferrer\">App Store</a>, no invite needed. On <strong>Android</strong> only a small group is trying it so far: use this form to ask to join. We read every request and may email you if a spot opens. This creates <strong>no obligation</strong> on either side — it is only a request to be considered.</p>",
+    beta_notice_html: "<p><strong>What we use your answers for:</strong> we use what you submit here only to decide whether to invite you to the beta and to reply at the email you give. Full details are in our <a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>.</p><p><strong>Plain language, not legal advice:</strong> if you need advice for your situation, speak to a qualified professional.</p>",
     beta_label_first_name: "First name",
     beta_label_surname: "Surname",
     beta_label_email: "Email address",
-    beta_label_why: "Why do you want to join? (helps us prioritise)",
-    beta_placeholder_why: "e.g. I want to track fuel and costs; I am happy to report bugs…",
-
-    beta_consent_html:
-      'I have read and agree to the <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Terms of Service</a> and the <a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a>. I understand that GasTrack is <strong>beta software</strong>: it may be incomplete, unstable, or change without notice; there are <strong>no warranties</strong> of any kind; data loss or errors are possible; and there is <strong>no guarantee</strong> of availability, features, or support. I am joining voluntarily. I consent to the operator using my details only to assess this request and to contact me about beta access, as explained in the Privacy Policy. I confirm that the information I provide is accurate to the best of my knowledge.',
-
+    beta_label_why: "Why would you like to try it?",
+    beta_placeholder_why: "e.g. I want to know what my car really costs, and I’m happy to tell you what doesn’t work…",
+    beta_consent_html: "I have read and agree to the <a href=\"https://gastrack.eu/terms.html\" target=\"_blank\" rel=\"noopener noreferrer\">Terms of Service</a> and the <a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Privacy Policy</a>. I understand that GasTrack is <strong>beta software</strong>: it may be incomplete, unstable, or change without notice; there are <strong>no warranties</strong> of any kind; data loss or errors are possible; and there is <strong>no guarantee</strong> of availability, features, or support. I am joining voluntarily. I consent to the operator using my details only to assess this request and to contact me about beta access, as explained in the Privacy Policy. I confirm that the information I provide is accurate to the best of my knowledge.",
     beta_submit: "Submit request",
     beta_success_title: "Request received",
-    beta_success_body:
-      "Thank you. If we can offer you beta access, we will contact you at the email address you provided. We cannot reply to every submission.",
-    beta_success_footer: "Questions? support.gastrack@gmail.com",
-
+    beta_success_body: "Thank you. If we have a place for you, we’ll write to the email address you gave. We can’t reply to every request.",
+    invite_meta_title: "You’re invited to GasTrack",
+    invite_eyebrow: "INVITATION",
+    invite_title: "A friend invited you to GasTrack",
+    invite_intro: "GasTrack keeps what your car costs in one place: fuel, parking, maintenance and the rest.",
+    invite_code_label: "Your invite code",
+    invite_copy: "Copy code",
+    invite_copied: "Copied",
+    invite_ios: "Download on the App Store",
+    invite_android: "Try it on Android",
+    invite_steps_html: "<li>Install GasTrack and create your account. It is for people aged 16 and over.</li><li>Enter the code on the screen after you sign up, or later in Settings → Invite a friend, within 30 days.</li><li>You both earn points in the app: 50 for you, 100 for your friend.</li>",
+    invite_note: "If you use the code, the person who invited you will see your first name. This page knows only the code: nothing about you has reached us.",
     privacy_title: "GasTrack — Privacy Policy",
-    privacy_updated: "Last updated: 25 October 2026",
-    privacy_intro:
-      'This policy describes how <strong>GasTrack</strong> (\u201Cthe app\u201D) handles personal information when you use our mobile application. GasTrack is operated by <strong>Terry Boakye Yiadom</strong>, sole author. Distribution is currently a <strong>closed beta</strong> (not a public store listing yet). If you have questions, contact us at <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+    privacy_updated: "Last updated: 9 November 2026",
+    privacy_intro: "This policy describes how <strong>GasTrack</strong> (“the app”) handles personal information when you use our mobile application. GasTrack is operated by <strong>Terry Boakye Yiadom</strong>, sole author. GasTrack is on the App Store for iPhone. On Android, only a small group can try it for now. If you have questions, contact us at <a href=\"mailto:support.gastrack@gmail.com\">support.gastrack@gmail.com</a>.",
     terms_title: "GasTrack — Terms of Service",
-    terms_updated: "Last updated: 16 April 2026",
-    terms_intro:
-      "These terms govern your use of the GasTrack mobile application. By downloading or using GasTrack, you agree to these terms and to our Privacy Policy.",
+    terms_updated: "Last updated: 5 November 2026",
+    terms_intro: "These terms govern your use of the GasTrack mobile application. By downloading or using GasTrack, you agree to these terms and to our Privacy Policy.",
     delete_meta_title: "GasTrack — Delete account",
     delete_back: "← Back to home",
     delete_eyebrow: "REQUEST ACCOUNT DELETION",
     delete_title: "Delete your GasTrack account",
-    delete_subtitle:
-      "Submitting this form sends a deletion request to our team. We will permanently delete your account and all associated data within 30 days of receiving your request.",
+    delete_subtitle: "Submitting this form sends a deletion request to our team. We will permanently delete your account and all associated data within 30 days of receiving your request.",
     delete_what_label: "What will be deleted:",
     delete_what_1: "Your account and login credentials",
     delete_what_2: "All vehicles and fuel logs",
@@ -98,6 +60,7 @@ const TRANSLATIONS = {
     delete_what_4: "Financial data and settings",
     delete_what_5: "Social profile, friends, and feed posts",
     delete_what_6: "Achievements and XP",
+    delete_kept: "Usage statistics you allowed stay in Google Analytics for its retention period, tied to a random code, not to your name or email. Our cloud providers’ short-lived backups expire on their own.",
     delete_warning: "This action is irreversible. Once deleted, your data cannot be recovered.",
     delete_email_label: "Your email address",
     delete_email_placeholder: "email@example.com",
@@ -112,104 +75,139 @@ const TRANSLATIONS = {
     delete_submit: "Submit deletion request",
     delete_success_title: "Request received",
     delete_success_intro: "We've received your deletion request for",
-    delete_success_body:
-      "Your account and all associated data will be permanently deleted within 30 days.",
-    delete_success_note:
-      "You'll receive a confirmation at that email address once the deletion is complete.",
-    delete_success_footer: "If you have questions: support.gastrack@gmail.com",
-    delete_in_app:
-      "Already have the app? You can delete your account directly in Settings → Account → Delete account for immediate deletion.",
-    footer_beta_access: "Beta access",
+    delete_success_body: "Your account and all associated data will be permanently deleted within 30 days.",
+    delete_success_note: "You'll receive a confirmation at that email address once the deletion is complete.",
+    delete_in_app: "Already have the app? You can delete your account directly in Settings → Account → Delete account for immediate deletion.",
+    footer_beta_access: "Android",
     footer_delete_account: "Delete account",
     footer_copy: "© 2025–2026 GasTrack. All rights reserved.",
+    nav_get: "Get the app",
+    choose_title: "Which phone do you have?",
+    choose_android: "By request",
+    choose_close: "Close",
+    lang_aria: "Language",
+    pump_label: "Total, one year",
+    cost_fuel: "Fuel",
+    cost_service: "Service",
+    cost_insurance: "Insurance",
+    cost_oneoff: "One-off",
+    cost_parking: "Parking",
+    pump_note: "Example: La C4, one year of costs",
+    film_title: "The real app, in 22 seconds.",
+    film_play: "Play the video",
+    film_credit: "Music: Sascha Ende, ende.app (CC BY 4.0)",
+    step1_title: "One bill for the whole car.",
+    step1_body: "Fuel, servicing, insurance, road tax, fines and parking. Add it once, then see what the car costs you every month and every kilometre.",
+    step1_unit: "a month",
+    shot_costs: "The costs screen: what the car costs per month, split by kind of cost.",
+    step2_title: "The cheapest fill-up, near you.",
+    step2_body: "Official Italian prices, every day. Chargers, parking and workshops are on the map too.",
+    step2_unit: "per litre, cheapest within 10 km",
+    shot_radar: "The fuel radar: a map of nearby stations with their prices.",
+    step3_title: "Road tax and MOT? No surprises.",
+    step3_body: "All your dates in one list: insurance, road tax, inspection, servicing. We’ll remind you before they’re due.",
+    step3_unit: "days to the road tax",
+    shot_due: "The upcoming screen: every date in one list.",
+    step4_title: "How far the tank will go.",
+    step4_body: "Worked out from your own fill-ups, not from a brochure. The more fill-ups you add, the closer it gets.",
+    step4_unit: "km left",
+    shot_home: "The home screen: the car, its range and what it has cost so far.",
+    tour_note: "Screens and figures from an example car.",
+    also_title: "And there’s more.",
+    also1_t: "Every fuel",
+    also1_b: "Petrol, diesel, LPG, CNG, hybrid, electric. Two-tank cars too.",
+    also2_t: "Trips",
+    also2_b: "What a journey will cost before you set off.",
+    also3_t: "Passport",
+    also3_b: "The car’s whole history in one document, for you or the next buyer.",
+    also4_t: "Sharing",
+    also4_b: "Someone who drives with you can add fill-ups and services. Only if you invite them.",
+    also5_t: "Work car",
+    also5_b: "Self-employed? Your accountant has it all at year end.",
+    also6_t: "Friends",
+    also6_b: "See how you stack up against your friends, and show off your badges.",
+    step5_title: "Bronze today.<br />Legendary one day.",
+    step5_body: "Every fill-up earns points. Climb seven ranks, collect badges and take on three new missions every week. Some badges are so rare that only a handful of drivers have them.",
+    step5_unit: "level, Platinum V",
+    shot_ranks: "The level screen: level 7, Platinum rank, and the badges within reach.",
+    rank_bronze: "Bronze",
+    rank_silver: "Silver",
+    rank_gold: "Gold",
+    rank_platinum: "Platinum",
+    rank_emerald: "Emerald",
+    rank_diamond: "Diamond",
+    rank_legendary: "Legendary",
+    band_title: "Your numbers are yours.",
+    band_1: "No ads.",
+    band_2: "No data sold.",
+    band_3: "Stored in the EU.",
+    band_body: "You can use GasTrack without an account, and delete everything whenever you want.",
+    band_link: "Read the privacy policy",
+    end_title: "Now you see <em>the rest.</em>",
+    contact_write: "Write to us",
+    footer_app: "App",
+    footer_legal: "Legal",
+    footer_contact: "Contact",
+    toc_label: "Contents",
+    form_error: "Something went wrong. Please try again, or write to us.",
+    home_title: "GasTrack · You see the fill-up. Not the rest.",
+    home_meta_description: "GasTrack puts fuel, servicing, insurance and parking on one bill, so you know what your car really costs. On the App Store for iPhone; Android by request.",
+    home_badge: "On iPhone now · Android by request",
+    home_h1_a: "You see the fill-up.",
+    home_h1_b: "Not the rest.",
+    home_sub: "GasTrack puts fuel, servicing, insurance and parking on one bill, so you know what your car really costs.",
+    home_android: "Try it on Android",
+    home_store_alt: "Download on the App Store"
   },
   it: {
     nf_badge: "Link GasTrack",
     nf_title_generic: "Pagina non trovata",
-    nf_sub_generic:
-      "Questa pagina non esiste. I link qui sotto ti portano dove volevi andare.",
+    nf_sub_generic: "Questa pagina non esiste. I link qui sotto ti portano dove volevi andare.",
     nf_title_link: "Apri in GasTrack",
-    nf_sub_link:
-      "Questo link si apre nell\u2019app GasTrack. Se ce l\u2019hai installata si \u00e8 gi\u00e0 aperta \u2014 altrimenti l\u2019app \u00e8 ancora in beta chiusa e puoi richiedere l\u2019accesso qui sotto.",
-    nf_cta_beta: "Richiedi accesso alla beta",
+    nf_sub_link: "Questo link si apre nell’app GasTrack. Se ce l’hai, si è già aperta. Altrimenti scaricala dall’App Store per iPhone, o chiedi di provarla su Android qui sotto.",
+    nf_cta_beta: "Provala su Android",
+    nf_cta_store: "Scarica dall’App Store",
     nav_home: "Home",
     nav_privacy: "Privacy",
     nav_terms: "Termini",
-    home_badge: "Beta chiusa",
-    home_headline_1: "Il tuo veicolo,",
-    home_headline_2: "sotto controllo.",
-    home_sub:
-      "GasTrack ti aiuta a monitorare carburante, parcheggi, manutenzione e costi reali — con radar, social e gamification opzionali. Pensato per chi vuole chiarezza. L’app è in <strong>beta chiusa</strong> (non ancora in store pubblico). Usa il <strong>modulo per richiedere la beta</strong> su questo sito.",
-    home_meta_description:
-      "GasTrack — carburante, parcheggio, manutenzione e costi reali. Richiedi la beta chiusa tramite il modulo su gastrack.eu. Non ancora in store pubblico.",
-    home_cta_primary: "Richiedi accesso beta",
-    home_cta_secondary: "Feedback beta",
-    home_features_label: "Cosa fa GasTrack",
-    home_feat1_title: "Monitoraggio carburante",
-    home_feat1_body:
-      "Registra ogni rifornimento, monitora i consumi e individua le tendenze. Supporta benzina, diesel, GPL, metano, elettrico e ibrido.",
-    home_feat2_title: "Parcheggi e manutenzione",
-    home_feat2_body:
-      "Non perdere mai traccia di una sosta o di un intervento. GasTrack conserva la cronologia completa del tuo veicolo in un unico posto.",
-    home_feat3_title: "Costi reali",
-    home_feat3_body:
-      "Scopri quanto ti costa davvero il veicolo ogni mese — carburante, assicurazione, tasse, finanziamento, manutenzione, tutto in una dashboard.",
-    home_feat4_title: "Radar",
-    home_feat4_body:
-      "Trova le stazioni di servizio vicino a te con prezzi in tempo reale e valutazioni della community. Il Radar carburante è in prova insieme al resto dell’app.",
-    home_feat5_title: "Social",
-    home_feat5_body:
-      "Confronta i consumi con gli amici, condividi traguardi e scopri come guidi rispetto agli altri.",
-    home_feat6_title: "Gamification",
-    home_feat6_body:
-      "Guadagna XP, sali di livello e sblocca achievement mentre tieni traccia del tuo veicolo. Non è mai stato così soddisfacente.",
-    home_contact_label: "Contatti",
-    home_contact_title: "Domande o feedback?",
-    home_contact_body:
-      "GasTrack è sviluppato da uno sviluppatore indipendente. Usa il <strong>modulo accesso beta</strong> per chiedere un invito, oppure scrivici per qualsiasi altra cosa — leggiamo ogni messaggio.",
-    home_contact_linkedin: "LinkedIn",
-
-    beta_meta_title: "GasTrack — Richiedi accesso beta",
-    beta_meta_description:
-      "Richiedi la beta chiusa di GasTrack. Inserisci i tuoi dati e conferma Termini, Privacy e limiti della beta.",
-
+    beta_meta_title: "GasTrack · Provala su Android",
+    beta_meta_description: "Chiedi di provare GasTrack su Android. Su iPhone GasTrack è su App Store.",
     beta_back: "← Torna alla home",
-    beta_eyebrow: "BETA CHIUSA",
-    beta_title: "Richiedi accesso beta",
-    beta_intro_html:
-      "<p>Usa questo modulo per chiedere di entrare nella <strong>beta chiusa</strong>. Leggiamo ogni richiesta. Potremmo scriverti se si libera un posto. <strong>Nessun obbligo</strong> per te o per noi — è solo una richiesta di valutazione.</p>",
-    beta_notice_html:
-      "<p><strong>A cosa servono i dati:</strong> usiamo quanto invii solo per valutare se invitarti alla beta e per risponderti all’indirizzo email indicato. I dettagli completi sono nell’<a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Informativa sulla privacy</a>.</p><p><strong>Linguaggio semplice, non parere legale:</strong> per la tua situazione specifica rivolgiti a un professionista qualificato.</p>",
-
+    beta_eyebrow: "ANDROID · SU RICHIESTA",
+    beta_title: "Chiedi di provare GasTrack su Android",
+    beta_intro_html: "<p>Su <strong>iPhone</strong> GasTrack è su <a href=\"https://apps.apple.com/app/id6762223301\" target=\"_blank\" rel=\"noopener noreferrer\">App Store</a>, senza invito. Su <strong>Android</strong> per ora la prova un piccolo gruppo: usa questo modulo per chiedere di entrare. Leggiamo ogni richiesta e potremmo scriverti se si libera un posto. <strong>Nessun obbligo</strong> per te o per noi — è solo una richiesta di valutazione.</p>",
+    beta_notice_html: "<p><strong>A cosa servono i dati:</strong> usiamo quanto invii solo per valutare se invitarti alla beta e per risponderti all’indirizzo email indicato. I dettagli completi sono nell’<a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Informativa sulla privacy</a>.</p><p><strong>Linguaggio semplice, non parere legale:</strong> per la tua situazione specifica rivolgiti a un professionista qualificato.</p>",
     beta_label_first_name: "Nome",
     beta_label_surname: "Cognome",
     beta_label_email: "Indirizzo email",
-    beta_label_why: "Perché vuoi entrare? (ci aiuta a dare priorità)",
-    beta_placeholder_why: "es. Voglio tracciare carburante e costi; posso segnalare bug…",
-
-    beta_consent_html:
-      'Ho letto e accetto i <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Termini di servizio</a> e l’<a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Informativa sulla privacy</a>. Comprendo che GasTrack è <strong>software in beta</strong>: può essere incompleto, instabile o cambiare senza preavviso; <strong>non ci sono garanzie</strong> di alcun tipo; possono verificarsi perdite di dati o errori; e <strong>non è garantita</strong> disponibilità, funzionalità o assistenza. Partecipo volontariamente. Acconsento che l’operatore usi i miei dati solo per valutare questa richiesta e contattarmi per l’accesso alla beta, come spiegato nell’Informativa sulla privacy. Dichiaro che le informazioni fornite sono, a mia conoscenza, veritiere.',
-
+    beta_label_why: "Perché vuoi provarla?",
+    beta_placeholder_why: "es. Voglio sapere quanto mi costa davvero l’auto, e posso dirvi cosa non funziona…",
+    beta_consent_html: "Ho letto e accetto i <a href=\"https://gastrack.eu/terms.html\" target=\"_blank\" rel=\"noopener noreferrer\">Termini di servizio</a> e l’<a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Informativa sulla privacy</a>. Comprendo che GasTrack è <strong>software in beta</strong>: può essere incompleto, instabile o cambiare senza preavviso; <strong>non ci sono garanzie</strong> di alcun tipo; possono verificarsi perdite di dati o errori; e <strong>non è garantita</strong> disponibilità, funzionalità o assistenza. Partecipo volontariamente. Acconsento che l’operatore usi i miei dati solo per valutare questa richiesta e contattarmi per l’accesso alla beta, come spiegato nell’Informativa sulla privacy. Dichiaro che le informazioni fornite sono, a mia conoscenza, veritiere.",
     beta_submit: "Invia richiesta",
     beta_success_title: "Richiesta ricevuta",
-    beta_success_body:
-      "Grazie. Se potremo offrirti l’accesso alla beta, ti contatteremo all’indirizzo email indicato. Non possiamo rispondere a tutte le richieste.",
-    beta_success_footer: "Domande? support.gastrack@gmail.com",
-
+    beta_success_body: "Grazie. Se c’è posto per te, ti scriviamo all’indirizzo email indicato. Non possiamo rispondere a tutte le richieste.",
+    invite_meta_title: "Hai un invito per GasTrack",
+    invite_eyebrow: "INVITO",
+    invite_title: "Un amico ti ha invitato su GasTrack",
+    invite_intro: "GasTrack tiene in un unico posto quanto ti costa l’auto: carburante, parcheggi, manutenzione e il resto.",
+    invite_code_label: "Il tuo codice invito",
+    invite_copy: "Copia il codice",
+    invite_copied: "Copiato",
+    invite_ios: "Scarica dall’App Store",
+    invite_android: "Provala su Android",
+    invite_steps_html: "<li>Installa GasTrack e crea il tuo account. È per chi ha almeno 16 anni.</li><li>Inserisci il codice nella schermata dopo la registrazione, o più tardi in Impostazioni → Invita un amico, entro 30 giorni.</li><li>Guadagnate punti nell’app: 50 tu, 100 chi ti ha invitato.</li>",
+    invite_note: "Se usi il codice, chi ti ha invitato vedrà il tuo nome. Questa pagina conosce solo il codice: non ci è arrivato nulla su di te.",
     privacy_title: "GasTrack — Informativa sulla privacy",
-    privacy_updated: "Ultimo aggiornamento: 25 ottobre 2026",
-    privacy_intro:
-      'Questa informativa descrive come <strong>GasTrack</strong> (“l’app”) tratta i dati personali quando usi la nostra applicazione mobile. GasTrack è gestita da <strong>Terry Boakye Yiadom</strong>, unico autore. La distribuzione è attualmente una <strong>beta chiusa</strong> (non ancora scheda store pubblica). Per domande, contattaci a <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+    privacy_updated: "Ultimo aggiornamento: 9 novembre 2026",
+    privacy_intro: "Questa informativa descrive come <strong>GasTrack</strong> (“l’app”) tratta i dati personali quando usi la nostra applicazione mobile. GasTrack è gestita da <strong>Terry Boakye Yiadom</strong>, unico autore. GasTrack è su App Store per iPhone. Su Android, per ora, la prova solo un piccolo gruppo. Per domande, contattaci a <a href=\"mailto:support.gastrack@gmail.com\">support.gastrack@gmail.com</a>.",
     terms_title: "GasTrack — Termini di servizio",
-    terms_updated: "Ultimo aggiornamento: 16 aprile 2026",
-    terms_intro:
-      "Questi termini disciplinano l’uso dell’app mobile GasTrack. Scaricando o usando GasTrack, accetti questi termini e la nostra Informativa sulla privacy.",
+    terms_updated: "Ultimo aggiornamento: 5 novembre 2026",
+    terms_intro: "Questi termini disciplinano l’uso dell’app mobile GasTrack. Scaricando o usando GasTrack, accetti questi termini e la nostra Informativa sulla privacy.",
     delete_meta_title: "GasTrack — Elimina account",
     delete_back: "← Torna alla home",
     delete_eyebrow: "RICHIESTA DI ELIMINAZIONE ACCOUNT",
     delete_title: "Elimina il tuo account GasTrack",
-    delete_subtitle:
-      "Inviando questo modulo invii una richiesta di eliminazione al nostro team. Elimineremo permanentemente il tuo account e tutti i dati associati entro 30 giorni dalla ricezione della richiesta.",
+    delete_subtitle: "Inviando questo modulo invii una richiesta di eliminazione al nostro team. Elimineremo permanentemente il tuo account e tutti i dati associati entro 30 giorni dalla ricezione della richiesta.",
     delete_what_label: "Cosa verrà eliminato:",
     delete_what_1: "Il tuo account e le credenziali di accesso",
     delete_what_2: "Tutti i veicoli e i rifornimenti",
@@ -217,6 +215,7 @@ const TRANSLATIONS = {
     delete_what_4: "Dati finanziari e impostazioni",
     delete_what_5: "Profilo social, amici e post",
     delete_what_6: "Achievement e XP",
+    delete_kept: "Le statistiche d’uso che hai consentito restano in Google Analytics per il suo periodo di conservazione, legate a un codice casuale, non al tuo nome o alla tua email. I backup di breve durata dei nostri fornitori cloud scadono da soli.",
     delete_warning: "Questa azione è irreversibile. Una volta eliminati, i dati non possono essere recuperati.",
     delete_email_label: "Il tuo indirizzo email",
     delete_email_placeholder: "email@esempio.com",
@@ -231,105 +230,139 @@ const TRANSLATIONS = {
     delete_submit: "Invia richiesta di eliminazione",
     delete_success_title: "Richiesta ricevuta",
     delete_success_intro: "Abbiamo ricevuto la tua richiesta di eliminazione per",
-    delete_success_body:
-      "Il tuo account e tutti i dati associati verranno eliminati permanentemente entro 30 giorni.",
-    delete_success_note:
-      "Riceverai una conferma a quell'indirizzo email una volta completata l'eliminazione.",
-    delete_success_footer: "Per domande: support.gastrack@gmail.com",
-    delete_in_app:
-      "Hai già l'app? Puoi eliminare il tuo account direttamente in Impostazioni → Account → Elimina account per l'eliminazione immediata.",
-    footer_beta_access: "Accesso beta",
+    delete_success_body: "Il tuo account e tutti i dati associati verranno eliminati permanentemente entro 30 giorni.",
+    delete_success_note: "Riceverai una conferma a quell'indirizzo email una volta completata l'eliminazione.",
+    delete_in_app: "Hai già l'app? Puoi eliminare il tuo account direttamente in Impostazioni → Account → Elimina account per l'eliminazione immediata.",
+    footer_beta_access: "Android",
     footer_delete_account: "Elimina account",
     footer_copy: "© 2025–2026 GasTrack. Tutti i diritti riservati.",
+    nav_get: "Scarica l’app",
+    choose_title: "Che telefono hai?",
+    choose_android: "Su richiesta",
+    choose_close: "Chiudi",
+    lang_aria: "Lingua",
+    pump_label: "Totale, un anno",
+    cost_fuel: "Carburante",
+    cost_service: "Manutenzione",
+    cost_insurance: "Assicurazione",
+    cost_oneoff: "Una tantum",
+    cost_parking: "Parcheggio",
+    pump_note: "Esempio: la C4, un anno di spese",
+    film_title: "L’app vera, in 22 secondi.",
+    film_play: "Guarda il video",
+    film_credit: "Musica: Sascha Ende, ende.app (CC BY 4.0)",
+    step1_title: "Un conto solo per tutta l’auto.",
+    step1_body: "Carburante, tagliandi, assicurazione, bollo, multe e parcheggi. Li aggiungi una volta e vedi quanto ti costa l’auto ogni mese e ogni chilometro.",
+    step1_unit: "al mese",
+    shot_costs: "La schermata dei costi: quanto costa l’auto al mese, per tipo di spesa.",
+    step2_title: "Il pieno più economico, vicino a te.",
+    step2_body: "I prezzi ufficiali, ogni giorno. Sulla mappa trovi anche colonnine, parcheggi e officine.",
+    step2_unit: "al litro, il più economico entro 10 km",
+    shot_radar: "Il radar carburante: la mappa dei distributori vicini con i prezzi.",
+    step3_title: "Bollo e revisione? Niente sorprese.",
+    step3_body: "Tutte le date in un solo elenco: assicurazione, bollo, revisione, tagliando. Ti avvisiamo prima.",
+    step3_unit: "giorni al bollo",
+    shot_due: "La schermata In scadenza: tutte le date in un solo elenco.",
+    step4_title: "Quanto ti porta il serbatoio.",
+    step4_body: "Lo calcoliamo dai tuoi rifornimenti, non da una brochure. Più ne aggiungi, più si avvicina.",
+    step4_unit: "km di autonomia",
+    shot_home: "La schermata iniziale: l’auto, l’autonomia e quanto ha speso finora.",
+    tour_note: "Schermate e cifre di un’auto di esempio.",
+    also_title: "E non è tutto.",
+    also1_t: "Ogni carburante",
+    also1_b: "Benzina, diesel, GPL, metano, ibride, elettriche. Anche con due serbatoi.",
+    also2_t: "Viaggi",
+    also2_b: "Quanto costa un tragitto prima di partire.",
+    also3_t: "Passaporto",
+    also3_b: "Tutta la storia dell’auto in un solo documento, per te o per chi la compra.",
+    also4_t: "Condivisione",
+    also4_b: "Chi guida con te può aggiungere pieni e manutenzioni. Solo se lo inviti.",
+    also5_t: "Auto da lavoro",
+    also5_b: "Partita IVA? A fine anno il commercialista ha tutto.",
+    also6_t: "Amici",
+    also6_b: "Guarda come te la cavi rispetto agli amici e metti in mostra i tuoi badge.",
+    step5_title: "Oggi Bronzo.<br />Un giorno Leggendario.",
+    step5_body: "Ogni pieno ti dà punti. Scala sette gradi, colleziona badge e affronta tre nuove missioni ogni settimana. Alcuni badge sono così rari che ce l’hanno in pochissimi.",
+    step5_unit: "livello, Platino V",
+    shot_ranks: "La schermata del livello: livello 7, grado Platino e i badge a portata di mano.",
+    rank_bronze: "Bronzo",
+    rank_silver: "Argento",
+    rank_gold: "Oro",
+    rank_platinum: "Platino",
+    rank_emerald: "Smeraldo",
+    rank_diamond: "Diamante",
+    rank_legendary: "Leggendario",
+    band_title: "I tuoi numeri sono tuoi.",
+    band_1: "Niente pubblicità.",
+    band_2: "Niente dati venduti.",
+    band_3: "Conservati nell’UE.",
+    band_body: "Puoi usare GasTrack senza account e cancellare tutto quando vuoi.",
+    band_link: "Leggi l’informativa privacy",
+    end_title: "Ora vedi anche <em>il resto.</em>",
+    contact_write: "Scrivici",
+    footer_app: "App",
+    footer_legal: "Note legali",
+    footer_contact: "Contatti",
+    toc_label: "Indice",
+    form_error: "Qualcosa non ha funzionato. Riprova, o scrivici.",
+    home_title: "GasTrack · Il pieno lo vedi. Il resto no.",
+    home_meta_description: "GasTrack mette carburante, manutenzione, assicurazione e parcheggio in un conto solo, così sai quanto ti costa davvero l’auto. Su App Store per iPhone; Android su richiesta.",
+    home_h1_a: "Il pieno lo vedi.",
+    home_h1_b: "Il resto no.",
+    home_sub: "GasTrack mette carburante, manutenzione, assicurazione e parcheggio in un conto solo, così sai quanto ti costa davvero l’auto.",
+    home_android: "Provala su Android",
+    home_store_alt: "Scarica su App Store",
+    home_badge: "Ora su iPhone · Android su richiesta"
   },
   fr: {
     nf_badge: "Lien GasTrack",
     nf_title_generic: "Page introuvable",
-    nf_sub_generic:
-      "Cette page n\u2019existe pas. Les liens ci-dessous vous m\u00e8neront o\u00f9 vous alliez.",
+    nf_sub_generic: "Cette page n’existe pas. Les liens ci-dessous vous mèneront où vous alliez.",
     nf_title_link: "Ouvrir dans GasTrack",
-    nf_sub_link:
-      "Ce lien s\u2019ouvre dans l\u2019application GasTrack. Si vous l\u2019avez install\u00e9e, elle s\u2019est d\u00e9j\u00e0 ouverte \u2014 sinon l\u2019application est encore en b\u00eata ferm\u00e9e et vous pouvez demander l\u2019acc\u00e8s ci-dessous.",
-    nf_cta_beta: "Demander l\u2019acc\u00e8s \u00e0 la b\u00eata",
+    nf_sub_link: "Ce lien s’ouvre dans l’application GasTrack. Si vous l’avez, elle s’est déjà ouverte. Sinon, téléchargez-la sur l’App Store pour iPhone, ou demandez à l’essayer sur Android ci-dessous.",
+    nf_cta_beta: "Essayer sur Android",
+    nf_cta_store: "Télécharger dans l’App Store",
     nav_home: "Accueil",
     nav_privacy: "Confidentialité",
     nav_terms: "Conditions",
-    home_badge: "Bêta fermée",
-    home_headline_1: "Votre véhicule,",
-    home_headline_2: "sous contrôle.",
-    home_sub:
-      "GasTrack vous aide à suivre le carburant, le stationnement, l’entretien et les coûts réels — avec radar, social et gamification en option. Conçu pour la clarté. L’application est en <strong>bêta fermée</strong> (pas encore en fiche store publique). Utilisez le <strong>formulaire de demande d’accès</strong> sur ce site.",
-    home_meta_description:
-      "GasTrack — carburant, stationnement, entretien et coûts réels. Demandez l’accès à la bêta fermée via le formulaire sur gastrack.eu. Pas encore en fiche store publique.",
-    home_cta_primary: "Demander l’accès bêta",
-    home_cta_secondary: "Retour bêta",
-    home_features_label: "Ce que fait GasTrack",
-    home_feat1_title: "Suivi du carburant",
-    home_feat1_body:
-      "Enregistrez chaque plein, suivez la consommation et repérez les tendances. Compatible essence, diesel, GPL, méthane, électrique et hybride.",
-    home_feat2_title: "Parking et entretien",
-    home_feat2_body:
-      "Ne perdez jamais le fil d'une session de stationnement ou d'un entretien. GasTrack conserve l'historique complet de votre véhicule au même endroit.",
-    home_feat3_title: "Coûts réels",
-    home_feat3_body:
-      "Découvrez ce que votre véhicule vous coûte vraiment par mois — carburant, assurance, taxes, financement, entretien, tout dans un tableau de bord.",
-    home_feat4_title: "Radar",
-    home_feat4_body:
-      "Trouvez les stations-service à proximité avec des prix en temps réel et des avis communautaires. Le radar carburant est en test avec le reste de l’application.",
-    home_feat5_title: "Social",
-    home_feat5_body:
-      "Comparez votre efficacité avec vos amis, partagez vos succès et voyez comment vous vous situez.",
-    home_feat6_title: "Gamification",
-    home_feat6_body:
-      "Gagnez des XP, montez de niveau et débloquez des succès en suivant votre véhicule. Gérer ses coûts n'a jamais été aussi satisfaisant.",
-    home_contact_label: "Contact",
-    home_contact_title: "Questions ou retours ?",
-    home_contact_body:
-      "GasTrack est développé par un développeur indépendant. Utilisez le <strong>formulaire d’accès bêta</strong> pour demander une invitation, ou écrivez-nous pour toute autre question — nous lisons chaque message.",
-    home_contact_linkedin: "LinkedIn",
-
-    beta_meta_title: "GasTrack — Demander l’accès bêta",
-    beta_meta_description:
-      "Demandez l’accès à la bêta fermée GasTrack. Indiquez vos coordonnées et acceptez les Conditions, la Politique de confidentialité et les limites de la bêta.",
-
+    beta_meta_title: "GasTrack · Essayer sur Android",
+    beta_meta_description: "Demandez à essayer GasTrack sur Android. Sur iPhone, GasTrack est sur l’App Store.",
     beta_back: "← Retour à l’accueil",
-    beta_eyebrow: "BÊTA FERMÉE",
-    beta_title: "Demander l’accès bêta",
-    beta_intro_html:
-      "<p>Ce formulaire sert à demander à rejoindre la <strong>bêta fermée</strong>. Nous lisons chaque demande. Nous pouvons vous contacter par e-mail si une place se libère. <strong>Aucune obligation</strong> pour vous ni pour nous — il s’agit seulement d’une demande d’examen.</p>",
-    beta_notice_html:
-      "<p><strong>Utilisation de vos réponses :</strong> nous utilisons ce que vous envoyez uniquement pour décider d’une invitation à la bêta et pour vous répondre à l’adresse indiquée. Les détails figurent dans notre <a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Politique de confidentialité</a>.</p><p><strong>Langage clair, pas un avis juridique :</strong> pour votre situation, consultez un professionnel qualifié.</p>",
-
+    beta_eyebrow: "ANDROID · SUR DEMANDE",
+    beta_title: "Demandez à essayer GasTrack sur Android",
+    beta_intro_html: "<p>Sur <strong>iPhone</strong>, GasTrack est sur l’<a href=\"https://apps.apple.com/app/id6762223301\" target=\"_blank\" rel=\"noopener noreferrer\">App Store</a>, sans invitation. Sur <strong>Android</strong>, seul un petit groupe l’essaie pour l’instant : ce formulaire sert à demander à le rejoindre. Nous lisons chaque demande et pouvons vous contacter par e-mail si une place se libère. <strong>Aucune obligation</strong> pour vous ni pour nous — il s’agit seulement d’une demande d’examen.</p>",
+    beta_notice_html: "<p><strong>Utilisation de vos réponses :</strong> nous utilisons ce que vous envoyez uniquement pour décider d’une invitation à la bêta et pour vous répondre à l’adresse indiquée. Les détails figurent dans notre <a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Politique de confidentialité</a>.</p><p><strong>Langage clair, pas un avis juridique :</strong> pour votre situation, consultez un professionnel qualifié.</p>",
     beta_label_first_name: "Prénom",
     beta_label_surname: "Nom",
     beta_label_email: "Adresse e-mail",
-    beta_label_why: "Pourquoi souhaitez-vous rejoindre la bêta ? (aide à prioriser)",
-    beta_placeholder_why:
-      "p. ex. Je veux suivre le carburant et les coûts ; je peux signaler des bugs…",
-
-    beta_consent_html:
-      'J’ai lu et j’accepte les <a href="https://gastrack.eu/terms.html" target="_blank" rel="noopener noreferrer">Conditions d’utilisation</a> et la <a href="https://gastrack.eu/privacy.html" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>. Je comprends que GasTrack est un <strong>logiciel en bêta</strong> : il peut être incomplet, instable ou évoluer sans préavis ; il n’y a <strong>aucune garantie</strong> ; des pertes de données ou des erreurs sont possibles ; et il n’y a <strong>aucune garantie</strong> de disponibilité, de fonctionnalités ou d’assistance. Je participe volontairement. J’accepte que l’exploitant utilise mes informations uniquement pour étudier cette demande et pour me contacter concernant l’accès bêta, comme expliqué dans la Politique de confidentialité. Je confirme que les renseignements fournis sont, à ma connaissance, exacts.',
-
+    beta_label_why: "Pourquoi souhaitez-vous l’essayer ?",
+    beta_placeholder_why: "p. ex. Je veux savoir ce que me coûte vraiment ma voiture, et je peux vous dire ce qui ne marche pas…",
+    beta_consent_html: "J’ai lu et j’accepte les <a href=\"https://gastrack.eu/terms.html\" target=\"_blank\" rel=\"noopener noreferrer\">Conditions d’utilisation</a> et la <a href=\"https://gastrack.eu/privacy.html\" target=\"_blank\" rel=\"noopener noreferrer\">Politique de confidentialité</a>. Je comprends que GasTrack est un <strong>logiciel en bêta</strong> : il peut être incomplet, instable ou évoluer sans préavis ; il n’y a <strong>aucune garantie</strong> ; des pertes de données ou des erreurs sont possibles ; et il n’y a <strong>aucune garantie</strong> de disponibilité, de fonctionnalités ou d’assistance. Je participe volontairement. J’accepte que l’exploitant utilise mes informations uniquement pour étudier cette demande et pour me contacter concernant l’accès bêta, comme expliqué dans la Politique de confidentialité. Je confirme que les renseignements fournis sont, à ma connaissance, exacts.",
     beta_submit: "Envoyer la demande",
     beta_success_title: "Demande reçue",
-    beta_success_body:
-      "Merci. Si nous pouvons vous proposer l’accès bêta, nous vous contacterons à l’adresse e-mail indiquée. Nous ne pouvons pas répondre à toutes les demandes.",
-    beta_success_footer: "Des questions ? support.gastrack@gmail.com",
-
+    beta_success_body: "Merci. S’il y a une place pour vous, nous vous écrirons à l’adresse indiquée. Nous ne pouvons pas répondre à toutes les demandes.",
+    invite_meta_title: "Vous êtes invité sur GasTrack",
+    invite_eyebrow: "INVITATION",
+    invite_title: "Un ami vous invite sur GasTrack",
+    invite_intro: "GasTrack réunit au même endroit ce que vous coûte votre voiture : carburant, stationnement, entretien et le reste.",
+    invite_code_label: "Votre code d’invitation",
+    invite_copy: "Copier le code",
+    invite_copied: "Copié",
+    invite_ios: "Télécharger sur l’App Store",
+    invite_android: "Essayer sur Android",
+    invite_steps_html: "<li>Installez GasTrack et créez votre compte. L’app s’adresse aux personnes de 16 ans et plus.</li><li>Saisissez le code sur l’écran qui suit l’inscription, ou plus tard dans Réglages → Inviter un ami, sous 30 jours.</li><li>Vous gagnez des points dans l’app : 50 pour vous, 100 pour la personne qui vous invite.</li>",
+    invite_note: "Si vous utilisez le code, la personne qui vous invite verra votre prénom. Cette page ne connaît que le code : rien sur vous ne nous est parvenu.",
     privacy_title: "GasTrack — Politique de confidentialité",
-    privacy_updated: "Dernière mise à jour : 25 octobre 2026",
-    privacy_intro:
-      'Cette politique décrit comment <strong>GasTrack</strong> (« l’application ») traite les informations personnelles lorsque vous utilisez notre application mobile. GasTrack est exploitée par <strong>Terry Boakye Yiadom</strong>, auteur unique. La distribution est actuellement une <strong>bêta fermée</strong> (pas encore de fiche store publique). Pour toute question, contactez-nous à <a href="mailto:support.gastrack@gmail.com">support.gastrack@gmail.com</a>.',
+    privacy_updated: "Dernière mise à jour : 9 novembre 2026",
+    privacy_intro: "Cette politique décrit comment <strong>GasTrack</strong> (« l’application ») traite les informations personnelles lorsque vous utilisez notre application mobile. GasTrack est exploitée par <strong>Terry Boakye Yiadom</strong>, auteur unique. GasTrack est sur l’App Store pour iPhone. Sur Android, seul un petit groupe peut l’essayer pour l’instant. Pour toute question, contactez-nous à <a href=\"mailto:support.gastrack@gmail.com\">support.gastrack@gmail.com</a>.",
     terms_title: "GasTrack — Conditions d’utilisation",
-    terms_updated: "Dernière mise à jour : 16 avril 2026",
-    terms_intro:
-      "Les présentes conditions régissent votre utilisation de l’application mobile GasTrack. En téléchargeant ou en utilisant GasTrack, vous acceptez ces conditions et notre Politique de confidentialité.",
+    terms_updated: "Dernière mise à jour : 5 novembre 2026",
+    terms_intro: "Les présentes conditions régissent votre utilisation de l’application mobile GasTrack. En téléchargeant ou en utilisant GasTrack, vous acceptez ces conditions et notre Politique de confidentialité.",
     delete_meta_title: "GasTrack — Supprimer le compte",
     delete_back: "← Retour à l’accueil",
     delete_eyebrow: "DEMANDE DE SUPPRESSION DE COMPTE",
     delete_title: "Supprimer votre compte GasTrack",
-    delete_subtitle:
-      "En envoyant ce formulaire, vous adressez une demande de suppression à notre équipe. Nous supprimerons définitivement votre compte et toutes les données associées dans les 30 jours suivant la réception de votre demande.",
+    delete_subtitle: "En envoyant ce formulaire, vous adressez une demande de suppression à notre équipe. Nous supprimerons définitivement votre compte et toutes les données associées dans les 30 jours suivant la réception de votre demande.",
     delete_what_label: "Données concernées :",
     delete_what_1: "Votre compte et vos identifiants",
     delete_what_2: "Tous les véhicules et journaux de carburant",
@@ -337,8 +370,8 @@ const TRANSLATIONS = {
     delete_what_4: "Données financières et paramètres",
     delete_what_5: "Profil social, amis et publications du fil",
     delete_what_6: "Succès et points d’expérience",
-    delete_warning:
-      "Cette action est irréversible. Une fois supprimées, vos données ne pourront pas être récupérées.",
+    delete_kept: "Les statistiques d’usage que vous avez autorisées restent dans Google Analytics pendant sa durée de conservation, liées à un code aléatoire, pas à votre nom ni à votre e-mail. Les sauvegardes de courte durée de nos fournisseurs cloud expirent d’elles-mêmes.",
+    delete_warning: "Cette action est irréversible. Une fois supprimées, vos données ne pourront pas être récupérées.",
     delete_email_label: "Votre adresse e-mail",
     delete_email_placeholder: "email@exemple.com",
     delete_reason_label: "Motif (facultatif)",
@@ -352,17 +385,90 @@ const TRANSLATIONS = {
     delete_submit: "Envoyer la demande de suppression",
     delete_success_title: "Demande reçue",
     delete_success_intro: "Nous avons bien reçu votre demande de suppression pour",
-    delete_success_body:
-      "Votre compte et toutes les données associées seront définitivement supprimés dans les 30 jours.",
-    delete_success_note:
-      "Vous recevrez une confirmation à cette adresse une fois la suppression terminée.",
-    delete_success_footer: "Des questions ? Écrivez à support.gastrack@gmail.com",
-    delete_in_app:
-      "Vous avez déjà l’application ? Vous pouvez supprimer votre compte directement dans Réglages → Compte → Supprimer le compte pour une suppression immédiate.",
-    footer_beta_access: "Accès bêta",
+    delete_success_body: "Votre compte et toutes les données associées seront définitivement supprimés dans les 30 jours.",
+    delete_success_note: "Vous recevrez une confirmation à cette adresse une fois la suppression terminée.",
+    delete_in_app: "Vous avez déjà l’application ? Vous pouvez supprimer votre compte directement dans Réglages → Compte → Supprimer le compte pour une suppression immédiate.",
+    footer_beta_access: "Android",
     footer_delete_account: "Supprimer le compte",
     footer_copy: "© 2025–2026 GasTrack. Tous droits réservés.",
-  },
+    nav_get: "Télécharger",
+    choose_title: "Quel téléphone avez-vous ?",
+    choose_android: "Sur demande",
+    choose_close: "Fermer",
+    lang_aria: "Langue",
+    pump_label: "Total, un an",
+    cost_fuel: "Carburant",
+    cost_service: "Entretien",
+    cost_insurance: "Assurance",
+    cost_oneoff: "Ponctuel",
+    cost_parking: "Stationnement",
+    pump_note: "Exemple : la C4, un an de dépenses",
+    film_title: "La vraie app, en 22 secondes.",
+    film_play: "Lancer la vidéo",
+    film_credit: "Musique : Sascha Ende, ende.app (CC BY 4.0)",
+    step1_title: "Une seule note pour toute la voiture.",
+    step1_body: "Carburant, entretien, assurance, taxe routière, amendes et stationnement. Vous les ajoutez une fois et vous voyez ce que coûte la voiture chaque mois et chaque kilomètre.",
+    step1_unit: "par mois",
+    shot_costs: "L’écran des coûts : ce que coûte la voiture par mois, par type de dépense.",
+    step2_title: "Le plein le moins cher, près de chez vous.",
+    step2_body: "Les prix officiels italiens, chaque jour. Bornes, parkings et garages sont aussi sur la carte.",
+    step2_unit: "le litre, le moins cher à 10 km",
+    shot_radar: "Le radar carburant : la carte des stations proches avec leurs prix.",
+    step3_title: "Taxe, contrôle technique ? Aucune surprise.",
+    step3_body: "Toutes vos dates dans une seule liste : assurance, taxe routière, contrôle technique, entretien. On vous prévient avant.",
+    step3_unit: "jours avant la taxe",
+    shot_due: "L’écran À venir : toutes les dates dans une seule liste.",
+    step4_title: "Jusqu’où ira le réservoir.",
+    step4_body: "Calculé à partir de vos pleins, pas d’une brochure. Plus vous en ajoutez, plus c’est juste.",
+    step4_unit: "km d’autonomie",
+    shot_home: "L’écran d’accueil : la voiture, son autonomie et ce qu’elle a coûté jusqu’ici.",
+    tour_note: "Écrans et chiffres d’une voiture d’exemple.",
+    also_title: "Et ce n’est pas tout.",
+    also1_t: "Tous les carburants",
+    also1_b: "Essence, diesel, GPL, GNV, hybride, électrique. Même avec deux réservoirs.",
+    also2_t: "Trajets",
+    also2_b: "Ce que coûtera un trajet avant de partir.",
+    also3_t: "Passeport",
+    also3_b: "Tout l’historique de la voiture en un seul document, pour vous ou pour le prochain acheteur.",
+    also4_t: "Partage",
+    also4_b: "Quelqu’un qui conduit avec vous peut ajouter pleins et entretiens. Seulement si vous l’invitez.",
+    also5_t: "Voiture de travail",
+    also5_b: "Indépendant ? En fin d’année, votre comptable a tout.",
+    also6_t: "Amis",
+    also6_b: "Voyez où vous en êtes face à vos amis et montrez vos badges.",
+    step5_title: "Bronze aujourd’hui.<br />Légendaire un jour.",
+    step5_body: "Chaque plein vous rapporte des points. Gravissez sept rangs, collectionnez des badges et relevez trois nouvelles quêtes chaque semaine. Certains badges sont si rares que très peu de conducteurs les ont.",
+    step5_unit: "niveau, Platine V",
+    shot_ranks: "L’écran de niveau : niveau 7, rang Platine et les badges à portée de main.",
+    rank_bronze: "Bronze",
+    rank_silver: "Argent",
+    rank_gold: "Or",
+    rank_platinum: "Platine",
+    rank_emerald: "Émeraude",
+    rank_diamond: "Diamant",
+    rank_legendary: "Légendaire",
+    band_title: "Vos chiffres sont à vous.",
+    band_1: "Pas de pub.",
+    band_2: "Aucune donnée vendue.",
+    band_3: "Stockées dans l’UE.",
+    band_body: "Vous pouvez utiliser GasTrack sans compte et tout effacer quand vous voulez.",
+    band_link: "Lire la politique de confidentialité",
+    end_title: "Vous voyez enfin <em>le reste.</em>",
+    contact_write: "Écrivez-nous",
+    footer_app: "App",
+    footer_legal: "Mentions légales",
+    footer_contact: "Contact",
+    toc_label: "Sommaire",
+    form_error: "Une erreur est survenue. Réessayez, ou écrivez-nous.",
+    home_title: "GasTrack · Le plein, vous le voyez. Le reste, non.",
+    home_meta_description: "GasTrack réunit carburant, entretien, assurance et stationnement en une seule note, pour savoir ce que votre voiture vous coûte vraiment. Sur l’App Store pour iPhone ; Android sur demande.",
+    home_h1_a: "Le plein, vous le voyez.",
+    home_h1_b: "Le reste, non.",
+    home_sub: "GasTrack réunit carburant, entretien, assurance et stationnement en une seule note, pour savoir ce que votre voiture vous coûte vraiment.",
+    home_android: "Essayer sur Android",
+    home_store_alt: "Télécharger dans l’App Store",
+    home_badge: "Déjà sur iPhone · Android sur demande"
+  }
 };
 
 (function mergeLegalTranslations() {
@@ -374,71 +480,82 @@ const TRANSLATIONS = {
   });
 })();
 
-let currentLang = localStorage.getItem("gt_lang") || "en";
+/** ?lang= first, then what the visitor chose before, then the language of their browser. */
+function detectLang() {
+  var supported = ["en", "it", "fr"];
+  var fromLink = new URLSearchParams(location.search).get("lang");
+  if (supported.indexOf(fromLink) >= 0) return fromLink;
+  try {
+    var saved = localStorage.getItem("gt_lang");
+    if (supported.indexOf(saved) >= 0) return saved;
+  } catch (e) {}
+  var browser = (navigator.language || "").slice(0, 2).toLowerCase();
+  return supported.indexOf(browser) >= 0 ? browser : "en";
+}
+
+let currentLang = detectLang();
 
 function setLang(lang) {
   currentLang = lang;
-  localStorage.setItem("gt_lang", lang);
+  try {
+    localStorage.setItem("gt_lang", lang);
+  } catch (e) {}
   applyTranslations();
   updateLangButtons();
 }
 
 function applyTranslations() {
   const dict = TRANSLATIONS[currentLang] || TRANSLATIONS.en;
+  const text = function (key) {
+    return dict[key] ?? TRANSLATIONS.en[key] ?? "";
+  };
   document.querySelectorAll("[data-i18n]").forEach(function (el) {
     const key = el.dataset.i18n;
     if (!key) return;
-    const val = dict[key] ?? TRANSLATIONS.en[key] ?? "";
-    if (el.dataset.i18nHtml === "true") {
-      el.innerHTML = val;
-    } else {
-      el.textContent = val;
-    }
+    if (el.dataset.i18nHtml === "true") el.innerHTML = text(key);
+    else el.textContent = text(key);
   });
-  document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
-    const key = el.getAttribute("data-i18n-placeholder");
-    if (!key) return;
-    const val = dict[key] ?? TRANSLATIONS.en[key] ?? "";
-    el.setAttribute("placeholder", val);
+  [
+    ["data-i18n-placeholder", "placeholder"],
+    ["data-i18n-alt", "alt"],
+    ["data-i18n-aria", "aria-label"],
+  ].forEach(function (pair) {
+    document.querySelectorAll("[" + pair[0] + "]").forEach(function (el) {
+      el.setAttribute(pair[1], text(el.getAttribute(pair[0])));
+    });
   });
 
+  document.documentElement.lang = currentLang;
   var page = document.body && document.body.getAttribute("data-page");
-  if (page === "privacy") {
-    if (dict.privacy_title) document.title = dict.privacy_title;
-    if (dict.privacy_meta_description) {
-      var md = document.querySelector('meta[name="description"]');
-      if (md) md.setAttribute("content", dict.privacy_meta_description);
-    }
-    document.documentElement.lang = currentLang;
-  } else if (page === "terms") {
-    if (dict.terms_title) document.title = dict.terms_title;
-    if (dict.terms_meta_description) {
-      var mt = document.querySelector('meta[name="description"]');
-      if (mt) mt.setAttribute("content", dict.terms_meta_description);
-    }
-    document.documentElement.lang = currentLang;
-  } else if (page === "home") {
-    if (dict.home_meta_description) {
-      var mh = document.querySelector('meta[name="description"]');
-      if (mh) mh.setAttribute("content", dict.home_meta_description);
-    }
-    document.documentElement.lang = currentLang;
-  } else if (page === "beta") {
-    if (dict.beta_meta_description) {
-      var mb = document.querySelector('meta[name="description"]');
-      if (mb) mb.setAttribute("content", dict.beta_meta_description);
-    }
-    document.documentElement.lang = currentLang;
+  var heads = {
+    home: ["home_title", "home_meta_description"],
+    privacy: ["privacy_title", "privacy_meta_description"],
+    terms: ["terms_title", "terms_meta_description"],
+    beta: [null, "beta_meta_description"],
+  }[page];
+  if (heads) {
+    if (heads[0] && dict[heads[0]]) document.title = dict[heads[0]];
+    var description = document.querySelector('meta[name="description"]');
+    if (description && dict[heads[1]]) description.setAttribute("content", dict[heads[1]]);
   }
+  document.dispatchEvent(new Event("gt:lang"));
 }
 
 function updateLangButtons() {
   document.querySelectorAll(".lang-btn").forEach(function (btn) {
-    btn.classList.toggle("active", btn.dataset.lang === currentLang);
+    var on = btn.dataset.lang === currentLang;
+    btn.classList.toggle("active", on);
+    btn.setAttribute("aria-pressed", on ? "true" : "false");
   });
 }
 
 function initAnimations() {
+  if (!("IntersectionObserver" in window)) {
+    document.querySelectorAll(".fade-in").forEach(function (el) {
+      el.classList.add("visible");
+    });
+    return;
+  }
   var observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (e) {
@@ -452,15 +569,9 @@ function initAnimations() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  applyTranslations();
-  updateLangButtons();
-  initAnimations();
-  setTimeout(function () {
-    document.querySelectorAll(".hero .fade-in").forEach(function (el) {
-      el.classList.add("visible");
-    });
-  }, 100);
-});
-
 window.setLang = setLang;
+
+/* Straight away, not on DOMContentLoaded: an Italian visitor should never see the English first. */
+applyTranslations();
+updateLangButtons();
+initAnimations();
